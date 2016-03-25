@@ -11,13 +11,13 @@ assume the repo is cloned into the `~/utils` folder.
 **Via HTTP**
 
 ```
-git clone https://github.com/dascentral/ubuntu-utils.git ~/utils
+git clone https://github.com/dascentral/ubuntu-utils.git ~/utils && cd ~/utils && ./update.sh
 ```
 
 **Via SSH**
 
 ```
-git clone git@github.com:dascentral/ubuntu-utils.git ~/utils
+git clone git@github.com:dascentral/ubuntu-utils.git ~/utils && cd ~/utils && ./update.sh
 ```
 
 ## Updates
