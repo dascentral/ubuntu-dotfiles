@@ -29,6 +29,6 @@ cd ~/utils
 ./update.sh
 ```
 
-The update script does rely on thee use of `sudo` so while you could run that
+The update script relies on the use of `sudo` so while you could run that
 daily, you should avoid running it on crontab unless you have `sudoers`
 setup properly.
