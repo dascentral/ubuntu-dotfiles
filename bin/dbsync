@@ -1,0 +1,61 @@
+#!/bin/sh
+
+#===================================================================================
+# MySQL Env Sync Script - Ubuntu 14.04
+#
+# DESCRIPTION
+# A utility script to copy production data into lower database environments.
+# 
+# PARAMETERS
+# - database - Name of the production database. Required.
+#
+# ACTIONS PERFORMED
+# - Performs 'mysqldump' of production database
+# - Drops and recreates the STAGE database
+# - Imports production data into STAGE database
+# - Drops and recreates the DEV database
+# - Imports production data into DEV database
+# 
+# ASSUMPTIONS
+# - Script is executed as the ADMIN user
+# - Admin user has "~/.my.cnf" configured appropriately for execution without U/P
+# - DEV and Stage databases exist and are named appropriately
+# - Expected naming convention for a "staff" databaes:
+# -- PROD: staff
+# -- STAGE: staff_stage
+# -- DEV: staff_dev
+#
+#===================================================================================
+
+# One parameter is required
+if [ $# != 1 ]; then
+   echo "Usage: dbsync [dbname]";
+   exit 1
+fi
+
+# Dump PROD database
+printf "\n\033[1m1) Dumping PROD Database\033[0m\n"
+mysqldump $1 > ~/$1.sql
+
+# Drop and recreate the STAGE database
+printf "\n\033[1m2) Synchronizing STAGE Database\033[0m\n"
+mysqladmin -f DROP $1_stage
+mysqladmin CREATE $1_stage
+echo "Database \"$1_stage\" created"
+
+# Import into STAGE database
+mysql $1_stage < ~/$1.sql
+echo 'STAGE: Data import complete'
+
+# Drop and recreate the DEV database
+printf "\n\033[1m3) Synchronizing STAGE Database\033[0m\n"
+mysqladmin -f DROP $1_dev
+mysqladmin CREATE $1_dev
+echo "Database \"$1_dev\" created"
+
+# Import into DEV database
+mysql $1_dev < ~/$1.sql
+echo 'DEV: Data import complete'
+
+# Remove SQL dump
+rm ~/$1.sql
