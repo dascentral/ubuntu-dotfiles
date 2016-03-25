@@ -30,6 +30,7 @@ alias utils='cd ~/utils'
 alias vhosts='cd /etc/nginx/sites-available'
 alias dev='cd /usr/share/nginx/html/dev'
 alias stage='cd /usr/share/nginx/html/stage'
+alias uat='cd /usr/share/nginx/html/uat'
 alias prod='cd /usr/share/nginx/html/prod'
 
 # tail log files
