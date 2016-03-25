@@ -34,9 +34,11 @@ sudo cp ~/utils/bin/* /usr/local/bin
 sudo chown $USER:$USER /usr/local/bin/*
 
 # This is a hack.
-# For some reason, the Nginx conf files come down from Git with permissions
-# set to 664. Let's clean that up so that they are 644.
-chmod 644 ~/utils/nginx/*
+# Files come down from Git with permissions that do not match what
+# I consider to be "ideal." Let's clean them up.
+find ~/utils -type f -exec chmod 644 {} \;
+find ~/utils -type d -exec chmod 755 {} \;
+chmod 755 ~/utils/update.sh
 
 
 printf "\n\033[32mComplete!\033[0m\n"
