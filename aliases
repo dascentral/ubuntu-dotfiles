@@ -26,7 +26,7 @@ alias vp='sudo vi /etc/php5/fpm/php.ini'
 #alias vp='sudo vi /etc/php/7.0/fpm/php.ini'
 
 # directory switching
-alias dot='cd ~/utils'
+alias utils='cd ~/utils'
 alias vhosts='cd /etc/nginx/sites-available'
 alias dev='cd /usr/share/nginx/html/dev'
 alias stage='cd /usr/share/nginx/html/stage'
