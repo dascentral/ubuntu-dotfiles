@@ -1,0 +1,36 @@
+#!/bin/sh
+
+#===================================================================================
+# Let's Encrypt Setup Script - Ubuntu 14.04
+#
+# DESCRIPTION
+# Obtains an SSL certificate via Let's Encrypt. More of a helper command.
+#
+# NOTES
+# Currently this script only takes one URL. At the moment, I am unclear on
+# whether or not multiple domains must be provided via the same command.
+# 
+# PARAMETERS
+# - Webroot - The webroot path of the site as configured within the web server
+# - URL - URL of the site to be secured
+#
+# ACTIONS PERFORMED
+# - Obtains certificate from Let's Encrypt
+# 
+# ASSUMPTIONS
+# - Let's Encrypt utils have been installed within /opt/letsencrypt
+# - Script is executed as the ADMIN user with sudo privileges
+#
+#===================================================================================
+
+# One parameter is required
+if [ $# != 2 ]; then
+   echo "Usage: cert [webroot] [url]";
+   exit 1
+fi
+
+# Change to the appropriate directory
+cd /opt/letsencrypt
+
+# Execute the cert command
+./letsencrypt-auto certonly -a webroot --webroot-path=$1 -d $2
