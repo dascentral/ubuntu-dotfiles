@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Script Setup
+backup_script="/sqlbackup/sqlbackup"
+backup_path="/sqlbackup"
+days_to_keep="180"
+
+# TEMPLATE
+#$backup_script DBNAME DBUSER 'DBPASS' -d $backup_path/DBNAME/ -z
+#find $backup_path/DBNAME/ -mtime +$days_to_keep -exec /bin/rm {} \;
