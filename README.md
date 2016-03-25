@@ -19,3 +19,16 @@ git clone https://github.com/dascentral/ubuntu-utils.git ~/utils
 ```
 git clone git@github.com:dascentral/ubuntu-utils.git ~/utils
 ```
+
+## Updates
+This repository contains an update script that can be used to pull down
+the latest from the repo and move items into the appropriate place.
+
+```
+cd ~/utils
+./update.sh
+```
+
+The update script does rely on thee use of `sudo` so while you could run that
+daily, you should avoid running it on crontab unless you have `sudoers`
+setup properly.
