@@ -12,7 +12,8 @@ alias gp='git push'
 
 # service restarts
 alias nrestart='sudo service nginx restart'
-alias prestart='sudo service php7.0-fpm restart'
+alias prestart='sudo service php5-fpm restart'
+#alias prestart='sudo service php7.0-fpm restart'
 
 # service reloads
 alias rln='sudo service nginx reload'
@@ -21,10 +22,11 @@ alias rln='sudo service nginx reload'
 alias fixnpm='sudo chown -R $(whoami) ~/.npm'
 
 # configuration files
-alias vp='sudo vi /etc/php/7.0/fpm/php.ini'
+alias vp='sudo vi /etc/php5/fpm/php.ini'
+#alias vp='sudo vi /etc/php/7.0/fpm/php.ini'
 
 # directory switching
-alias dot='cd ~/dotfiles/ubuntu'
+alias dot='cd ~/utils'
 alias vhosts='cd /etc/nginx/sites-available'
 alias dev='cd /usr/share/nginx/html/dev'
 alias stage='cd /usr/share/nginx/html/stage'
