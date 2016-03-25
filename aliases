@@ -1,0 +1,41 @@
+# general aliases
+alias c='clear'
+alias fn='find . -name'
+alias g='grep -r --color=auto '
+alias h='history'
+alias hg='history | grep'
+alias l='ls -aCFl --color=auto'
+
+# git aliases
+alias gl='git pull'
+alias gp='git push'
+
+# service restarts
+alias nrestart='sudo service nginx restart'
+alias prestart='sudo service php7.0-fpm restart'
+
+# service reloads
+alias rln='sudo service nginx reload'
+
+# permission modifications
+alias fixnpm='sudo chown -R $(whoami) ~/.npm'
+
+# configuration files
+alias vp='sudo vi /etc/php/7.0/fpm/php.ini'
+
+# directory switching
+alias dot='cd ~/dotfiles/ubuntu'
+alias vhosts='cd /etc/nginx/sites-available'
+alias dev='cd /usr/share/nginx/html/dev'
+alias stage='cd /usr/share/nginx/html/stage'
+alias prod='cd /usr/share/nginx/html/prod'
+
+# tail log files
+alias tne='tail -f /var/log/nginx/error.log'
+
+# system update
+alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo reboot'
+
+# edits to this file
+alias va='vi ~/.bash_aliases'
+alias sa='source ~/.bash_aliases'
