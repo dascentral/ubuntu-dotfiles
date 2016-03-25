@@ -33,7 +33,7 @@ fi
 user="www-data"
 
 # determine the verion of PHP available
-if [ ! -e "/var/run/php/php7.0-fpm.sock" ]; then
+if [ -e "/var/run/php/php7.0-fpm.sock" ]; then
    config="laravel-php7.conf"
 else
    config="laravel-php5.conf"
