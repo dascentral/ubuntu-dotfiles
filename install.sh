@@ -41,11 +41,14 @@ sudo chown $USER:$USER /usr/local/bin/*
 
 # Install MySQL Backup Utility
 printf "\n\033[1m4) Installing MySQL Backup Utility.\033[0m\n"
-sudo mkdir -p /sqlbackup
+if [ ! -e "/sqlbackup" ]; then
+    sudo mkdir -p /sqlbackup
+fi
 sudo chown $USER:$USER /sqlbackup
 sudo cp ~/utils/mysql/sqlbackup /sqlbackup
-sudo cp ~/utils/mysql/mysql_backup /usr/local/bin
-sudo chown $USER:$USER /usr/local/bin/mysql_backup
-
+if [ ! -e "/usr/local/bin/mysql_backup" ]; then
+    sudo cp ~/utils/mysql/mysql_backup /usr/local/bin
+    sudo chown $USER:$USER /usr/local/bin/mysql_backup
+fi
 
 printf "\n\033[32mComplete!\033[0m\n"
