@@ -12,8 +12,8 @@ alias gp='git push'
 
 # service restarts
 alias nrestart='sudo service nginx restart'
-alias prestart='sudo service php5-fpm restart'
-#alias prestart='sudo service php7.0-fpm restart'
+alias prestart='sudo service php7.0-fpm restart'
+alias prestart5='sudo service php5-fpm restart'
 
 # service reloads
 alias rln='sudo service nginx reload'
@@ -22,8 +22,8 @@ alias rln='sudo service nginx reload'
 alias fixnpm='sudo chown -R $(whoami) ~/.npm'
 
 # configuration files
-alias vp='sudo vi /etc/php5/fpm/php.ini'
-#alias vp='sudo vi /etc/php/7.0/fpm/php.ini'
+alias vp='sudo vi /etc/php/7.0/fpm/php.ini'
+alias vp5='sudo vi /etc/php5/fpm/php.ini'
 
 # directory switching
 alias utils='cd ~/utils'
@@ -32,6 +32,8 @@ alias dev='cd /usr/share/nginx/html/dev'
 alias stage='cd /usr/share/nginx/html/stage'
 alias uat='cd /usr/share/nginx/html/uat'
 alias prod='cd /usr/share/nginx/html/prod'
+alias jobs='cd /var/lib/jenkins/jobs'
+alias work='cd /var/lib/jenkins/workspace'
 
 # tail log files
 alias tne='tail -f /var/log/nginx/error.log'
