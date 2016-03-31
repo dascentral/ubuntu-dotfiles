@@ -20,6 +20,7 @@
 # ASSUMPTIONS
 # - Web server is Nginx
 # - Web server user is "www-data"
+# - PHP FPM is located in its "normal" place
 #
 #===================================================================================
 
@@ -33,10 +34,16 @@ fi
 user="www-data"
 
 # determine the verion of PHP available
+config="null"
 if [ -e "/var/run/php/php7.0-fpm.sock" ]; then
    config="laravel-php7.conf"
-else
+fi
+if [ -e "/var/run/php5-fpm.sock" ]; then
    config="laravel-php5.conf"
+fi
+if [ $config = "null" ]; then
+	echo "Unable to determine version of PHP. Script cannot proceed."
+	exit 1;
 fi
 
 # Create site folders
