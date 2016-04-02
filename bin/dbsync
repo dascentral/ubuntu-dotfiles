@@ -40,13 +40,13 @@ date +'%a %b %e %H:%M:%S %Z %Y'
 mysqldump $1 > ~/$1.sql
 
 # STAGE
-mysqladmin -f DROP $1_stage
+mysqladmin -f --silent DROP $1_stage
 mysqladmin CREATE $1_stage
 mysql $1_stage < ~/$1.sql
 echo "- Database \"$1_stage\" synced"
 
 # DEV
-mysqladmin -f DROP $1_dev
+mysqladmin -f --silent DROP $1_dev
 mysqladmin CREATE $1_dev
 mysql $1_dev < ~/$1.sql
 echo "- Database \"$1_dev\" synced"
