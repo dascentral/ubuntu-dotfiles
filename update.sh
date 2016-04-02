@@ -20,19 +20,20 @@
 clear
 
 # Clean any potential conflicts
+printf "\033[1m1) Resetting repo.\033[0m\n"
 git reset HEAD --hard
 
 # ensure we have the latest
-printf "\033[1m1) Updating utils.\033[0m\n"
+printf "\n\033[1m2) Updating utils.\033[0m\n"
 cd ~/utils
 git pull
 
 # Move aliases into place
-printf "\n\033[1m2) Updating aliases.\033[0m\n"
+printf "\n\033[1m3) Updating aliases.\033[0m\n"
 cp ~/utils/aliases ~/.bash_aliases
 
 # Install /usr/local/bin scripts
-printf "\n\033[1m3) Copying scripts to /usr/local/bin.\033[0m\n"
+printf "\n\033[1m4) Copying scripts to /usr/local/bin.\033[0m\n"
 sudo cp ~/utils/bin/* /usr/local/bin
 sudo chown $USER:$USER /usr/local/bin/*
 
