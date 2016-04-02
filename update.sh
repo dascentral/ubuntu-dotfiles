@@ -19,8 +19,8 @@
 
 clear
 
-# This is a hack. Necessary due to permissions tweaks at the bottom of this file.
-rm ~/utils/bin/dbsync
+# Clean any potential conflicts
+git reset HEAD --hard
 
 # ensure we have the latest
 printf "\033[1m1) Updating utils.\033[0m\n"
