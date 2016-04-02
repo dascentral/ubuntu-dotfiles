@@ -3,7 +3,6 @@
 #
 # DESCRIPTION
 # A template for the typical crontab on an Nginx/Laravel web server.
-#
 #===================================================================================
 
 # MySQL Backup
