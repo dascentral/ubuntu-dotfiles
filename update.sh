@@ -38,7 +38,7 @@ sudo chown $USER:$USER /usr/local/bin/*
 # I consider to be "ideal." Let's clean them up.
 find ~/utils -type f -exec chmod 644 {} \;
 find ~/utils -type d -exec chmod 755 {} \;
-chmod 755 ~/utils/update.sh
+#chmod 755 ~/utils/update.sh
 
 
 printf "\n\033[32mComplete!\033[0m\n"
