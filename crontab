@@ -1,0 +1,18 @@
+#===================================================================================
+# Crontab Template - Ubuntu 14.04
+#
+# DESCRIPTION
+# A template for the typical crontab on an Nginx/Laravel web server.
+#
+#===================================================================================
+
+# MySQL Backup
+10 4 * * * /usr/local/bin/mysql_backup
+20 4 * * * /usr/local/bin/s3sync /sqlbackup BUCKET 1>> /dev/null 2>&1
+
+# Laravel Scheduler
+* * * * * php /usr/share/nginx/html/prod/URL/artisan schedule:run >> /var/log/laravel/URL.log
+
+# Let's Encrypt SSL Renewal - Managed within root crontab
+#30 2 * * 1 /opt/letsencrypt/letsencrypt-auto renew >> /var/log/le-renew.log
+#35 2 * * 1 /etc/init.d/nginx reload
