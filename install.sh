@@ -17,6 +17,8 @@
 # - Repo was initially cloned into the ~/utils directory
 # - Script is executed as the ADMIN user with sudo privileges
 #
+# Script may be run multiple times without issue.
+#
 #===================================================================================
 
 clear
