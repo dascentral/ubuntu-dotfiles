@@ -28,7 +28,13 @@ git pull
 
 # Move aliases into place
 printf "\n\033[1m2) Updating aliases.\033[0m\n"
-cp ~/utils/aliases ~/.bash_aliases
+cp ~/utils/aliases/aliases ~/.bash_aliases
+if [ -e "/etc/apache2" ]; then
+    cp ~/utils/aliases/aliases-apache ~/.bash_aliases
+fi
+if [ -e "/etc/nginx" ]; then
+    cp ~/utils/aliases/aliases-nginx ~/.bash_aliases
+fi
 
 # Give permission of /usr/local/bin to admin user
 printf "\n\033[1m3) Updating ownership of /usr/local/bin.\033[0m\n"
