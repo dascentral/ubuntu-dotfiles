@@ -24,7 +24,7 @@
 
 # One parameter is required
 if [ $# != 1 ]; then
-   echo "Usage: wp-site [url]";
+   echo "Usage: wordpress-site [url]";
    exit 1
 fi
 
