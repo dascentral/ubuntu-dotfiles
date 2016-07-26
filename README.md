@@ -12,7 +12,8 @@ they may not error as gracefully as they should.
 
 While I would be pleased if these scripts help others in administration of
 their servers, they exist primarily to faciltiate my systems administration
-activities and likely address a very small sliver of the sysadmin/DevOps world.
+activities and likely address a very small sliver of needs within the
+sysadmin/DevOps world.
 
 ## Installation
 This is a fairly simple clone from GitHub. All scripts within this repo
