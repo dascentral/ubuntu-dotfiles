@@ -4,6 +4,12 @@
 A collection of scripts and utility files that will aid in administration
 of Ubuntu servers.
 
+### Assumptions
+The scripts within this repo rely upon a number of assumptions that are not
+documented as well as I might like. If you setup your Ubuntu servers in a
+consistent manner, these scripts may work very well for you. If not, I admit
+they may not error gracefully in non-standard.
+
 ## Installation
 This is a fairly simple clone from GitHub. All scripts within this repo
 assume the repo is cloned into the `~/utils` folder.
