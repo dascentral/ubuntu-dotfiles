@@ -1,7 +1,7 @@
 # Ubuntu Utils
 
 ## Introduction
-A collection of scripts and utility files that will aid in administration
+A collection of scripts and utility files that may aid in the administration
 of Ubuntu servers.
 
 ## Assumptions
@@ -10,10 +10,9 @@ documented as well as I might like. If you setup your Ubuntu servers in a
 consistent manner, these scripts may work very well for you. If not, I admit
 they may not error as gracefully as they should.
 
-While I would be pleased if these scripts help others in administration of
-their servers, they exist primarily to faciltiate my systems administration
-activities and likely address a very small sliver of needs within the
-sysadmin/DevOps world.
+While I would love for these scripts to be helpful to others, they exist
+primarily to faciltiate my systems administration activities and address
+only a very small sliver of needs within the sysadmin/DevOps world.
 
 ## Installation
 This is a fairly simple clone from GitHub. All scripts within this repo
