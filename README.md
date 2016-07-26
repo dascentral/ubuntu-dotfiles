@@ -8,7 +8,11 @@ of Ubuntu servers.
 The scripts within this repo rely upon a number of assumptions that are not
 documented as well as I might like. If you setup your Ubuntu servers in a
 consistent manner, these scripts may work very well for you. If not, I admit
-they may not error gracefully in non-standard.
+they may not error as gracefully as they should.
+
+While I would be pleased if these scripts help others in administration
+of their servers, they primarily exist to faciltiate my systems
+administration activities.
 
 ## Installation
 This is a fairly simple clone from GitHub. All scripts within this repo
