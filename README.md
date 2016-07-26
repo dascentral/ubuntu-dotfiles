@@ -4,7 +4,7 @@
 A collection of scripts and utility files that will aid in administration
 of Ubuntu servers.
 
-### Assumptions
+## Assumptions
 The scripts within this repo rely upon a number of assumptions that are not
 documented as well as I might like. If you setup your Ubuntu servers in a
 consistent manner, these scripts may work very well for you. If not, I admit
