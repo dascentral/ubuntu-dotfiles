@@ -12,7 +12,7 @@ they may not error as gracefully as they should.
 
 While I would love for these scripts to be helpful to others, they exist
 primarily to faciltiate my systems administration activities and address
-only a very small sliver of needs within the sysadmin/DevOps world.
+only a very small sliver of the needs within the sysadmin/DevOps world.
 
 ## Installation
 This is a fairly simple clone from GitHub. All scripts within this repo
