@@ -28,6 +28,8 @@ alias work='cd /var/lib/jenkins/workspace'
 
 # permission modifications
 alias fixnpm='sudo chown -R $(whoami) ~/.npm'
+alias pfixfiles='find . -type f -exec chmod 644 {} \;'
+alias pfixdirs='find . -type d -exec chmod 755 {} \;'
 
 # system update
 alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo reboot'
