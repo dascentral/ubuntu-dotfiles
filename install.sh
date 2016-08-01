@@ -12,6 +12,7 @@
 # - Gives permission of /usr/local/bin to the current user
 # - Copy /bin scripts into /usr/local/bin
 # - Installs MySQL Backup Utility
+# - Installs ack
 #
 # ASSUMPTIONS
 # - Repo was initially cloned into the ~/utils directory
@@ -60,3 +61,6 @@ if [ ! -e "/usr/local/bin/mysql_backup" ]; then
 fi
 
 printf "\n\033[32mComplete!\033[0m\n"
+
+# Install ack
+sudo apt-get install ack-grep
