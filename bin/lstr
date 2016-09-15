@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#===================================================================================
+#
+# Script that recreates the Laravel "storage" folder structure and adjust
+# permissions if specified.
+#
+# One Optional Parameter
+# 1) Username - User granted recursive ownership of the storage folder
+#
+#===================================================================================
+
+
+# Create the directory structure
+mkdir storage
+cd storage
+mkdir app
+mkdir -p framework/cache
+mkdir -p framework/sessions
+mkdir -p framework/views
+mkdir logs
+
+# If a parameter is provided, change the ownership
+if [ $# != 1 ]; then
+    sudo chown -R $1 storage
+fi
