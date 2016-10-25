@@ -12,8 +12,8 @@
 #
 # ACTIONS PERFORMED
 # - Creates DEV, Stage, and UAT folders in the appropriate place
-# - Creates and enables the necessary Nginx server entries
-# - Reloads the Nginx configuration
+# - Creates and enables the necessary web server entries
+# - Reloads the web server configuration
 #
 # ASSUMPTIONS
 # - Web server is Apache or Nginx.
