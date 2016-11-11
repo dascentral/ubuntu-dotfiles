@@ -40,3 +40,4 @@ printf "\n"
 
 # CLI Utilities
 ./install/cli/ack.sh
+./install/cli/yarn.sh

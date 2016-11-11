@@ -4,7 +4,7 @@
 # Ubuntu Utilities - Aliases
 #===================================================================================
 
-printf "\n\033[1mUpdating aliases.\033[0m\n"
+printf "\033[1mUpdating aliases.\033[0m\n"
 
 # Move aliases into place
 cp ~/utils/aliases/aliases ~/.bash_aliases

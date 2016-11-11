@@ -12,9 +12,10 @@
 printf "\033[1mResetting repo.\033[0m\n"
 cd ~/utils
 git reset HEAD --hard
+printf "\n"
 
 # Ensure we have the latest
-printf "\n\033[1mPulling latest from GitHub.\033[0m\n"
+printf "\033[1mPulling latest from GitHub.\033[0m\n"
 git pull
 
 # This is a hack.
