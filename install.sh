@@ -34,6 +34,7 @@ printf "\n"
 # Environment Setup
 ./install/env/aliases.sh
 ./install/env/bin.sh
+./install/env/permissions.sh
 
 # MySQL Utilities
 ./install/mysql/sqlbackup.sh
