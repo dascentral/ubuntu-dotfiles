@@ -1,4 +1,5 @@
 # general aliases
+alias ack='ack-grep'
 alias c='clear'
 alias fn='find . -name'
 alias g='grep -r --color=auto '
