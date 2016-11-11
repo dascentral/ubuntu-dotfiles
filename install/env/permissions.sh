@@ -4,7 +4,7 @@
 # Ubuntu Utilities - Various Permission Updates
 #===================================================================================
 
-printf "\033[1mUpdating Permissions.\033[0m\n"
+printf "\033[1mUpdating permissions.\033[0m\n"
 
 # /usr/lib/node_modules
 if [ -e "/usr/lib/node_modules" ]; then
