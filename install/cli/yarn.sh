@@ -5,7 +5,7 @@
 #===================================================================================
 
 # Install or Update Yarn
-if [ -e "/usr/local/bin/yarn" ]; then
+if [ ! -e "/usr/local/bin/yarn" ]; then
     printf "\033[1mInstalling yarn.\033[0m\n"
     npm install -g yarn
 else
