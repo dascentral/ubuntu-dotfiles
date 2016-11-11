@@ -28,6 +28,7 @@ chmod -R 755 ~/utils/bin
 chmod -R 755 ~/utils/install
 
 # Update the packaging tool
+printf "\033[Updating the Ubunutu Packaging Tool.\033[0m\n"
 sudo apt-get update
 
 # Wrap it up
