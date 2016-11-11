@@ -31,14 +31,13 @@ git clone git@github.com:dascentral/ubuntu-utils.git ~/utils && cd ~/utils && ./
 ```
 
 ## Updates
-This repository contains an update script that can be used to pull down
-the latest from the repo and move items into the appropriate place.
+The installation script can be run multiple times to ensure that the latest from the repository
+is available to the local server and that all software has been installed.
 
 ```
 cd ~/utils
-./update.sh
+./install.sh
 ```
 
-The update script relies on the use of `sudo` so while you could run that
-daily, you should avoid running it on crontab unless you have `sudoers`
-setup properly.
+At this time, the install script relies on the use of `sudo` so while you could run that
+daily, you should avoid running it on crontab unless you have `sudoers` setup properly.
