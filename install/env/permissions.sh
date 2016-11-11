@@ -11,5 +11,10 @@ if [ -e "/usr/lib/node_modules" ]; then
     sudo chown -R $USER /usr/lib/node_modules
 fi
 
+# /usr/lib/node_modules
+if [ -e "/home/administrator/.npm" ]; then
+    sudo chown -R $USER:$USER /home/administrator/.npm
+fi
+
 # Wrap it up
 printf "\n"
