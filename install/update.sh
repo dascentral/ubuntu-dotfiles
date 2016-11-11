@@ -27,5 +27,8 @@ chmod 755 ~/utils/install.sh
 chmod -R 755 ~/utils/bin
 chmod -R 755 ~/utils/install
 
+# Update the packaging tool
+sudo apt-get update
+
 # Wrap it up
 printf "\n"
