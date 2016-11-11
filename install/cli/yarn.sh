@@ -11,7 +11,7 @@ if [ -e "/usr/local/bin/yarn" ]; then
     npm install -g yarn
 else
     yarn self-update
-if 
+fi
     
 # Wrap it up
 printf "\n"
