@@ -4,8 +4,9 @@
 # Ubuntu Utilities - Aliases
 #===================================================================================
 
-# Move aliases into place
 printf "\n\033[1mUpdating aliases.\033[0m\n"
+
+# Move aliases into place
 cp ~/utils/aliases/aliases ~/.bash_aliases
 if [ -e "/etc/apache2" ]; then
     cp ~/utils/aliases/aliases-apache ~/.bash_aliases
@@ -15,4 +16,4 @@ if [ -e "/etc/nginx" ]; then
 fi
 
 # Wrap it up
-printf "\n\n"
+printf "\n"

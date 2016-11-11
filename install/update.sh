@@ -27,4 +27,4 @@ chmod -R 755 ~/utils/bin
 chmod -R 755 ~/utils/install
 
 # Wrap it up
-printf "\n\n"
+printf "\n"

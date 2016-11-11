@@ -4,7 +4,6 @@
 # Ubuntu Utilities - MySQL Backup
 #===================================================================================
 
-# Install MySQL Backup Utility
 printf "\n\033[1mInstalling MySQL Backup Utility.\033[0m\n"
 
 # Create the /sqlbackup folder
@@ -25,4 +24,4 @@ if [ ! -e "/usr/local/bin/mysql_backup" ]; then
 fi
 
 # Wrap it up
-printf "\n\n"
+printf "\n"
