@@ -6,8 +6,12 @@
 
 printf "\033[1mInstalling yarn.\033[0m\n"
 
-# Install Yarn
-npm install -g yarn
-
+# Install or Update Yarn
+if [ -e "/usr/local/bin/yarn" ]; then
+    npm install -g yarn
+else
+    yarn self-update
+if 
+    
 # Wrap it up
 printf "\n"
