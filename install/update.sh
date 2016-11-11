@@ -9,7 +9,7 @@
 #===================================================================================
 
 # Clean any potential conflicts
-printf "\033[1mResetting repo.\033[0m\n"
+printf "\033[1mResetting repository.\033[0m\n"
 cd ~/utils
 git reset HEAD --hard
 printf "\n"
