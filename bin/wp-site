@@ -11,7 +11,7 @@
 # - url - Production URL for the site to be hosted
 #
 # ACTIONS PERFORMED
-# - Creates DEV, Stage, and UAT folders in the appropriate place
+# - Creates DEV, Stage, UAT, and PROD folders in the appropriate place
 # - Creates and enables the necessary web server entries
 # - Reloads the web server configuration
 #
