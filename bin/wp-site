@@ -35,7 +35,7 @@ user="www-data"
 if [ -e "/etc/apache2" ]; then
     websrv="Apache";
     config="wordpress.conf"
-else
+elif [ -e "/etc/nginx" ]; then
     websrv="Nginx";
     config="null"
     if [ -e "/var/run/php/php7.0-fpm.sock" ]; then
@@ -48,6 +48,9 @@ else
         echo "Unable to determine version of PHP. Script cannot proceed."
         exit 1;
     fi
+else
+    echo "Server is not running Apache or Nginx. Script cannot proceed."
+    exit 1;
 fi
 
 # configure for Apache
