@@ -33,6 +33,12 @@ fi
 # web server user
 user="www-data"
 
+# Nginx required for now
+if [ -e "/etc/nginx" ]; then
+    echo "Server is not running Nginx. Script cannot proceed."
+    exit 1;
+fi
+
 # determine the verion of PHP available
 config="null"
 if [ -e "/var/run/php/php7.0-fpm.sock" ]; then
