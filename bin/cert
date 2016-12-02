@@ -1,10 +1,10 @@
 #!/bin/sh
 
 #===================================================================================
-# Let's Encrypt Setup Script - Ubuntu 14.04
+# Certbot (previously Let's Encrypt Client) Setup Script - Ubuntu 14.04
 #
 # DESCRIPTION
-# Obtains an SSL certificate via Let's Encrypt. More of a helper command.
+# Obtains or renews an SSL certificate via Let's Encrypt. More of a helper command.
 #
 # NOTES
 # Currently this script only takes one URL. At the moment, I am unclear on
@@ -13,24 +13,31 @@
 # PARAMETERS
 # - Webroot - The webroot path of the site as configured within the web server
 # - URL - URL of the site to be secured
+# - Renew - Other parameters are ignored and certificate renewal is attempted
 #
 # ACTIONS PERFORMED
-# - Obtains certificate from Let's Encrypt
+# - Obtains certificate from Let's Encrypt or renews certificates.
 # 
 # ASSUMPTIONS
-# - Let's Encrypt utils have been installed within /opt/letsencrypt
+# - Certbot has been installed within /opt/certbot
 # - Script is executed as the ADMIN user with sudo privileges
 #
 #===================================================================================
 
 # One parameter is required
-if [ $# != 2 ]; then
-   echo "Usage: cert [webroot] [url]";
+if [ $# != 2 ] || [ $1 != "renew" ]; then
+   echo "Usage:"
+   echo " Install new certificate: cert [webroot] [url]"
+   echo " Renew all certificates: cert renew"
    exit 1
 fi
 
 # Change to the appropriate directory
-cd /opt/letsencrypt
+cd /opt/certbot
 
 # Execute the cert command
-./letsencrypt-auto certonly -a webroot --webroot-path=$1 -d $2
+if [ $1 == "renew"]; then
+  ./certbot-auto renew
+else
+  ./certbot-auto certonly --webroot -w $1 -d $2 
+fi
