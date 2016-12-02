@@ -19,7 +19,7 @@ printf "\n"
 # Install NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 
-# The following lines SHOULD be added to ~/.bashrc
+# The following lines SHOULD be added to ~/.bashrc automatically...
 #export NVM_DIR="/home/administrator/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
