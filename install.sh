@@ -41,4 +41,5 @@ printf "\n"
 
 # CLI Utilities
 ./install/cli/ack.sh
+./install/cli/nvm.sh
 ./install/cli/yarn.sh
