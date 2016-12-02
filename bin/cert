@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #===================================================================================
-# Let's Encrypt Setup Script - Ubuntu 14.04
+# Certbot (previously Let's Encrypt Client) Setup Script - Ubuntu 14.04
 #
 # DESCRIPTION
 # Obtains an SSL certificate via Let's Encrypt. More of a helper command.
@@ -18,7 +18,7 @@
 # - Obtains certificate from Let's Encrypt
 # 
 # ASSUMPTIONS
-# - Let's Encrypt utils have been installed within /opt/letsencrypt
+# - Certbot has been installed within /opt/certbot
 # - Script is executed as the ADMIN user with sudo privileges
 #
 #===================================================================================
@@ -30,7 +30,7 @@ if [ $# != 2 ]; then
 fi
 
 # Change to the appropriate directory
-cd /opt/letsencrypt
+cd /opt/certbot
 
 # Execute the cert command
-./letsencrypt-auto certonly -a webroot --webroot-path=$1 -d $2
+./certbot-auto certonly --webroot -w $1 -d $2 
