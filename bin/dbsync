@@ -2,6 +2,7 @@
 
 #===================================================================================
 # MySQL Env Sync Script - Ubuntu 14.04
+#===================================================================================
 #
 # DESCRIPTION
 # A utility script to copy production data into lower database environments.

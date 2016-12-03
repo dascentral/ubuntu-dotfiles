@@ -1,12 +1,15 @@
 #!/bin/sh
 
 #===================================================================================
+# Laravel - Create Storage Folder
+#===================================================================================
 #
+# DESCRIPTION
 # Script that recreates the Laravel "storage" folder structure and adjust
 # permissions if specified.
 #
-# One Optional Parameter
-# 1) Username - User granted recursive ownership of the storage folder
+# PARAMETERS
+# - Username - Optional - User granted recursive ownership of the storage folder
 #
 #===================================================================================
 

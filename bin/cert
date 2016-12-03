@@ -1,10 +1,13 @@
 #!/bin/sh
 
 #===================================================================================
-# Certbot (previously Let's Encrypt Client) Setup Script - Ubuntu 14.04
+# Certbot Setup Script - Ubuntu 14.04
+#===================================================================================
 #
 # DESCRIPTION
 # Obtains an SSL certificate via Let's Encrypt. More of a helper command.
+# NOTE: Certbot replaces the Let's Encrypt command utilities that were
+# previously used to create SSL certificates.
 #
 # NOTES
 # Currently this script only takes one URL. At the moment, I am unclear on

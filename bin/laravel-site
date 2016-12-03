@@ -2,6 +2,7 @@
 
 #===================================================================================
 # Laravel Site Setup Script - Ubuntu 14.04
+#===================================================================================
 #
 # DESCRIPTION
 # Helper script that sets up necessary folders and Nginx server configurations

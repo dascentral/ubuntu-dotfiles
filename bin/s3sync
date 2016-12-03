@@ -2,6 +2,7 @@
 
 #===================================================================================
 # Amazon S3 Backup Script - Ubuntu 14.04
+#===================================================================================
 #
 # DESCRIPTION
 # Script that facilitates backup of server data to Amazon S3.
