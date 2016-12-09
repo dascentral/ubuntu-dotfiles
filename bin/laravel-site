@@ -41,16 +41,13 @@ if [ -e "/etc/nginx" ]; then
 fi
 
 # determine the verion of PHP available
-config="null"
 if [ -e "/var/run/php/php7.0-fpm.sock" ]; then
-   config="laravel-php7.conf"
-fi
-if [ -e "/var/run/php5-fpm.sock" ]; then
-   config="laravel-php5.conf"
-fi
-if [ $config = "null" ]; then
-	echo "Unable to determine version of PHP. Script cannot proceed."
-	exit 1;
+    config="laravel-php7.conf"
+elif [ -e "/var/run/php5-fpm.sock" ]; then
+    config="laravel-php5.conf"
+else
+    echo "Unable to determine version of PHP. Script cannot proceed."
+    exit 1;
 fi
 
 # Create site folders
