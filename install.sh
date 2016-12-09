@@ -45,4 +45,4 @@ printf "\n"
 ./install/cli/yarn.sh
 
 # Cleanup
-./install/
+./install/cleanup.sh
