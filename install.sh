@@ -41,6 +41,7 @@ printf "\n"
 
 # CLI Utilities
 ./install/cli/ack.sh
+./install/cli/certbot.sh
 ./install/cli/nvm.sh
 ./install/cli/yarn.sh
 
