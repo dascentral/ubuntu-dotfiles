@@ -33,14 +33,14 @@ fi
 user="www-data"
 
 # determine the environment
-if [ -e "/etc/apache2" ]; then
-    websrv="Apache"
-    config="static.conf"
-elif [ -e "/etc/nginx" ]; then
+if [ -e "/etc/nginx" ]; then
     websrv="Nginx"
     config="null"
+    if [ -e "/var/run/php/php7.1-fpm.sock" ]; then
+       config="static-php71.conf"
+    fi
     if [ -e "/var/run/php/php7.0-fpm.sock" ]; then
-       config="static-php7.conf"
+       config="static-php70.conf"
     fi
     if [ -e "/var/run/php5-fpm.sock" ]; then
        config="static-php5.conf"
@@ -49,6 +49,9 @@ elif [ -e "/etc/nginx" ]; then
         echo "Unable to determine version of PHP. Script cannot proceed."
         exit 1;
     fi
+elif [ -e "/etc/apache2" ]; then
+    websrv="Apache"
+    config="static.conf"
 else
     echo "Server is not running Apache or Nginx. Script cannot proceed."
     exit 1;
