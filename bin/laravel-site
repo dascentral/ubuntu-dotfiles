@@ -43,7 +43,7 @@ fi
 # determine the verion of PHP available
 if [ -e "/var/run/php/php7.1-fpm.sock" ]; then
     config="laravel-php71.conf"
-elif [ -e "/var/run/php7.0-fpm.sock" ]; then
+elif [ -e "/var/run/php/php7.0-fpm.sock" ]; then
     config="laravel-php70.conf"
 elif [ -e "/var/run/php5-fpm.sock" ]; then
     config="laravel-php5.conf"
