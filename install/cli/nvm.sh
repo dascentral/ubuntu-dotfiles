@@ -12,7 +12,7 @@ check="/home/$USER/.nvm"
 printf "\033[1mInstalling $name...\033[0m"
 if [ -e $check ]; then
     printf "\033[1m already installed.\n\n\033[0m"
-    exit 1;
+    exit 0;
 fi
 printf "\n"
 
