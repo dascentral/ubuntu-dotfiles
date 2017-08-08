@@ -1,56 +1,14 @@
-# general aliases
-alias ack='ack-grep'
-alias c='clear'
-alias fn='find . -name'
-alias g='grep -r --color=auto '
-alias h='history'
-alias hg='history | grep'
-alias l='ls -aCFl --color=auto'
 
-# git aliases
-alias gl='git pull'
-alias gp='git push'
-
-# Directory Shortcuts
-alias utils='cd ~/utils'
-
+#------------------------------------------------------------------------------------------
 # Nginx
+#------------------------------------------------------------------------------------------
 alias nrestart='sudo service nginx restart'
 alias rln='sudo service nginx reload'
 alias te='tail -f /var/log/nginx/error.log'
 
-# Nginx - Directory Shortcuts
+# Directory Shortcuts
 alias vhosts='cd /etc/nginx/sites-available'
 alias dev='cd /usr/share/nginx/html/dev'
 alias stage='cd /usr/share/nginx/html/stage'
 alias uat='cd /usr/share/nginx/html/uat'
 alias prod='cd /usr/share/nginx/html/prod'
-
-# MySQL
-alias rdb='sudo service mysql restart'
-
-# PHP
-alias prestart='sudo service php7.1-fpm restart'
-alias prestart71='sudo service php7.1-fpm restart'
-alias prestart70='sudo service php7.0-fpm restart'
-alias prestart5='sudo service php5-fpm restart'
-alias vp='sudo vi /etc/php/7.1/fpm/php.ini'
-alias vp71='sudo vi /etc/php/7.1/fpm/php.ini'
-alias vp70='sudo vi /etc/php/7.0/fpm/php.ini'
-alias vp5='sudo vi /etc/php5/fpm/php.ini'
-
-# Jenkins
-alias jobs='cd /var/lib/jenkins/jobs'
-alias work='cd /var/lib/jenkins/workspace'
-
-# permission modifications
-alias fixnpm='sudo chown -R $(whoami) ~/.npm'
-alias pfixfiles='find . -type f -exec chmod 644 {} \;'
-alias pfixdirs='find . -type d -exec chmod 755 {} \;'
-
-# system update
-alias update='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo reboot'
-
-# edits to this file
-alias va='vi ~/.bash_aliases'
-alias sa='source ~/.bash_aliases'

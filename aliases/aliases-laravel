@@ -1,0 +1,8 @@
+
+#------------------------------------------------------------------------------------------
+# Laravel
+#------------------------------------------------------------------------------------------
+alias cda='composer dump-autoload'
+alias routes='php artisan route:list'
+alias tll='tail -f storage/logs/laravel.log'
+alias cll='cat storage/logs/laravel.log'

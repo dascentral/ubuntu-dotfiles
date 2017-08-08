@@ -1,19 +1,34 @@
 #!/bin/sh
 
 #===================================================================================
-# Ubuntu Utilities - Aliases
+# Aliases
 #===================================================================================
 
-printf "\033[1mUpdating aliases.\033[0m\n"
+# Start it up
+printf "\033[1mInstalling aliases...\033[0m"
 
-# Move aliases into place
+# Global
 cp ~/utils/aliases/aliases ~/.bash_aliases
+
+# Laravel
+cat ~/utils/aliases/aliases-laravel >> ~/.bash_aliases
+
+# MySQL
+cat ~/utils/aliases/aliases-mysql >> ~/.bash_aliases
+
+# PHP
+cat ~/utils/aliases/aliases-php >> ~/.bash_aliases
+
+# Apache
 if [ -e "/etc/apache2" ]; then
-    cp ~/utils/aliases/aliases-apache ~/.bash_aliases
+    cat ~/utils/aliases/aliases-apache >> ~/.bash_aliases
 fi
+
+# Nginx
 if [ -e "/etc/nginx" ]; then
-    cp ~/utils/aliases/aliases-nginx ~/.bash_aliases
+    cat ~/utils/aliases/aliases-nginx >> ~/.bash_aliases
 fi
 
 # Wrap it up
-printf "\n"
+printf "\033[1m complete.\033[0m"
+printf "\n\n"
