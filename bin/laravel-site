@@ -66,30 +66,19 @@ ln -s /etc/nginx/sites-available/$1.conf /etc/nginx/sites-enabled/$1.conf
 # Reload Nginx configuration
 sudo service nginx reload
 
-# Create Laravel storage folder structure
-mkdir -p /usr/share/nginx/html/dev/$1/storage/app
-mkdir -p /usr/share/nginx/html/dev/$1/storage/framework/cache
-mkdir -p /usr/share/nginx/html/dev/$1/storage/framework/sessions
-mkdir -p /usr/share/nginx/html/dev/$1/storage/framework/views
-mkdir -p /usr/share/nginx/html/dev/$1/storage/logs
-mkdir -p /usr/share/nginx/html/stage/$1/storage/app
-mkdir -p /usr/share/nginx/html/stage/$1/storage/framework/cache
-mkdir -p /usr/share/nginx/html/stage/$1/storage/framework/sessions
-mkdir -p /usr/share/nginx/html/stage/$1/storage/framework/views
-mkdir -p /usr/share/nginx/html/stage/$1/storage/logs
-mkdir -p /usr/share/nginx/html/uat/$1/storage/app
-mkdir -p /usr/share/nginx/html/uat/$1/storage/framework/cache
-mkdir -p /usr/share/nginx/html/uat/$1/storage/framework/sessions
-mkdir -p /usr/share/nginx/html/uat/$1/storage/framework/views
-mkdir -p /usr/share/nginx/html/uat/$1/storage/logs
-mkdir -p /usr/share/nginx/html/prod/$1/storage/app
-mkdir -p /usr/share/nginx/html/prod/$1/storage/framework/cache
-mkdir -p /usr/share/nginx/html/prod/$1/storage/framework/sessions
-mkdir -p /usr/share/nginx/html/prod/$1/storage/framework/views
-mkdir -p /usr/share/nginx/html/prod/$1/storage/logs
-
 # Set permissions on storage
-sudo chown -R $user /usr/share/nginx/html/dev/$1/storage
-sudo chown -R $user /usr/share/nginx/html/stage/$1/storage
-sudo chown -R $user /usr/share/nginx/html/uat/$1/storage
-sudo chown -R $user /usr/share/nginx/html/prod/$1/storage
+sudo chown -R administrator /usr/share/nginx/html/dev/$1/storage
+sudo chgrp -R www-data /usr/share/nginx/html/dev/$1/storage
+sudo chmod 775 /usr/share/nginx/html/dev/$1/storage
+
+sudo chown -R administrator /usr/share/nginx/html/stage/$1/storage
+sudo chgrp -R www-data /usr/share/nginx/html/stage/$1/storage
+sudo chmod 775 /usr/share/nginx/html/stage/$1/storage
+
+sudo chown -R administrator /usr/share/nginx/html/uat/$1/storage
+sudo chgrp -R www-data /usr/share/nginx/html/uat/$1/storage
+sudo chmod 775 /usr/share/nginx/html/uat/$1/storage
+
+sudo chown -R administrator /usr/share/nginx/html/prod/$1/storage
+sudo chgrp -R www-data /usr/share/nginx/html/prod/$1/storage
+sudo chmod 775 /usr/share/nginx/html/prod/$1/storage
