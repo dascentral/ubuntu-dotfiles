@@ -32,18 +32,18 @@ printf "\n"
 ./install/update.sh
 
 # Environment Setup
-./install/env/aliases.sh
-./install/env/bin.sh
-./install/env/permissions.sh
+./install/aliases.sh
+./install/bin.sh
+./install/permissions.sh
 
 # MySQL Utilities
-./install/mysql/sqlbackup.sh
+./install/sqlbackup.sh
 
 # CLI Utilities
-./install/cli/ack.sh
-./install/cli/certbot.sh
-./install/cli/nvm.sh
-./install/cli/yarn.sh
+./install/ack.sh
+./install/certbot.sh
+./install/nvm.sh
+./install/yarn.sh
 
 # Cleanup
 ./install/cleanup.sh
