@@ -45,5 +45,8 @@ printf "\n"
 ./install/nvm.sh
 ./install/yarn.sh
 
+# PHP
+./install/composer.sh
+
 # Cleanup
 ./install/cleanup.sh
