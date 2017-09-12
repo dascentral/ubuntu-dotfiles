@@ -67,18 +67,18 @@ ln -s /etc/nginx/sites-available/$1.conf /etc/nginx/sites-enabled/$1.conf
 sudo service nginx reload
 
 # Set permissions on storage
-sudo chown -R administrator /usr/share/nginx/html/dev/$1/storage
+sudo chown -R ${USER} /usr/share/nginx/html/dev/$1/storage
 sudo chgrp -R www-data /usr/share/nginx/html/dev/$1/storage
 sudo chmod 775 /usr/share/nginx/html/dev/$1/storage
 
-sudo chown -R administrator /usr/share/nginx/html/stage/$1/storage
+sudo chown -R ${USER} /usr/share/nginx/html/stage/$1/storage
 sudo chgrp -R www-data /usr/share/nginx/html/stage/$1/storage
 sudo chmod 775 /usr/share/nginx/html/stage/$1/storage
 
-sudo chown -R administrator /usr/share/nginx/html/uat/$1/storage
+sudo chown -R ${USER} /usr/share/nginx/html/uat/$1/storage
 sudo chgrp -R www-data /usr/share/nginx/html/uat/$1/storage
 sudo chmod 775 /usr/share/nginx/html/uat/$1/storage
 
-sudo chown -R administrator /usr/share/nginx/html/prod/$1/storage
+sudo chown -R ${USER} /usr/share/nginx/html/prod/$1/storage
 sudo chgrp -R www-data /usr/share/nginx/html/prod/$1/storage
 sudo chmod 775 /usr/share/nginx/html/prod/$1/storage
