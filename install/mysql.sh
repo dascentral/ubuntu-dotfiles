@@ -29,3 +29,6 @@ sudo apt-get update
 sudo apt-get install -y mysql-server
 sudo mysql_secure_installation
 printf "\n\n"
+
+# To allow remote connections to MySQL, disable the "bind-address" line within
+# the appropriate configuration file within "/etc/mysql"
