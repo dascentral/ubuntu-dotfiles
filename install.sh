@@ -43,7 +43,6 @@ printf "\n"
 ./install/ack.sh
 ./install/certbot.sh
 ./install/nvm.sh
-./install/yarn.sh
 
 # PHP
 ./install/composer.sh
