@@ -22,6 +22,7 @@ mkdir -p storage/framework/sessions
 mkdir -p storage/framework/views
 mkdir -p storage/logs
 
-# Set proper permissionssudo chown -R ${USER} storage
+# Set proper permissions
+sudo chown -R ${USER} storage
 sudo chgrp -R www-data storage
-sudo chmod 775 storage
+sudo chmod -R 775 storage
