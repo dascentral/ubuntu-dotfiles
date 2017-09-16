@@ -44,7 +44,7 @@ daily, you should avoid running it on crontab unless you have `sudoers` setup pr
 
 
 ## Uninstalling Software
-Initially I anticipated created shell scrips that would uninstall various software
+Initially I thought I would create shell scrips to uninstall various software
 packages from an Ubuntu server. I quickly realized that was probably a bad idea.
 Instead, I have documented uninstall instructions for various packages here.
 
@@ -66,12 +66,8 @@ apt list --installed
 
 For my most recent uninstall attempt, I used the following:
 ```
-sudo apt-get -y purge mysql-client-5.5
-sudo apt-get -y purge mysql-client-core-5.5
-sudo apt-get -y purge mysql-common
-sudo apt-get -y purge mysql-server
-sudo apt-get -y purge mysql-server-5.5
-sudo apt-get -y purge mysql-server-core-5.5
+sudo apt-get -y purge mysql-client-5.5 mysql-client-core-5.5 mysql-common
+sudo apt-get -y purge mysql-server mysql-server-5.5 mysql-server-core-5.5
 sudo apt-get -y autoremove --purge
 sudo apt-get autoclean
 ```
