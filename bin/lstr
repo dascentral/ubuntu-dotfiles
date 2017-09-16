@@ -13,7 +13,6 @@
 #
 #===================================================================================
 
-
 # Create the directory structure
 mkdir -p storage
 mkdir -p storage/app
