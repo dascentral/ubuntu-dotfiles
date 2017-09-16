@@ -19,6 +19,13 @@ fi
 
 # Install
 printf "\033[1mInstalling $name...\033[0m\n"
+
+# If running Ubuntu 14.04
+wget http://dev.mysql.com/get/mysql-apt-config_0.6.0-1_all.deb
+sudo dpkg -i mysql-apt-config_0.6.0-1_all.deb
+sudo apt-get update
+
+# Standard instructions
 sudo apt-get install -y mysql-server
 sudo mysql_secure_installation
 printf "\n\n"
