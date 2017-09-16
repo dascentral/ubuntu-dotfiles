@@ -15,15 +15,13 @@
 
 
 # Create the directory structure
-mkdir storage
-cd storage
-mkdir app
-mkdir -p framework/cache
-mkdir -p framework/sessions
-mkdir -p framework/views
-mkdir logs
+mkdir -p storage
+mkdir -p storage/app
+mkdir -p storage/framework/cache
+mkdir -p storage/framework/sessions
+mkdir -p storage/framework/views
+mkdir -p storage/logs
 
-# If a parameter is provided, change the ownership
-if [ $# != 1 ]; then
-    sudo chown -R $1 storage
-fi
+# Set proper permissionssudo chown -R ${USER} storage
+sudo chgrp -R www-data storage
+sudo chmod 775 storage
