@@ -8,7 +8,7 @@
 name="aliases"
 
 # Start it up
-printf "\033[1;33mInstalling $name...\033[0m\n"
+printf "\033[1;33mInstalling $name..."
 
 # Global
 cp ~/utils/aliases/aliases ~/.bash_aliases
@@ -33,5 +33,5 @@ if [ -e "/etc/nginx" ]; then
 fi
 
 # Wrap it up
-printf "\033[1m complete.\033[0m"
+printf " complete.\033[0m"
 printf "\n\n"
