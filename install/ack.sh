@@ -5,7 +5,7 @@
 #===================================================================================
 
 # setup
-name="NVM"
+name="ack"
 check="/usr/bin/ack-grep"
 
 # Check if installed
