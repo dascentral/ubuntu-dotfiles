@@ -4,8 +4,11 @@
 # Aliases
 #===================================================================================
 
+# setup
+name="aliases"
+
 # Start it up
-printf "\033[1mInstalling aliases...\033[0m"
+printf "\033[1;33mInstalling $name...\033[0m\n"
 
 # Global
 cp ~/utils/aliases/aliases ~/.bash_aliases

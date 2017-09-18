@@ -4,9 +4,8 @@
 # Ubuntu Utilities - ack
 #===================================================================================
 
-printf "\033[1mInstalling ack.\033[0m\n"
-
 # Install ack
+printf "\033[1;33mInstalling $name...\033[0m\n"
 sudo apt-get install ack-grep
 
 # Wrap it up

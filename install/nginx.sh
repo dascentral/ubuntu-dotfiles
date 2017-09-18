@@ -15,7 +15,7 @@ if [ -e $check ]; then
 fi
 
 # Install
-printf "\033[1mInstalling $name...\033[0m\n"
+printf "\033[1;33mInstalling $name...\033[0m\n"
 sudo apt-get install -y nginx
 sudo chown -R $USER:$USER /usr/share/nginx/html
 sudo chown -R $USER:$USER /etc/nginx/sites-available

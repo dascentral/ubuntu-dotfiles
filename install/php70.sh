@@ -15,7 +15,7 @@ if [ -e $check ]; then
 fi
 
 # Install
-printf "\033[1mInstalling $name...\033[0m\n"
+printf "\033[1;33mInstalling $name...\033[0m\n"
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
 sudo apt-get install -y php7.0

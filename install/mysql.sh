@@ -15,7 +15,7 @@ if [ -e $check ]; then
 fi
 
 # Install
-printf "\033[1mInstalling $name...\033[0m\n"
+printf "\033[1;33mInstalling $name...\033[0m\n"
 
 # If running Ubuntu 14.04
 wget http://dev.mysql.com/get/mysql-apt-config_0.6.0-1_all.deb
