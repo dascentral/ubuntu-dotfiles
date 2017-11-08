@@ -30,8 +30,8 @@ if [ -e "/etc/nginx" ]; then
 fi
 
 # Custom Aliases
-if [ -e "~/.aliases-custom" ]; then
-    cat ~/.aliases-custom >> ~/.bash_aliases
+if [ -e "/home/${USER}/.aliases-custom" ]; then
+    cat /home/${USER}/.aliases-custom >> ~/.bash_aliases
 fi
 
 # Wrap it up
