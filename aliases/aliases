@@ -21,8 +21,9 @@ alias pfixdirs='find . -type d -exec chmod 755 {} \;'
 # system update
 alias update='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo reboot'
 
-# edits to this file
-alias va='vi ~/.bash_aliases'
+# aliases
+alias ca='cat ~/.bash_aliases'
+alias va='vi ~/.aliases-custom'
 alias sa='source ~/.bash_aliases'
 
 
