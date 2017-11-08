@@ -4,7 +4,7 @@
 # Ubuntu Utilities - Various Permission Updates
 #===================================================================================
 
-printf "\033[1;33mUpdating permissions.\033[0m\n"
+printf "\033[1;37mUpdating permissions.\033[0m\n"
 
 if [ -e "/usr/lib/node_modules" ]; then
     sudo chown -R $USER /usr/lib/node_modules

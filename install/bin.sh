@@ -4,7 +4,7 @@
 # Ubuntu Utilities - /usr/local/bin
 #===================================================================================
 
-printf "\033[1;33mCopying scripts to /usr/local/bin.\033[0m\n"
+printf "\033[1;37mCopying scripts to /usr/local/bin.\033[0m\n"
 
 # Install /usr/local/bin scripts
 sudo chown -R $USER:$USER /usr/local/bin

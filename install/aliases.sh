@@ -5,7 +5,7 @@
 #===================================================================================
 
 # Start it up
-printf "\033[1;33mInstalling aliases.\033[0m"
+printf "\033[1;37mInstalling aliases.\033[0m"
 
 # Global
 cp ~/utils/aliases/aliases ~/.bash_aliases
