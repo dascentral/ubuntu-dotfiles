@@ -2,6 +2,7 @@
 #------------------------------------------------------------------------------------------
 # Laravel
 #------------------------------------------------------------------------------------------
+alias art='php artisan'
 alias cda='composer dump-autoload'
 alias routes='php artisan route:list'
 alias tll='tail -f storage/logs/laravel.log'

@@ -29,5 +29,10 @@ if [ -e "/etc/nginx" ]; then
     cat ~/utils/aliases/aliases-nginx >> ~/.bash_aliases
 fi
 
+# Custom Aliases
+if [ -e "~/.aliases-custom" ]; then
+    cat ~/.aliases-custom >> ~/.bash_aliases
+fi
+
 # Wrap it up
 printf "\n\n"
