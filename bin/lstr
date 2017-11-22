@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #===================================================================================
-# Laravel - Create Storage Folder
+# Laravel - Storage Folder
 #===================================================================================
 #
 # DESCRIPTION
@@ -11,14 +11,20 @@
 #===================================================================================
 
 # Create the directory structure
-mkdir -p storage
-mkdir -p storage/app
-mkdir -p storage/framework/cache
-mkdir -p storage/framework/sessions
-mkdir -p storage/framework/views
-mkdir -p storage/logs
+if [ ! -e "./storage" ]; then
+    mkdir -p storage
+    mkdir -p storage/app
+    mkdir -p storage/framework/cache
+    mkdir -p storage/framework/sessions
+    mkdir -p storage/framework/views
+    mkdir -p storage/logs
+fi
 
 # Set proper permissions
 sudo chown -R ${USER} storage
 sudo chgrp -R www-data storage
-sudo chmod -R 775 storage
+sudo chmod 775 storage
+cd storage
+find . -type d -exec chmod 775 {} \;
+find . -type f -exec chmod 664 {} \;
+cd ..
