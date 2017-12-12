@@ -12,12 +12,8 @@
 
 # Create the directory structure
 if [ ! -e "./storage" ]; then
-    mkdir -p storage
-    mkdir -p storage/app
-    mkdir -p storage/framework/cache
-    mkdir -p storage/framework/sessions
-    mkdir -p storage/framework/views
-    mkdir -p storage/logs
+    printf "\033[1;33mStorage folder does not exist.\n\n\033[0m"
+    exit 0;
 fi
 
 # Set proper permissions
