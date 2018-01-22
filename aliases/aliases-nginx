@@ -4,7 +4,7 @@
 #------------------------------------------------------------------------------------------
 alias nrestart='sudo service nginx restart'
 alias rln='sudo service nginx reload'
-alias te='tail -f /var/log/nginx/error.log'
+alias te='sudo tail -f /var/log/nginx/error.log'
 
 # Directory Shortcuts
 alias vhosts='cd /etc/nginx/sites-available'
