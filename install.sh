@@ -41,7 +41,6 @@ printf "\n"
 
 # CLI Utilities
 ./install/ack.sh
-./install/certbot.sh
 ./install/nvm.sh
 
 # PHP
