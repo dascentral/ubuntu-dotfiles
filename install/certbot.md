@@ -15,7 +15,25 @@ sudo apt-get install python-certbot-nginx
 ```
 
 
-## Legacy Script Content
+## Obtaining an SSL Certificate
+The following command will prompt an interactive configuration of the SSL certificate for the provided domain:
+
+```
+sudo certbot --nginx -d example.url.com
+```
+
+
+## Verifying Certbot Auto-Renewal
+Let's Encrypt's certificates are only valid for ninety days. This is to encourage users to automate their certificate renewal process. The `certbot` package we installed takes care of this for us by running `certbot renew` twice a day via a `systemd` timer. On non-systemd distributions this functionality is provided by a script placed in `/etc/cron.d`. This task runs twice a day and will renew any certificate that's within thirty days of expiration.
+
+To test the renewal process, you can do a dry run with certbot:
+
+```
+sudo certbot renew --dry-run
+```
+
+
+## Legacy Installation Process
 In the early days of Let's Encrypt, installation on Ubuntu was a highly manual process. The commands below demonstrate how it used to happen. I'm keeping them around for the sake of nostalgia only.
 
 ```
