@@ -1,7 +1,8 @@
 #!/bin/sh
 
 #===================================================================================
-# Ubuntu Utilities - Update
+# Prepare for Installation
+#===================================================================================
 #
 # DESCRIPTION
 # Reset the repo and pull down the latest from Git.

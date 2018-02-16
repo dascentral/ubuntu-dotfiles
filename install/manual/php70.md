@@ -1,21 +1,11 @@
-#!/bin/sh
-
-#===================================================================================
 # PHP 7.0
-#===================================================================================
 
-# Setup
-name="PHP 7.0"
-check="/var/run/php/php7.0-fpm.sock"
+## Documentation
+Not sure of the source of this material. It likely came from Servers for Hackers.
 
-# Check if installed
-if [ -e $check ]; then
-    printf "\033[1;33m$name already installed.\n\n\033[0m"
-    exit 0;
-fi
+## Installation
 
-# Install
-printf "\033[1;37mInstalling $name...\033[0m\n"
+```
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
 sudo apt-get install -y php7.0
@@ -41,4 +31,4 @@ sudo apt-get install -y php7.0-zip
 sudo apt-get install -y php7.0-xml
 sudo sed -i 's/\;cgi\.fix_pathinfo\=1/cgi\.fix_pathinfo\=0/g' /etc/php/7.0/fpm/php.ini
 sudo service php7.0-fpm restart
-printf "\n\n"
+```

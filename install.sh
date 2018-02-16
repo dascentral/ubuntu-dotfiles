@@ -24,7 +24,7 @@ clear
 printf "\n"
 
 # Update Repository
-./install/update.sh
+./install/prep.sh
 
 # Environment Setup
 ./install/aliases.sh
