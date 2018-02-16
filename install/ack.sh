@@ -1,21 +1,16 @@
 #!/bin/sh
 
 #===================================================================================
-# Ubuntu Utilities - ack
+# ack
 #===================================================================================
 
 # setup
 name="ack"
 check="/usr/bin/ack-grep"
 
-# Check if installed
-if [ -e $check ]; then
-    exit 0;
+# Installation
+if [ ! -e $check ]; then
+    printf "\033[1;37mInstalling $name...\033[0m\n"
+    sudo apt-get install ack-grep
+    printf "\n\n"
 fi
-
-# Install
-printf "\033[1;37mInstalling $name...\033[0m\n"
-sudo apt-get install ack-grep
-
-# Wrap it up
-printf "\n"

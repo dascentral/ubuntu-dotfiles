@@ -19,14 +19,11 @@ cat ~/utils/aliases/aliases-mysql >> ~/.bash_aliases
 # PHP
 cat ~/utils/aliases/aliases-php >> ~/.bash_aliases
 
-# Apache
-if [ -e "/etc/apache2" ]; then
-    cat ~/utils/aliases/aliases-apache >> ~/.bash_aliases
-fi
-
-# Nginx
+# Web Server
 if [ -e "/etc/nginx" ]; then
     cat ~/utils/aliases/aliases-nginx >> ~/.bash_aliases
+elif [ -e "/etc/apache2" ]; then
+    cat ~/utils/aliases/aliases-apache >> ~/.bash_aliases
 fi
 
 # Custom Aliases
