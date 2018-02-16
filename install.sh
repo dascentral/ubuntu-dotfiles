@@ -2,6 +2,7 @@
 
 #===================================================================================
 # Ubuntu Utilities - Install Script - Ubuntu 14.04
+#===================================================================================
 #
 # DESCRIPTION
 # Facilitates installation of various software packages for administering
@@ -47,4 +48,4 @@ printf "\n"
 ./install/composer.sh
 
 # Cleanup
-./install/cleanup.sh
+./cleanup.sh
