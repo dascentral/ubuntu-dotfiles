@@ -8,14 +8,8 @@
 # Facilitates installation of various software packages for administering
 # Ubuntu servers or virtual machines.
 #
-# NOTES
-# - This script is safe to run multiple times.
-#
-# PARAMETERS
-# - No parameters required.
-#
 # ACTIONS PERFORMED
-# - See comments below. Easier to define the actions there.
+# - See comments below.
 #
 # ASSUMPTIONS
 # - You're running Ubuntu 14.04.
