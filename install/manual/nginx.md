@@ -1,21 +1,13 @@
-#!/bin/sh
-
-#===================================================================================
 # Nginx
-#===================================================================================
 
-# Setup
-name="Nginx"
-check="/usr/sbin/nginx"
+## Documentation
+Unsure of where I pulled this from.
 
-# Check if installed
-if [ -e $check ]; then
-    printf "\033[1;37m$name already installed.\n\n\033[0m"
-    exit 0;
-fi
 
-# Install
-printf "\033[1;33mInstalling $name...\033[0m\n"
+## Installation
+I have a particular directory structure that I like to maintain. These instructions assume you want to match my style.
+
+```
 sudo apt-get install -y nginx
 sudo chown -R $USER:$USER /usr/share/nginx/html
 sudo chown -R $USER:$USER /etc/nginx/sites-available
@@ -28,4 +20,4 @@ mv /usr/share/nginx/html/50x.html /usr/share/nginx/html/server
 mv /usr/share/nginx/html/index.html /usr/share/nginx/html/server
 sudo sed -i 's/root \/usr\/share\/nginx\/html\;/root \/usr\/share\/nginx\/html\/server\;/g' /etc/nginx/sites-available/default
 sudo service nginx reload
-printf "\n\n"
+```

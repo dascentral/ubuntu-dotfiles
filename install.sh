@@ -2,19 +2,14 @@
 
 #===================================================================================
 # Ubuntu Utilities - Install Script - Ubuntu 14.04
+#===================================================================================
 #
 # DESCRIPTION
 # Facilitates installation of various software packages for administering
 # Ubuntu servers or virtual machines.
 #
-# NOTES
-# - This script is safe to run multiple times.
-#
-# PARAMETERS
-# - No parameters required.
-#
 # ACTIONS PERFORMED
-# - See comments below. Easier to define the actions there.
+# - See comments below.
 #
 # ASSUMPTIONS
 # - You're running Ubuntu 14.04.
@@ -29,7 +24,7 @@ clear
 printf "\n"
 
 # Update Repository
-./install/update.sh
+./install/prep.sh
 
 # Environment Setup
 ./install/aliases.sh
@@ -41,11 +36,10 @@ printf "\n"
 
 # CLI Utilities
 ./install/ack.sh
-./install/certbot.sh
 ./install/nvm.sh
 
 # PHP
 ./install/composer.sh
 
 # Cleanup
-./install/cleanup.sh
+./cleanup.sh

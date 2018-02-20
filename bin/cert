@@ -1,39 +1,28 @@
 #!/bin/sh
 
 #===================================================================================
-# Certbot Setup Script - Ubuntu 14.04
+# Certbot Setup Script
 #===================================================================================
 #
 # DESCRIPTION
 # Obtains an SSL certificate via Let's Encrypt. More of a helper command.
-# NOTE: Certbot replaces the Let's Encrypt command utilities that were
-# previously used to create SSL certificates.
 #
-# NOTES
-# Currently this script only takes one URL. At the moment, I am unclear on
-# whether or not multiple domains must be provided via the same command.
-# 
 # PARAMETERS
-# - Webroot - The webroot path of the site as configured within the web server
 # - URL - URL of the site to be secured
-#
-# ACTIONS PERFORMED
-# - Obtains certificate from Let's Encrypt
-# 
-# ASSUMPTIONS
-# - Certbot has been installed within /opt/certbot
-# - Script is executed as the ADMIN user with sudo privileges
 #
 #===================================================================================
 
+# Verify installed
+if [ ! -e "/usr/bin/certbot" ]; then
+    printf "\033[1;37mcertbot utilies are not installed.\n\n\033[0m"
+    exit 1;
+fi
+
 # One parameter is required
-if [ $# != 2 ]; then
-   echo "Usage: cert [webroot] [url]";
-   exit 1
+if [ $# != 1 ]; then
+    echo "Usage: cert [url]";
+    exit 1;
 fi
 
 # Change to the appropriate directory
-cd /opt/certbot
-
-# Execute the cert command
-./certbot-auto certonly --webroot -w $1 -d $2 
+sudo certbot --nginx -d $1

@@ -1,7 +1,8 @@
 #!/bin/sh
 
 #===================================================================================
-# Ubuntu Utilities - Update
+# Prepare for Installation
+#===================================================================================
 #
 # DESCRIPTION
 # Reset the repo and pull down the latest from Git.
@@ -24,6 +25,7 @@ git pull
 find ~/utils -type f -exec chmod 644 {} \;
 find ~/utils -type d -exec chmod 755 {} \;
 chmod 755 ~/utils/install.sh
+chmod 755 ~/utils/cleanup.sh
 chmod -R 755 ~/utils/bin
 chmod -R 755 ~/utils/install
 printf "\n"
