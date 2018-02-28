@@ -2,9 +2,7 @@
 
 ## Documentation
 
-Honestly, I'm not sure where I pulled the instructions from that are listed below.
-
-It's likely worth a little Googling to confirm that these are up-to-date.
+Honestly, I'm not sure where I found the instructions listed below. It's likely worth a little Googling to confirm that these are up-to-date.
 
 ## Installation
 
