@@ -13,5 +13,6 @@ if [ ! -e $check ]; then
     printf "\033[1;37mInstalling $name...\033[0m\n"
     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     sudo mv wp-cli.phar /usr/local/bin/wp
+    sudo chmod 755 /usr/local/bin/wp
     printf "\n\n"
 fi
