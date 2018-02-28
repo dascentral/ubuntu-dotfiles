@@ -31,14 +31,10 @@ printf "\n"
 ./install/bin.sh
 ./install/permissions.sh
 
-# MySQL Utilities
+# Software Installation
 ./install/sqlbackup.sh
-
-# CLI Utilities
 ./install/ack.sh
 ./install/nvm.sh
-
-# PHP
 ./install/composer.sh
 
 # Cleanup
