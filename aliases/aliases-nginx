@@ -2,6 +2,7 @@
 #------------------------------------------------------------------------------------------
 # Nginx
 #------------------------------------------------------------------------------------------
+alias nginx_status='systemctl status nginx'
 alias nrestart='sudo service nginx restart'
 alias rln='sudo service nginx reload'
 alias te='sudo tail -f /var/log/nginx/error.log'
