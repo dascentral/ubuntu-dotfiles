@@ -36,6 +36,7 @@ printf "\n"
 ./install/ack.sh
 ./install/nvm.sh
 ./install/composer.sh
+./install/wp-cli.sh
 
 # Cleanup
 ./cleanup.sh
