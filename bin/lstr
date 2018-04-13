@@ -10,6 +10,12 @@
 #
 #===================================================================================
 
+# Confirm we're in a Laravel folder
+if [ ! -e "./composer.json" ]; then
+    printf "\033[1;33mThis does not appear to be a Laravel application.\033[0m\n"
+    exit 1;
+fi
+
 # Create folders as necessary
 if [ ! -e "./storage" ]; then
     mkdir -p storage
