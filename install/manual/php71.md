@@ -1,12 +1,12 @@
 # PHP 7.1
 
 ## Documentation
-Source: [Servers for Hackers](https://serversforhackers.com/c/lemp-nginx-php-laravel)
 
+Source: [Servers for Hackers](https://serversforhackers.com/c/lemp-nginx-php-laravel)
 
 ## Installation
 
-```
+```bash
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
 sudo apt-get install -y php7.1-fpm
@@ -31,17 +31,17 @@ sudo service php7.1-fpm restart
 
 The following lines were commented out from my most recent script.
 
-```
-#sudo apt-get install -y php7.1-common
-#sudo apt-get install -y php7.1-curl
-#sudo apt-get install -y php7.1-dev
-#sudo apt-get install -y php7.1-intl
-#sudo apt-get install -y php7.1-json
-#sudo apt-get install -y php7.1-ldap
-#sudo apt-get install -y php7.1-opcache
-#sudo apt-get install -y php7.1-phpdbg
-#sudo apt-get install -y php7.1-recode
-#sudo apt-get install -y php7.1-snmp
-#sudo apt-get install -y php7.1-tidy
-#sudo sed -i 's/\;cgi\.fix_pathinfo\=1/cgi\.fix_pathinfo\=0/g' /etc/php/7.1/fpm/php.ini
+```bash
+sudo apt-get install -y php7.1-common
+sudo apt-get install -y php7.1-curl
+sudo apt-get install -y php7.1-dev
+sudo apt-get install -y php7.1-intl
+sudo apt-get install -y php7.1-json
+sudo apt-get install -y php7.1-ldap
+sudo apt-get install -y php7.1-opcache
+sudo apt-get install -y php7.1-phpdbg
+sudo apt-get install -y php7.1-recode
+sudo apt-get install -y php7.1-snmp
+sudo apt-get install -y php7.1-tidy
+sudo sed -i 's/\;cgi\.fix_pathinfo\=1/cgi\.fix_pathinfo\=0/g' /etc/php/7.1/fpm/php.ini
 ```
