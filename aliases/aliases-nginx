@@ -2,6 +2,7 @@
 #------------------------------------------------------------------------------------------
 # Nginx
 #------------------------------------------------------------------------------------------
+alias ng='cd /etc/nginx'
 alias nginx_status='systemctl status nginx'
 alias nrestart='sudo service nginx restart'
 alias rln='sudo service nginx reload'
