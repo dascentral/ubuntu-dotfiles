@@ -8,8 +8,12 @@ alias rln='sudo service nginx reload'
 alias te='sudo tail -f /var/log/nginx/error.log'
 
 # Directory Shortcuts
+alias sites='cd /etc/nginx/sites-available'
+alias hosts='cd /etc/nginx/sites-available'
 alias vhosts='cd /etc/nginx/sites-available'
+
 alias enabled='cd /etc/nginx/sites-enabled'
+
 alias dev='cd /usr/share/nginx/html/dev'
 alias stage='cd /usr/share/nginx/html/stage'
 alias uat='cd /usr/share/nginx/html/uat'
