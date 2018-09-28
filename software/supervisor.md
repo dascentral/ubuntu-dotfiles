@@ -27,7 +27,7 @@ All commands below should be run as the **root** user.
 Configuration files live here:
 
 ```bash
-cd /etc/supervisor/conf.d
+/etc/supervisor/conf.d
 ```
 
 ### Viewing Running Programs
