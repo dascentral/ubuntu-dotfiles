@@ -6,7 +6,7 @@
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
 sudo apt install php7.2 php7.2-common php7.2-cli php7.2-fpm
-sudo apt install php7.2-bcmath php7.2-curl php7.2-gd php7.2-imap php7.2-ldap php7.2-mbstring php7.2-mysql php7.2-pgsql php7.2-readline php7.2-sqlite3 php7.2-zip
+sudo apt install php7.2-bcmath php7.2-curl php7.2-gd php7.2-imap php7.2-ldap php7.2-mbstring php7.2-mysql php7.2-pgsql php7.2-readline php7.2-sqlite3 php7.2-xml php7.2-zip
 ```
 
 Note that the `mcrypt` extension was deprecated in PHP 7.1 and removed from PHP 7.2. OpenSSL is used instead.
