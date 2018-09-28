@@ -29,6 +29,9 @@ fi
 if [ ! -e "./storage/framework/cache" ]; then
     mkdir -p storage/framework/cache
 fi
+if [ ! -e "./storage/framework/cache/data" ]; then
+    mkdir -p storage/framework/cache/data
+fi
 if [ ! -e "./storage/framework/sessions" ]; then
     mkdir -p storage/framework/sessions
 fi
