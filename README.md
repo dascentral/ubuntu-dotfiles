@@ -14,13 +14,13 @@ While I would love for these scripts to be helpful to others, they exist primari
 
 This is a fairly simple clone from GitHub. All scripts within this repo assume the repo is cloned into the `~/utils` folder.
 
-**Via HTTP**
+### Via HTTP
 
 ```bash
 git clone https://github.com/dascentral/ubuntu-utils.git ~/utils && cd ~/utils && ./install.sh
 ```
 
-**Via SSH**
+### Via SSH
 
 ```bash
 git clone git@github.com:dascentral/ubuntu-utils.git ~/utils && cd ~/utils && ./install.sh
