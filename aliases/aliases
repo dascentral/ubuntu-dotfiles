@@ -25,19 +25,3 @@ alias update='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y 
 alias ca='cat ~/.bash_aliases'
 alias va='vi ~/.aliases-custom'
 alias sa='source ~/.bash_aliases'
-
-
-#------------------------------------------------------------------------------------------
-# Git
-#------------------------------------------------------------------------------------------
-alias nah='git reset HEAD --hard'
-alias gl='git pull'
-alias gp='git push'
-alias gs='git status'
-
-
-#------------------------------------------------------------------------------------------
-# Jenkins
-#------------------------------------------------------------------------------------------
-alias jobs='cd /var/lib/jenkins/jobs'
-alias work='cd /var/lib/jenkins/workspace'

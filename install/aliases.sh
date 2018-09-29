@@ -19,6 +19,12 @@ cat ~/utils/aliases/aliases-mysql >> ~/.bash_aliases
 # PHP
 cat ~/utils/aliases/aliases-php >> ~/.bash_aliases
 
+# Git
+cat ~/utils/aliases/aliases-git >> ~/.bash_aliases
+
+# Jenkins
+cat ~/utils/aliases/aliases-jenkins >> ~/.bash_aliases
+
 # Web Server
 if [ -e "/etc/nginx" ]; then
     cat ~/utils/aliases/aliases-nginx >> ~/.bash_aliases
