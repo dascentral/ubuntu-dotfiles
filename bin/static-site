@@ -86,7 +86,7 @@ if [ $websrv = "Nginx" ]; then
     mkdir -p /usr/share/nginx/html/prod/$1
 
     # create web server configs
-    cp ~/utils/nginx/$config /etc/nginx/sites-available/$1.conf
+    cp ~/utils/config/nginx/$config /etc/nginx/sites-available/$1.conf
     sudo sed -i "s/SITEURL/$1/g" /etc/nginx/sites-available/$1.conf
     ln -s /etc/nginx/sites-available/$1.conf /etc/nginx/sites-enabled/$1.conf
 
