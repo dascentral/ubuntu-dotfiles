@@ -14,4 +14,6 @@ if [ ! -e $check ]; then
     curl -sS https://getcomposer.org/installer | php
     sudo mv composer.phar /usr/local/bin/composer
     printf "\n\n"
+else
+    composer self-update
 fi
