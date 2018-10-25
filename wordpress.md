@@ -2,7 +2,7 @@
 
 ## Overview
 
-Setting up and maintaining a WordPress installation across multiple environments can be a bit tricky. Below is what we currently believe to be best practice.
+Setting up and maintaining a WordPress installation across multiple environments can be a bit tricky. Below is what I currently believe to be best practice.
 
 Primary content source, per usual, is [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-16-04).
 
