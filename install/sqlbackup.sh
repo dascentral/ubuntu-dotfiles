@@ -15,11 +15,11 @@ fi
 sudo chown $USER:$USER /sqlbackup
 
 # Copy the backup utility script into place
-sudo cp ~/utils/mysql/sqlbackup /sqlbackup
+sudo cp ~/utils/resources/mysql/sqlbackup /sqlbackup
 
 # Copy the crontab template script into place
 if [ ! -e "/usr/local/bin/mysql_backup" ]; then
-    sudo cp ~/utils/mysql/mysql_backup /usr/local/bin
+    sudo cp ~/utils/resources/mysql/mysql_backup /usr/local/bin
     sudo chown $USER:$USER /usr/local/bin/mysql_backup
 fi
 

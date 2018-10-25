@@ -59,7 +59,7 @@ mkdir -p /usr/share/nginx/html/uat/$1
 mkdir -p /usr/share/nginx/html/prod/$1
 
 # Create Nginx server configs
-cp ~/utils/config/nginx/$config /etc/nginx/sites-available/$1.conf
+cp ~/utils/resources/config/nginx/$config /etc/nginx/sites-available/$1.conf
 sudo sed -i "s/SITEURL/$1/g" /etc/nginx/sites-available/$1.conf
 ln -s /etc/nginx/sites-available/$1.conf /etc/nginx/sites-enabled/$1.conf
 

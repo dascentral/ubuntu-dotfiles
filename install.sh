@@ -39,4 +39,4 @@ printf "\n"
 ./install/wp-cli.sh
 
 # Cleanup
-./cleanup.sh
+./install/cleanup.sh
