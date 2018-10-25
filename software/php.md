@@ -77,7 +77,6 @@ sudo apt-get install -y php7.1-tidy
 sudo sed -i 's/\;cgi\.fix_pathinfo\=1/cgi\.fix_pathinfo\=0/g' /etc/php/7.1/fpm/php.ini
 ```
 
-
 ## PHP 7.0
 
 At this stage of the game, I'm focused exclusively on removing PHP 7.0. These commans will help you get there.
