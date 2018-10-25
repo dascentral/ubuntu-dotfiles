@@ -19,15 +19,14 @@ printf "\n"
 printf "\033[1mPulling latest from GitHub.\033[0m\n"
 git pull
 
-# This is a hack.
-# Files come down from Git with permissions that do not match what
-# I consider to be "ideal." Let's clean them up.
+# HACK ALERT
+# Files seem to come down from Git with odd permissions. This code is my attempt to clean things up.
+# all files get 644
 find ~/utils -type f -exec chmod 644 {} \;
-find ~/utils -type d -exec chmod 755 {} \;
-chmod 755 ~/utils/install.sh
-chmod 755 ~/utils/cleanup.sh
-chmod -R 755 ~/utils/bin
-chmod -R 755 ~/utils/install
+# all directories get 775
+find ~/utils -type d -exec chmod 775 {} \;
+# all shell scripts get 755
+find ~/utils -name '*.sh' -exec chmod 755 {} \;
 printf "\n"
 
 # Update the packaging tool
