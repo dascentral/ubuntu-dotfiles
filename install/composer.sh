@@ -16,4 +16,5 @@ if [ ! -e $check ]; then
     printf "\n\n"
 else
     composer self-update
+    printf "\n\n"
 fi
