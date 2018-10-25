@@ -15,7 +15,7 @@ if [ ! -e $check ]; then
     sudo mv composer.phar /usr/local/bin/composer
     printf "\n\n"
 else
-    printf "\033[1;37mUpdating $name...\033[0m\n"
+    printf "\033[1;37mUpdating $name.\033[0m\n"
     composer self-update
     printf "\n"
 fi
