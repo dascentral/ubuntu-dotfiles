@@ -24,7 +24,7 @@ sudo apt install php7.2-bcmath php7.2-curl php7.2-gd php7.2-imap php7.2-ldap php
 
 Note that the `mcrypt` extension was deprecated in PHP 7.1 and removed from PHP 7.2. OpenSSL is used instead.
 
-## Uninstalling PHP 7.2
+### Uninstalling PHP 7.2
 
 The following will uninstall PHP 7.2:
 
@@ -56,6 +56,15 @@ sudo apt-get install -y php7.1-sqlite3
 sudo apt-get install -y php7.1-xdebug
 sudo apt-get install -y php7.1-zip
 sudo service php7.1-fpm restart
+```
+
+### Uninstalling PHP 7.1
+
+The following will uninstall PHP 7.1:
+
+```bash
+sudo apt purge php7.1-*
+sudo apt purge php7.1
 ```
 
 ### Optional Packages
