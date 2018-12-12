@@ -39,12 +39,6 @@ if [ -e "/etc/nginx" ]; then
     if [ -e "/var/run/php/php7.1-fpm.sock" ]; then
        config="wordpress-php71.conf"
     fi
-    if [ -e "/var/run/php/php7.0-fpm.sock" ]; then
-       config="wordpress-php70.conf"
-    fi
-    if [ -e "/var/run/php5-fpm.sock" ]; then
-       config="wordpress-php5.conf"
-    fi
     if [ $config = "null" ]; then
         echo "Unable to determine version of PHP. Script cannot proceed."
         exit 1;
