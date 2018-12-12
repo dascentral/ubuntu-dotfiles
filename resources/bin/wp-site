@@ -36,6 +36,9 @@ user="www-data"
 if [ -e "/etc/nginx" ]; then
     websrv="Nginx";
     config="null"
+    if [ -e "/var/run/php/php7.2-fpm.sock" ]; then
+       config="wordpress-php72.conf"
+    fi
     if [ -e "/var/run/php/php7.1-fpm.sock" ]; then
        config="wordpress-php71.conf"
     fi

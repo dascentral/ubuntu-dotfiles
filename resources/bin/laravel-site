@@ -41,7 +41,9 @@ if [ ! -e "/etc/nginx" ]; then
 fi
 
 # determine the verion of PHP available
-if [ -e "/var/run/php/php7.1-fpm.sock" ]; then
+if [ -e "/var/run/php/php7.2-fpm.sock" ]; then
+    config="laravel-php72.conf"
+elif [ -e "/var/run/php/php7.1-fpm.sock" ]; then
     config="laravel-php71.conf"
 else
     echo "Unable to determine version of PHP. Script cannot proceed."
