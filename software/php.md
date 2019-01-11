@@ -8,8 +8,8 @@ PHP has been releasing versions much more rapidly in recent years. Information b
 
 ## Resources
 
-* [Servers for Hackers](https://serversforhackers.com/c/lemp-nginx-php-laravel)
-* [Upgrading to PHP 7.2](https://ayesh.me/Ubuntu-PHP-7.2)
+-   [Servers for Hackers](https://serversforhackers.com/c/lemp-nginx-php-laravel)
+-   [Upgrading to PHP 7.2](https://ayesh.me/Ubuntu-PHP-7.2)
 
 ## PHP 7.2
 
@@ -40,21 +40,9 @@ I gleaned installation instructions from [Servers for Hackers](https://serversfo
 ```bash
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
-sudo apt-get install -y php7.1-fpm
-sudo apt-get install -y php7.1-cli
-sudo apt-get install -y php7.1-mcrypt
-sudo apt-get install -y php7.1-gd
-sudo apt-get install -y php7.1-mysql
-sudo apt-get install -y php7.1-pgsql
-sudo apt-get install -y php7.1-imap
-sudo apt-get install -y php-memcached
-sudo apt-get install -y php7.1-mbstring
-sudo apt-get install -y php7.1-xml
-sudo apt-get install -y php7.1-curl
-sudo apt-get install -y php7.1-bcmath
-sudo apt-get install -y php7.1-sqlite3
-sudo apt-get install -y php7.1-xdebug
-sudo apt-get install -y php7.1-zip
+sudo apt install php7.2 php7.2-common php7.2-cli php7.1-fpm
+
+sudo apt-get install -y php7.1-fpm php7.1-cli php7.1-mcrypt php7.1-gd php7.1-mysql php7.1-pgsql php7.1-imap php-memcached php7.1-mbstring php7.1-xml php7.1-curl php7.1-bcmath php7.1-sqlite3 php7.1-xdebug php7.1-zip
 sudo service php7.1-fpm restart
 ```
 
