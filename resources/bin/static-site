@@ -25,8 +25,8 @@
 
 # One parameter is required
 if [ $# != 1 ]; then
-   echo "Usage: static-site [url]"
-   exit 1;
+    printf "\033[1;33mUsage: static-site [url]\033[0m\n"
+    exit 1;
 fi
 
 # web server user
