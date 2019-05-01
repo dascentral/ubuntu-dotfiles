@@ -1,42 +1,44 @@
 # Certbot
 
 ## Documentation
+
 Official Documentation: [https://certbot.eff.org/](https://certbot.eff.org/)
 
 Additional Reference: [How To Secure Nginx with Let's Encrypt on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04) - via Digital Ocean
 
-
 ## Installation
+
 The following installation commands assume you are running Nginx.
-```
+
+```bash
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx
 ```
 
-
 ## Obtaining an SSL Certificate
+
 The following command will prompt an interactive configuration of the SSL certificate for the provided domain:
 
-```
+```bash
 sudo certbot --nginx -d example.url.com
 ```
 
-
 ## Verifying Certbot Auto-Renewal
+
 Let's Encrypt's certificates are only valid for ninety days. This is to encourage users to automate their certificate renewal process. The `certbot` package we installed takes care of this for us by running `certbot renew` twice a day via a `systemd` timer. On non-systemd distributions this functionality is provided by a script placed in `/etc/cron.d`. This task runs twice a day and will renew any certificate that's within thirty days of expiration.
 
 To test the renewal process, you can do a dry run with certbot:
 
-```
+```bash
 sudo certbot renew --dry-run
 ```
 
-
 ## Legacy Installation Process
+
 In the early days of Let's Encrypt, installation on Ubuntu was a highly manual process. The commands below demonstrate how it used to happen. I'm keeping them around for the sake of nostalgia only.
 
-```
+```bash
 # setup
 name="certbot"
 check="/opt/certbot/certbot-auto"
