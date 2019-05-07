@@ -61,6 +61,14 @@ GRANT ALL PRIVILEGES ON *.* TO '[user]'@'%' IDENTIFIED BY '[pass]' WITH GRANT OP
 FLUSH PRIVILEGES;
 ```
 
+The following will update a password for an existing user:
+
+```bash
+USE mysql;
+ALTER USER '[user]'@'localhost' IDENTIFIED BY '[pass]';
+FLUSH PRIVILEGES;
+```
+
 ## Uninstall
 
 ### Purge
