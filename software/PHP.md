@@ -4,7 +4,7 @@
 
 PHP: Hypertext Preprocessor is a general-purpose programming language originally designed for web development. It was originally created by Rasmus Lerdorf in 1994; the PHP reference implementation is now produced by The PHP Group. [Wikipedia](https://en.wikipedia.org/wiki/PHP)
 
-All notes below are for **PHP 7.2** running on **Ubuntu 18.04**.
+Installation notes are for **PHP 7.2** running on **Ubuntu 18.04**.
 
 ## Installation
 
