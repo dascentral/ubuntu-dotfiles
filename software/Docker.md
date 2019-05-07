@@ -8,4 +8,6 @@ Docker is a computer program that performs operating-system-level virtualization
 
 Please see the Docker docs for the latest on installing Docker on Ubuntu.
 
-[https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository)
+* [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository) - Community Edition
+* [Docker Machine](https://docs.docker.com/machine/install-machine/#install-machine-directly)
+* [Docker Composer](https://docs.docker.com/compose/install/#install-compose)
