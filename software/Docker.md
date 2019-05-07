@@ -11,3 +11,5 @@ Please see the Docker docs for the latest on installing Docker on Ubuntu.
 * [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository) - Community Edition
 * [Docker Machine](https://docs.docker.com/machine/install-machine/#install-machine-directly)
 * [Docker Composer](https://docs.docker.com/compose/install/#install-compose)
+* [Command Completion](https://docs.docker.com/compose/completion/)
+* [Linux Post-installation](https://docs.docker.com/install/linux/linux-postinstall/)
