@@ -44,7 +44,7 @@ In looking further into the Redis logs, I saw the following details:
 
 The amount of data that I am storing in Redis is relatively small (~30MB) so the fact that I am encountering this error on a virtual machine with 1 GB of RAM and 30 GB of disk space seems quite odd.
 
-I found a number of articles online that attempted to describe the problem and offer some solutions. I am not currently comfortable with my understanding of the issue nor the solution that I employed.
+I found a number of articles that attempted to describe the problem and offer some solutions. I am not currently comfortable with my understanding of the issue nor the solution that I employed.
 
 This article seemed to give the best explanation of the problem: [http://pingredis.blogspot.com/2016/09/redis-error-cant-save-in-background.html](http://pingredis.blogspot.com/2016/09/redis-error-cant-save-in-background.html). Per that article:
 
