@@ -1,26 +1,30 @@
 # MySQL
 
-## Documentation
+## Introduction
 
-Honestly, I'm not sure where I found the instructions listed below. It's likely worth a little Googling to confirm that these are up-to-date.
+MySQL is an open-source relational database management system. Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language. [Wikipedia](https://en.wikipedia.org/wiki/MySQL)
 
 ## Installation
 
-The following commands were identified for machines running Ubuntu 14.04.
+Initial installation is relatively straightforward. Simply execute the following:
 
 ```bash
-wget http://dev.mysql.com/get/mysql-apt-config_0.6.0-1_all.deb
-sudo dpkg -i mysql-apt-config_0.6.0-1_all.deb
-sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5072E1F5
-sudo apt-get update
+sudo apt update
+sudo apt install mysql-server
 ```
 
-And then the `apt-get install` portion of the installation process.
+Source: [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04)
+
+
+### Secure the installation
+
+Out of the box, the MySQL installation is sufficiently secure for production use. There is a separate process that can be run to harden the install.
 
 ```bash
-sudo apt-get install -y mysql-server
 sudo mysql_secure_installation
 ```
+
+I do not currently enable the "VALIDATE PASSWORD PLUGIN."
 
 ## Configuration
 
@@ -29,6 +33,49 @@ To allow remote connections to MySQL, disable the "bind-address" line within the
 For versions of MySQL prior to 5.7, see `/etc/mysql/my.cnf`.
 
 For MySQL 5.7, see `/etc/mysql/mysql.conf.d/mysqld.cnf`.
+
+## Resetting the root password
+
+We've all needed this at some point or another, right? First, we need to stop the MySQL service:
+
+```bash
+sudo /etc/init.d/mysql stop
+```
+
+Then we need to start MySQL without a password:
+
+```bash
+sudo mysqld_safe --skip-grant-tables &
+```
+
+If you receive an error message saying that the directory for "UNIX socket file don't exists", then you need to manually create that folder and assign the appropriate permissions.
+
+```bash
+sudo mkdir -p /var/run/mysqld
+sudo chown mysql:mysql /var/run/mysqld
+```
+
+Login as the `root` user:
+
+```bash
+mysql -u root
+```
+
+Reset the password:
+
+```bash
+USE mysql;
+UPDATE user SET authentication_string=PASSWORD('password') WHERE user='root';
+FLUSH PRIVILEGES;
+quit
+```
+
+Stop and restart MySQL:
+
+```bash
+sudo /etc/init.d/mysql stop
+sudo /etc/init.d/mysql start
+```
 
 ## Uninstalling MySQL 5.5
 
