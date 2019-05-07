@@ -7,7 +7,7 @@ Nginx is a web server which can also be used as a reverse proxy, load balancer, 
 
 ## Installation
 
-Initial installation of Nginx is relatively straightforward. Simply execute the following:
+Initial installation is relatively straightforward. Simply execute the following:
 
 ```bash
 sudo apt update
@@ -15,6 +15,8 @@ sudo apt install nginx
 ```
 
 Following completion of those commands, you should see the default Nginx welcome message when browsing your server's IP address within the browser.
+
+**Source:** [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04)
 
 ## Configuration
 
