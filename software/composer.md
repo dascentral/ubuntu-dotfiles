@@ -1,21 +1,18 @@
-#!/bin/sh
+# Composer
 
-#===================================================================================
-# Composer - https://getcomposer.org/download/
-#===================================================================================
+## Introduction
 
-# setup
-name="Composer"
-check="/usr/local/bin/composer"
+Dependency manager for PHP. [https://getcomposer.org/](https://getcomposer.org/)
 
-# Installation
-if [ ! -e $check ]; then
-    printf "\033[1;37mInstalling $name...\033[0m\n"
-    curl -sS https://getcomposer.org/installer | php
-    sudo mv composer.phar /usr/local/bin/composer
-    printf "\n\n"
-else
-    printf "\033[1;37mUpdating $name.\033[0m\n"
-    composer self-update
-    printf "\n"
-fi
+## Installation
+
+```bash
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+```
+
+## Updating
+
+```bash
+composer self-update
+```
