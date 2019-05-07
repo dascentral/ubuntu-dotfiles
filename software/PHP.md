@@ -11,8 +11,8 @@ Installation notes are for **PHP 7.2** running on **Ubuntu 18.04**.
 Initial installation is accomplished through execution of the following commands:
 
 ```bash
-sudo apt update
 sudo add-apt-repository universe
+sudo apt update
 sudo apt install php-fpm php-mysql
 ```
 
