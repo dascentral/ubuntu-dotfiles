@@ -2,16 +2,23 @@
 
 ## Introduction
 
-Ah, PHP. The much maligned programming language that I love and use on the daily. Official site: [http://php.net/](http://php.net/).
+PHP: Hypertext Preprocessor is a general-purpose programming language originally designed for web development. It was originally created by Rasmus Lerdorf in 1994; the PHP reference implementation is now produced by The PHP Group. [Wikipedia](https://en.wikipedia.org/wiki/PHP)
 
-PHP has been releasing versions much more rapidly in recent years. Information below hopes to help you manage those versions.
+All notes below are for **PHP 7.2** running on **Ubuntu 18.04**.
 
-## Resources
+## Installation
 
--   [Servers for Hackers](https://serversforhackers.com/c/lemp-nginx-php-laravel)
--   [Upgrading to PHP 7.2](https://ayesh.me/Ubuntu-PHP-7.2)
+Initial installation is accomplished through execution of the following commands:
 
-## PHP 7.2
+```bash
+sudo apt update
+sudo add-apt-repository universe
+sudo apt install php-fpm php-mysql
+```
+
+Source: [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04)
+
+## Legacy Content
 
 Installation can be completed via the following commands:
 
