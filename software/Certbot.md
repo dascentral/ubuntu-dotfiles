@@ -1,10 +1,8 @@
 # Certbot
 
-## Documentation
+## Introduction
 
-Official Documentation: [https://certbot.eff.org/](https://certbot.eff.org/)
-
-Additional Reference: [How To Secure Nginx with Let's Encrypt on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04) - via Digital Ocean
+Automatically enable HTTPS on your website with EFF's Certbot, deploying Let's Encrypt certificates. [https://certbot.eff.org/](https://certbot.eff.org/)
 
 ## Installation
 
@@ -12,9 +10,11 @@ The following installation commands assume you are running Nginx.
 
 ```bash
 sudo add-apt-repository ppa:certbot/certbot
-sudo apt-get update
-sudo apt-get install python-certbot-nginx
+sudo apt update
+sudo apt install python-certbot-nginx
 ```
+
+Source: [How To Secure Nginx with Let's Encrypt on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04)
 
 ## Obtaining an SSL Certificate
 
