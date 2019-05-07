@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #===================================================================================
-# Ubuntu Utilities - Install Script - Ubuntu 14.04
+# Ubuntu Utilities - Install Script - Ubuntu 18.04
 #===================================================================================
 #
 # DESCRIPTION
@@ -12,7 +12,7 @@
 # - See comments below.
 #
 # ASSUMPTIONS
-# - You're running Ubuntu 14.04.
+# - You're running Ubuntu 18.04.
 # - Repo was initially cloned into the ~/utils directory.
 # - Script is executed as the ADMIN user with sudo privileges.
 #
@@ -30,13 +30,6 @@ printf "\n"
 ./install/aliases.sh
 ./install/bin.sh
 ./install/permissions.sh
-
-# Software Installation
-./install/sqlbackup.sh
-./install/ack.sh
-./install/nvm.sh
-./install/composer.sh
-./install/wp-cli.sh
 
 # Cleanup
 ./install/cleanup.sh
