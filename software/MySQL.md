@@ -81,6 +81,8 @@ sudo killall -KILL mysql mysqld_safe mysqld
 sudo apt-get --purge remove mysql-server
 ```
 
+## Uninstalling MySQL 5.5
+
 ### Stop the Service
 
 ```bash
