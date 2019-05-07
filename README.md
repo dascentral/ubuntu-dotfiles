@@ -101,7 +101,7 @@ sudo service ssh restart
 
 ### Disable password authentication
 
-Passwords are one of the least secure ways to protect a server. We want to force login via SSH keys by turning off `PasswordAuthentication` within the SSH config.
+Passwords are one of the least secure ways to grant access to a server. We want to force login via SSH keys by turning off `PasswordAuthentication` within the SSH config.
 
 Edit `/etc/ssh/sshd_config` and set `PasswordAuthentication` to no.
 
