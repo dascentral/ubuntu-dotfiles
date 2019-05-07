@@ -1,16 +1,16 @@
-#!/bin/sh
-
-#===================================================================================
 # ack
-#===================================================================================
 
-# setup
-name="ack"
-check="/usr/bin/ack-grep"
+## Introduction
 
-# Installation
-if [ ! -e $check ]; then
-    printf "\033[1;37mInstalling $name...\033[0m\n"
-    sudo apt-get install ack-grep
-    printf "\n\n"
-fi
+ack is a tool like grep, optimized for programmers. Designed for programmers with large heterogeneous trees of source code, ack is written purely in portable Perl 5 and takes advantage of the power of Perl's regular expressions.
+
+[https://beyondgrep.com/](https://beyondgrep.com/)
+
+## Installation
+
+Initial installation is accomplished through execution of the following commands:
+
+```bash
+sudo apt update
+sudo apt install ack-grep
+```
