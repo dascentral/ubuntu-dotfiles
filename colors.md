@@ -1,5 +1,6 @@
 # Shell Scripting - Colors
-```
+
+```bash
 Black:        0;30
 Red:          0;31
 Green:        0;32
