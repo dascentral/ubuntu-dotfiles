@@ -87,7 +87,7 @@ Enter the administrative password and you should be all set.
 
 Following creation of our administrative account, we want to prevent accidental use of the `root` account by disabling its ability to login.
 
-Edit the `/etc/ssh/sshd_config` file and set `PermitRootLogin` to no.
+Edit `/etc/ssh/sshd_config` and set `PermitRootLogin` to no.
 
 ```bash
 PermitRootLogin no
@@ -103,7 +103,7 @@ sudo service ssh restart
 
 Passwords are one of the least secure ways to protect a server. We want to force login via SSH keys by turning off `PasswordAuthentication` within the SSH config.
 
-Edit the `/etc/ssh/sshd_config` file and set `PasswordAuthentication` to no.
+Edit `/etc/ssh/sshd_config` and set `PasswordAuthentication` to no.
 
 ```bash
 PasswordAuthentication no
