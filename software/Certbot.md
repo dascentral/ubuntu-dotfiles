@@ -4,6 +4,8 @@
 
 Automatically enable HTTPS on your website with EFF's Certbot, deploying Let's Encrypt certificates. [https://certbot.eff.org/](https://certbot.eff.org/)
 
+All notes below are for **Ubuntu 18.04**.
+
 ## Installation
 
 The following installation commands assume you are running Nginx.
