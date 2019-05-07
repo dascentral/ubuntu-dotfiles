@@ -17,7 +17,6 @@ sudo apt install mysql-server
 
 Source: [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04)
 
-
 ### Secure the installation
 
 Out of the box, the MySQL installation is sufficiently secure for production use. There is a separate process that can be run to harden the install.
