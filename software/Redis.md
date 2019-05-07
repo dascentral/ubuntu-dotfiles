@@ -6,7 +6,34 @@
 
 ## Installation
 
-* [How To Install and Secure Redis on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04)
+Initial installation is accomplished through execution of the following commands:
+
+```bash
+sudo apt update
+sudo apt install redis-server
+```
+
+Following installation, we need to update the `supervised ` setting within `/etc/redis/redis.conf`. Open that file and set it as follows:
+
+```bash
+supervised systemd
+```
+
+Then restart the Redis service:
+
+```bash
+sudo systemctl restart redis.service
+```
+
+**Source:** [How To Install and Secure Redis on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04)
+
+## System Status
+
+Execute the following to get a report on system status:
+
+```bash
+sudo systemctl status redis
+```
 
 ## Redis CLI
 
