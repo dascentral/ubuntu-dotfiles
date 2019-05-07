@@ -4,6 +4,8 @@
 
 MySQL is an open-source relational database management system. Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language. [Wikipedia](https://en.wikipedia.org/wiki/MySQL)
 
+All notes below are for **MySQL 5.7** running on **Ubuntu 18.04**.
+
 ## Installation
 
 Initial installation is relatively straightforward. Simply execute the following:
@@ -26,60 +28,50 @@ sudo mysql_secure_installation
 
 I do not currently enable the "VALIDATE PASSWORD PLUGIN."
 
-## Configuration
-
-To allow remote connections to MySQL, disable the "bind-address" line within the appropriate configuration file.
-
-For versions of MySQL prior to 5.7, see `/etc/mysql/my.cnf`.
-
-For MySQL 5.7, see `/etc/mysql/mysql.conf.d/mysqld.cnf`.
-
-## Resetting the root password
-
-We've all needed this at some point or another, right? First, we need to stop the MySQL service:
+Following completion of that process, you will now be able to login via the `root` user by simply executing the following:
 
 ```bash
-sudo /etc/init.d/mysql stop
+sudo mysql
 ```
 
-Then we need to start MySQL without a password:
+### Starting, Stopping, and Restarting
 
 ```bash
-sudo mysqld_safe --skip-grant-tables &
+sudo service mysql start
+sudo service mysql stop
+sudo service mysql restart
 ```
 
-If you receive an error message saying that the directory for "UNIX socket file don't exists", then you need to manually create that folder and assign the appropriate permissions.
+## Allowing remote connections
+
+To allow remote connections to MySQL, disable the "bind-address" line within the apporpriate MySQL configuration file. Typically, that is this file:
 
 ```bash
-sudo mkdir -p /var/run/mysqld
-sudo chown mysql:mysql /var/run/mysqld
+/etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
-Login as the `root` user:
+## Administrative Users
 
-```bash
-mysql -u root
-```
-
-Reset the password:
+Would you like to create an administrative user in addition to the `root` user? Would you like them to be able to access the server remotely? The following commands will help you create that user.
 
 ```bash
 USE mysql;
-UPDATE user SET authentication_string=PASSWORD('password') WHERE user='root';
+GRANT ALL PRIVILEGES ON *.* TO '[user]'@'localhost' IDENTIFIED BY '[pass]' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO '[user]'@'%' IDENTIFIED BY '[pass]' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-quit
 ```
 
-Stop and restart MySQL:
+## Uninstall
+
+### Purge
+
+If things just aren't going well and you're fine blowing away your entire installation, **including all of you data**, you can purge the software from your server:
 
 ```bash
-sudo /etc/init.d/mysql stop
-sudo /etc/init.d/mysql start
+sudo service mysql stop
+sudo killall -KILL mysql mysqld_safe mysqld
+sudo apt-get --purge remove mysql-server
 ```
-
-## Uninstalling MySQL 5.5
-
-Backup all data before running the following commands.
 
 ### Stop the Service
 
