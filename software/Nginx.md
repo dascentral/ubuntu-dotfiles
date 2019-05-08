@@ -52,3 +52,8 @@ And then we need to make a tweak to the default server configuration to make sur
 sed -i 's/root \/var\/www\/html;/root \/usr\/share\/nginx\/html\/server\;/g' /etc/nginx/sites-available/default
 sudo service nginx reload
 ```
+
+## Basic HTTP Auth
+
+* [Restricting Access with HTTP Basic Authentication](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/) - Official Nginx docs
+* [How To Set Up Basic HTTP Authentication With Nginx on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-basic-http-authentication-with-nginx-on-ubuntu-14-04) - DigitalOcean
