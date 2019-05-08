@@ -1,25 +1,21 @@
-#!/bin/sh
+# NVM
 
-#===================================================================================
-# NVM Install Script - https://github.com/creationix/nvm/
-#===================================================================================
+## Introduction
 
-# setup
-name="NVM"
-check="/home/$USER/.nvm"
+Node Version Manager - Simple bash script to manage multiple active node.js versions. [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
 
-# Check if installed
-if [ -e $check ]; then
-    exit 0;
-fi
+## Installation
 
-# Install
-printf "\033[1;37mInstalling $name...\033[0m\n"
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+```
 
-# The following lines SHOULD be added to ~/.bashrc automatically...
-#export NVM_DIR="/home/administrator/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+The following lines SHOULD be added to `~/.bashrc` automatically:
 
-# Wrap it up
-printf "\n\n"
+```bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
+
+You will need to exit your terminal session and re-open in order to use NVM.
