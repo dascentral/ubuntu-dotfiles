@@ -19,3 +19,41 @@ Set PM2 to start at system startup:
 ```bash
 pm2 startup
 ```
+
+## Useful PM2 Commands
+
+**List active processes**
+
+```bash
+pm2 list
+```
+
+**Display process details**
+
+```bash
+pm2 show [app]
+```
+
+**Tail application logs**
+
+```bash
+pm2 logs [app]
+```
+
+**Global monitor**
+
+```bash
+pm2 monit
+```
+
+**Restart active process**
+
+```bash
+pm2 restart [app]
+```
+
+**Kill active process**
+
+```bash
+pm2 delete [app]
+```
