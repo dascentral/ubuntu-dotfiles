@@ -131,3 +131,34 @@ Depending upon the distribution used during initial installation of the operatin
 sudo apt update
 sudo apt upgrade
 ```
+
+## Additional Information
+
+I do not have a good place for this info just yet so it goes here for now.
+
+### Ubuntu 14.04 - Managing DNS
+
+DNS name servers are stored in the following file:
+
+```
+/etc/network/interfaces
+```
+
+File contents typically look something like this:
+
+```bash
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet static
+address 10.3.XXX.XXX
+netmask 255.255.255.0
+gateway 10.3.XXX.XXX
+dns-nameservers 10.3.XXX.XXX 10.15.XXX.XXX
+```
