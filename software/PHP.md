@@ -2,21 +2,28 @@
 
 ## Introduction
 
-PHP: Hypertext Preprocessor is a general-purpose programming language originally designed for web development. It was originally created by Rasmus Lerdorf in 1994; the PHP reference implementation is now produced by The PHP Group. [Wikipedia](https://en.wikipedia.org/wiki/PHP)
+PHP: Hypertext Preprocessor is a general-purpose programming language originally designed for web development. It was originally created by Rasmus Lerdorf in 1994; the PHP reference implementation is now produced by The PHP Group. Source: [Wikipedia](https://en.wikipedia.org/wiki/PHP)
 
-Installation notes are for **PHP 7.2** running on **Ubuntu 18.04**.
+Installation notes are for **PHP 7.4** running on **Ubuntu 18.04**.
 
 ## Installation
 
 Initial installation is accomplished through execution of the following commands:
 
 ```bash
-sudo add-apt-repository universe
-sudo apt update
-sudo apt install php-fpm php-mysql
+sudo apt-get update
+sudo apt -y install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt -y install php7.4
+sudo apt-get install php7.4-fpm
+sudo apt-get install php-pear
 ```
 
-**Source:** [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04)
+### Resources
+
+* [How To Install PHP 7.4 on Ubuntu 18.04/19.04/16.04](https://computingforgeeks.com/how-to-install-php-on-ubuntu/)
+* [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04)
 
 ## Uninstall
 
