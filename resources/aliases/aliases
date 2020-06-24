@@ -28,3 +28,4 @@ alias sa='source ~/.bash_aliases'
 
 # disk space & file counting
 alias files='find . -type f | wc -l'
+alias size='du -sh .'
