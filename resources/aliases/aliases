@@ -25,3 +25,6 @@ alias update='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y 
 alias ca='cat ~/.bash_aliases'
 alias va='vi ~/.aliases-custom'
 alias sa='source ~/.bash_aliases'
+
+# disk space & file counting
+alias files='find . -type f | wc -l'
