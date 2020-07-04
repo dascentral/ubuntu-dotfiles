@@ -27,3 +27,7 @@ alias sa='source ~/.aliases'
 # disk space & file counting
 #alias files='find . -type f | wc -l'
 #alias size='du -sh .'
+
+# Permissions
+alias d755='find . -type d -exec chmod 755 {} \;'
+alias f644='find . -type f -exec chmod 644 {} \;'
