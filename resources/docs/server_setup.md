@@ -11,7 +11,7 @@ However, I do not yet live fully in the world of serverless. I still use and mai
 * Nginx
 * Redis
 
-Note that I currently host servers at [DigitalOcean](https://www.digitalocean.com/). Setup below covers configuration of a new Droplet.
+Note that I currently host servers at [DigitalOcean](https://www.digitalocean.com/). Setup below covers configuration of a new Droplet where I have specified the `root` password during initial creation.
 
 ## Server Setup
 
@@ -109,7 +109,7 @@ sudo apt update
 sudo apt install -y fail2ban
 ```
 
-## LNMP Setup
+## LEMP Setup
 
 ### Nginx Installation
 
