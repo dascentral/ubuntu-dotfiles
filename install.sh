@@ -26,8 +26,10 @@ printf "\n"
 # Update Repository
 ./install/prep.sh
 
+# Install aliases
+./aliases/install.sh
+
 # Environment Setup
-./install/aliases.sh
 ./install/bin.sh
 ./install/permissions.sh
 
