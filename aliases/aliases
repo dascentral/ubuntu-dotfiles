@@ -5,7 +5,6 @@
 alias ack='ack-grep'
 alias c='clear'
 alias fn='find . -name'
-alias g='grep -r --color=auto '
 alias h='history'
 alias hg='history | grep'
 alias l='ls -aCFl --color=auto'
@@ -13,19 +12,14 @@ alias l='ls -aCFl --color=auto'
 # Directory Shortcuts
 alias utils='cd ~/utils'
 
-# permission modifications
-alias fixnpm='sudo chown -R $(whoami) ~/.npm'
-alias pfixfiles='find . -type f -exec chmod 644 {} \;'
-alias pfixdirs='find . -type d -exec chmod 755 {} \;'
-
 # system update
-alias update='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo reboot'
+#alias update='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo reboot'
 
 # aliases
-alias ca='cat ~/.bash_aliases'
-alias va='vi ~/.aliases-custom'
-alias sa='source ~/.bash_aliases'
+alias cz='cat ~/.zshrc'
+alias vz='vi ~/.zshrc'
+alias sz='source ~/.zshrc'
 
 # disk space & file counting
-alias files='find . -type f | wc -l'
-alias size='du -sh .'
+#alias files='find . -type f | wc -l'
+#alias size='du -sh .'
