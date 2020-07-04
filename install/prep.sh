@@ -27,7 +27,6 @@ find ~/utils -type f -exec chmod 644 {} \;
 find ~/utils -type d -exec chmod 775 {} \;
 # all shell scripts get 755
 find ~/utils -name '*.sh' -exec chmod 755 {} \;
-printf "\n"
 
 # Update the packaging tool
 #printf "\033[1mUpdating the Ubunutu Packaging Tool.\033[0m\n"
