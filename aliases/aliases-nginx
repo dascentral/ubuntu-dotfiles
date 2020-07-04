@@ -15,7 +15,7 @@ alias vhosts='cd /etc/nginx/sites-available'
 
 alias enabled='cd /etc/nginx/sites-enabled'
 
-alias dev='cd /usr/share/nginx/html/dev'
-alias stage='cd /usr/share/nginx/html/stage'
-alias uat='cd /usr/share/nginx/html/uat'
-alias prod='cd /usr/share/nginx/html/prod'
+alias dev='cd /var/www/html/dev'
+alias stage='cd /var/www/html/stage'
+alias uat='cd /var/www/html/uat'
+alias prod='cd /var/www/html/prod'
