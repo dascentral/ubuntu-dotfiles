@@ -15,9 +15,7 @@ Note that I currently host servers at [DigitalOcean](https://www.digitalocean.co
 
 ## Server Setup
 
-In July 2020, I setup a new droplet at DigitalOcean and struggled at first to gain access. By default, new droplets have `PasswordAuthentication` set to `no` within the SSH config — `/etc/ssh/sshd_config`.
-
-I do not recall being provided an initial password for the `root` user so I requested a root password reset and logged in via the web console after receiving it via email.
+Server setup instructions below assume that `PasswordAuthentication` is enabled for the `root` user.
 
 ### Create an Administrative User
 
@@ -28,39 +26,15 @@ adduser [username]
 usermod -aG sudo [username]
 ```
 
-### Firewall Setup
-
-Ubuntu 20.04 servers can use the [UFW firewall](https://en.wikipedia.org/wiki/Uncomplicated_Firewall) to make sure only  connections to certain services are allowed. We can set up a basic firewall very easily using this application.
-
-Let's first ensure the firewall allows SSH connections:
-
-```bash
-ufw allow OpenSSH
-```
-
-Let's not forget to turn on the firewall:
-
-```bash
-ufw enable
-```
-
-To check the status of the firewall, you can use the appropriately named "status" command:
-
-```bash
-ufw status
-```
-
-If running commands as the administrative user, you will like need to prefix those commands with `sudo`.
-
 ### Enable SSH Login
 
-If password authentication is *enabled* on your machine, you can use `ssh-copy-id` to easily copy your public key to the new server:
+You can use `ssh-copy-id` from your local machine to easily copy your public key to the new server:
 
 ```bash
 ssh-copy-id [username]@[ip_address]
 ```
 
-If password authentication is *disabled*, login via the web console, `su -` to your administrative user, and manually copy the contents of your public key into your `~/.ssh/authorized_keys` file. The following bevy of commands will hopefully get you to the right spot:
+You may also manually copy your public key into the `~/.ssh/authorized_keys` file within your administrative account. The following bevy of commands will hopefully get you to the right spot:
 
 ```bash
 su - [username]
@@ -70,42 +44,25 @@ echo "ssh-rsa EXAMPLEzaC1yc2E...GvaQ" >> ~/.ssh/authorized_keys
 chmod 600 authorized_keys
 ```
 
-### Disable root login
+### Secure SSH Connections
 
-Following creation of our administrative account, we want to prevent accidental use of the `root` account by disabling its ability to login.
+To ensure SSH access to the server is as secure as possible, we want to perform the following:
 
-Edit `/etc/ssh/sshd_config` and set `PermitRootLogin` to `no`.
+* Disable the root login
+* Disable password authentication
+* Ensure Pubkey Authentication is enabled
+* Ensure Challenge Response Authentication is *disabled*
+
+We will make the necessary modifications within `/etc/ssh/sshd_config` :
 
 ```bash
 PermitRootLogin no
-```
-
-Following that change, restart the SSH service:
-
-```bash
-sudo service ssh restart
-```
-
-### Disable Password Authentication
-
-Passwords are one of the least secure ways to grant access to a server. We want to force login via SSH keys by turning off `PasswordAuthentication` within the SSH config.
-
-In the event that your server started with this setting `on` or if you turned it on to make copying over your SSH public key easier, let's make sure we turn it off.
-
-Edit `/etc/ssh/sshd_config` and set `PasswordAuthentication` to no.
-
-```bash
 PasswordAuthentication no
-```
-
-Before restarting the SSH service, confirm the following defaults are in place:
-
-```bash
 PubkeyAuthentication yes
 ChallengeResponseAuthentication no
 ```
 
-Following that change, restart the SSH service:
+Following those changes, restart the SSH service:
 
 ```bash
 sudo service ssh restart
@@ -121,6 +78,37 @@ sudo apt update
 sudo apt upgrade
 ```
 
+### Firewall Setup
+
+Ubuntu 20.04 servers can use the [UFW firewall](https://en.wikipedia.org/wiki/Uncomplicated_Firewall) to make sure only  connections to certain services are allowed. We can set up a basic firewall very easily using this application.
+
+Let's first ensure the firewall allows SSH connections:
+
+```bash
+sudo ufw allow OpenSSH
+```
+
+Let's not forget to turn on the firewall:
+
+```bash
+sudo ufw enable
+```
+
+To check the status of the firewall, you can use the appropriately named "status" command:
+
+```bash
+sudo ufw status
+```
+
+### Install Fail2ban
+
+[Fail2Ban](https://en.wikipedia.org/wiki/Fail2ban) is an intrusion prevention software framework that protects computer servers from brute-force attacks. I highly recommend installing this software. It requires no real configuration.
+
+```bash
+sudo apt update
+sudo apt install -y fail2ban
+```
+
 ## LNMP Setup
 
 ### Nginx Installation
@@ -129,7 +117,7 @@ Installation of the software is fairly straightforward:
 
 ```bash
 sudo apt update
-sudo apt install nginx
+sudo apt install -y nginx
 ```
 
 After installation, we'll need to make sure the firewall grants access to ports 80 and 443:
@@ -144,7 +132,7 @@ Installation of this software is also fairly straightforward:
 
 ```bash
 sudo apt update
-sudo apt install mysql-server
+sudo apt install -y mysql-server
 ```
 
 We will want to run through the secure installation process to ensure we have locked things down:
@@ -155,10 +143,10 @@ sudo mysql_secure_installation
 
 I do not install the "VALIDATE PASSWORD PLUGIN" since I use a password manager to always create strong, unique passwords for database credentials. However, I do recommend the following during setup:
 
-* Remove the anonymous user
-* Disallow root login remotely
-* Remove the test database and access to it
-* Reload privilege tables immediately
+* **Yes** — Remove the anonymous user
+* **Yes** — Disallow root login remotely
+* **Yes** — Remove the test database and access to it
+* **Yes** — Reload privilege tables immediately
 
 At the end of the installation process, you can test the login via the following:
 
