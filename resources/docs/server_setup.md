@@ -174,9 +174,9 @@ sudo apt install -y php-fpm php-mysql
 Out of the box, the `root` user owns many of the files and folders that you will likely need to modify with frequency. You may wish to change ownership of the following locations:
 
 ```bash
-chown -R [user]:[user] /var/www/html
-chown -R [user]:[user] /etc/nginx/sites-available
-chown -R [user]:[user] /etc/nginx/sites-enabled
+sudo chown -R [user]:[user] /var/www/html
+sudo chown -R [user]:[user] /etc/nginx/sites-available
+sudo chown -R [user]:[user] /etc/nginx/sites-enabled
 ```
 
 ## Resources
