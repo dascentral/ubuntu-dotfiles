@@ -164,7 +164,7 @@ You guessed it. Installation of this software is fairly straightforward:
 
 ```bash
 sudo apt update
-sudo apt install php-fpm php-mysql
+sudo apt install -y php-fpm php-mysql
 ```
 
 ## Resources
