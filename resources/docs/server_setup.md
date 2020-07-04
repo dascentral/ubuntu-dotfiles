@@ -167,6 +167,18 @@ sudo apt update
 sudo apt install -y php-fpm php-mysql
 ```
 
+## Optional Modifications
+
+### Nginx
+
+Out of the box, the `root` user owns many of the files and folders that you will likely need to modify with frequency. You may wish to change ownership of the following locations:
+
+```bash
+chown -R [user]:[user] /var/www/html
+chown -R [user]:[user] /etc/nginx/sites-available
+chown -R [user]:[user] /etc/nginx/sites-enabled
+```
+
 ## Resources
 
 DigitalOcean produces a great deal of great content on server administration:
