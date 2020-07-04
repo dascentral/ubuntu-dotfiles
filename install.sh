@@ -27,7 +27,7 @@ printf "\n"
 ./install/prep.sh
 
 # Install aliases
-./aliases/install.sh
+./install/aliases.sh
 
 # Environment Setup
 #./install/bin.sh
