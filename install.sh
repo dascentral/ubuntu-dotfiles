@@ -30,8 +30,8 @@ printf "\n"
 ./aliases/install.sh
 
 # Environment Setup
-./install/bin.sh
-./install/permissions.sh
+#./install/bin.sh
+#./install/permissions.sh
 
 # Cleanup
-./install/cleanup.sh
+#./install/cleanup.sh
