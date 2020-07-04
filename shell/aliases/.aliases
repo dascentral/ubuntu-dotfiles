@@ -15,10 +15,13 @@ alias utils='cd ~/utils'
 # system update
 #alias update='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo reboot'
 
-# aliases
+# Z Shell
 alias cz='cat ~/.zshrc'
 alias vz='vi ~/.zshrc'
 alias sz='source ~/.zshrc'
+
+# aliases
+alias ca='cat ~/.aliases'
 
 # disk space & file counting
 #alias files='find . -type f | wc -l'
