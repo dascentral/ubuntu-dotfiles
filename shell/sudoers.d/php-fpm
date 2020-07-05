@@ -1,1 +1,1 @@
-dsmith ALL=NOPASSWD: /usr/sbin/service php7.4-fpm reload
+[[user]] ALL=NOPASSWD: /usr/sbin/service php7.4-fpm reload
