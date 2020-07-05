@@ -28,6 +28,7 @@ printf "\n"
 ./install/nginx.sh
 ./install/php.sh
 ./install/redis.sh
+./install/software.sh
 
 # Environment Setup
 #./install/bin.sh
