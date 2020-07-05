@@ -27,6 +27,7 @@ printf "\n"
 ./install/aliases.sh
 ./install/nginx.sh
 ./install/php.sh
+./install/redis.sh
 
 # Environment Setup
 #./install/bin.sh
