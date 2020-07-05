@@ -7,6 +7,23 @@ if [ ! -e "/etc/nginx" ]; then
     sudo ufw allow 'Nginx Full'
 fi
 
+# create directories
+if [ ! -e "/var/www/html/server" ]; then
+    mkdir /var/www/html/server
+fi
+if [ ! -e "/var/www/html/dev" ]; then
+    mkdir /var/www/html/dev
+fi
+if [ ! -e "/var/www/html/stage" ]; then
+    mkdir /var/www/html/stage
+fi
+if [ ! -e "/var/www/html/uat" ]; then
+    mkdir /var/www/html/uat
+fi
+if [ ! -e "/var/www/html/prod" ]; then
+    mkdir /var/www/html/prod
+fi
+
 # configure Nginx
 if [ ! -e "/etc/nginx/sites-available/default.original" ]; then
     printf "\033[1;37mBacking up default Nginx site.\n\033[0m"
