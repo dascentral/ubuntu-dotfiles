@@ -39,7 +39,6 @@ cd ~/utils
 
 Depending upon the distribution used during initial installation of the operating system, you likely have a number of packages with updates pending. You can install those updates via the following:
 
-
 ```bash
 sudo apt update
 sudo apt upgrade
