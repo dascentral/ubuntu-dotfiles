@@ -202,6 +202,14 @@ sudo apt install supervisor
 service supervisor restart
 ```
 
+## Sudoers
+
+If you wish to allow your administrative user to issue `sudo` commands without entering their password, you can make additions to the `/etc/sudoers.d/` folder. The **safe** way to do this is via the `visudo` command. For example, the following will allow you to add a custom directive for `php-fpm`:
+
+```bash
+sudo visudo -f /etc/sudoers.d/php-fpm
+```
+
 ## Resources
 
 DigitalOcean produces a great deal of great content on server administration:
