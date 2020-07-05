@@ -44,9 +44,11 @@ sudo apt update
 sudo apt upgrade
 ```
 
-## Color Coding
+## Random Nuggets
 
-Just for fun, here are the color codes when using `printf` within shell scripts:
+### Color Coding
+
+Here are the color codes when using `printf` within shell scripts:
 
 ```bash
 Black:        0;30
@@ -65,5 +67,18 @@ Light Blue:   1;34
 Light Purple: 1;35
 Light Cyan:   1;36
 White:        1;37
+```
+
+### Laravel Storage Folder
+
+So, I haven't quite yet nailed the RSYNC command necessary to properly deploy Laravel's storage folder for a new website. These commands will create the necessary folder structure:
+
+```bash
+mkdir -p storage/app
+mkdir -p storage/framework/cache
+mkdir -p storage/framework/sessions
+mkdir -p storage/framework/testing
+mkdir -p storage/framework/views
+mkdir -p storage/logs
 ```
 
