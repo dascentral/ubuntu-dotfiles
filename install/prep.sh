@@ -29,8 +29,8 @@ find ~/utils -type d -exec chmod 775 {} \;
 find ~/utils -name '*.sh' -exec chmod 755 {} \;
 
 # Update the packaging tool
-#printf "\033[1mUpdating the Ubunutu Packaging Tool.\033[0m\n"
-#sudo apt-get update
+printf "\033[1mUpdating the Ubunutu Packaging Tool.\033[0m\n"
+sudo apt update
 
 # Wrap it up
 printf "\n"
