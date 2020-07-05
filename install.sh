@@ -29,6 +29,9 @@ printf "\n"
 # Install aliases
 ./install/aliases.sh
 
+# Install Nginx
+./install/nginx.sh
+
 # Environment Setup
 #./install/bin.sh
 #./install/permissions.sh
