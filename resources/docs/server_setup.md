@@ -11,15 +11,21 @@ However, I do not yet live fully in the world of serverless. I still use and mai
 * Nginx
 * Redis
 
-Note that I currently host servers at [DigitalOcean](https://www.digitalocean.com/). Setup below covers configuration of a new Droplet where I have specified the `root` password during initial creation.
+I currently host servers at [DigitalOcean](https://www.digitalocean.com/). Setup instructions below were for a new droplet created in July 2020. I specified the `root` password during its creation.
 
 ## Server Setup
 
-Server setup instructions below assume that `PasswordAuthentication` is enabled for the `root` user.
+### Login as root
+
+Our first step is to login as the `root` user. This method of access will only be available if `PasswordAuthentication` has been set to `yes`.
+
+```bash
+ssh root@[ip_address]
+```
 
 ### Create an Administrative User
 
-Once successfully logged in as the `root` user, create an administrative user for daily use and grant them administrative privileges:
+Once logged in, create a new user and grant them administrative privileges. We will use this account for day-to-day systems administration.
 
 ```bash
 adduser [username]
