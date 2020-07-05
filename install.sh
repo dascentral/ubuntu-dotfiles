@@ -23,14 +23,10 @@ clear
 # Let it breathe
 printf "\n"
 
-# Update Repository
 ./install/prep.sh
-
-# Install aliases
 ./install/aliases.sh
-
-# Install Nginx
 ./install/nginx.sh
+./install/php.sh
 
 # Environment Setup
 #./install/bin.sh
