@@ -210,6 +210,12 @@ If you wish to allow your administrative user to issue `sudo` commands without e
 sudo visudo -f /etc/sudoers.d/php-fpm
 ```
 
+You could then add the following command to allow execution without password:
+
+```bash
+[username] ALL=NOPASSWD: /usr/sbin/service php7.4-fpm reload
+```
+
 ## Resources
 
 DigitalOcean produces a great deal of great content on server administration:
