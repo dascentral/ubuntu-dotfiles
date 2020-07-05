@@ -5,10 +5,6 @@
 # A template for the typical crontab on an Nginx/Laravel web server.
 #===================================================================================
 
-# MySQL Backup
-10 4 * * * /usr/local/bin/mysql_backup >> /var/log/sqlbackup/backup.log
-20 4 * * * /usr/local/bin/s3sync /sqlbackup BUCKET >> /var/log/sqlbackup/s3sync.log
-
 # Laravel Scheduler
 * * * * * php /usr/share/nginx/html/prod/URL/artisan schedule:run >> /var/log/laravel/URL.log
 
