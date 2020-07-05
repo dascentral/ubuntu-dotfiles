@@ -87,7 +87,7 @@ At this point, you can update your DNS records to point the domain name to the n
 Once DNS changes have propagated, make sure the renewal will occur as expected:
 
 ```bash
-sudo letsencrypt renew --dry-run
+sudo certbot renew --dry-run
 ```
 
 ### Cleanup the Old Server
