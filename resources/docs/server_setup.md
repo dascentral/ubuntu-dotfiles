@@ -187,6 +187,12 @@ sudo chown -R [user]:[user] /etc/nginx/sites-enabled
 
 ## Additional Software
 
+### Recommended
+
+```bash
+sudo apt install -y git tmux vim curl wget zip unzip htop
+```
+
 ### Supervisor
 
 [Supervisor](http://supervisord.org/) is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems. This [DigitalOcean article](https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps) gives you the info that you'll need.
