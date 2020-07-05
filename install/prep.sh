@@ -1,14 +1,5 @@
 #!/bin/sh
 
-#===================================================================================
-# Prepare for Installation
-#===================================================================================
-#
-# DESCRIPTION
-# Reset the repo and pull down the latest from Git.
-#
-#===================================================================================
-
 # Clean any potential conflicts
 printf "\033[1mResetting repository.\033[0m\n"
 cd ~/utils

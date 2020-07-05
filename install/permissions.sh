@@ -1,9 +1,5 @@
 #!/bin/sh
 
-#===================================================================================
-# Ubuntu Utilities - Various Permission Updates
-#===================================================================================
-
 printf "\033[1;37mUpdating permissions.\033[0m\n"
 
 if [ -e "/usr/lib/node_modules" ]; then
@@ -18,5 +14,4 @@ if [ -e "/usr/local/lib" ]; then
     sudo chown -R $USER /usr/local/lib
 fi
 
-# Wrap it up
 printf "\n"
