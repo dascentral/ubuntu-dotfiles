@@ -11,7 +11,7 @@
 
 # Clean any potential conflicts
 printf "\033[1mRemoving orphan packages.\033[0m\n"
-sudo apt-get autoremove -y
+sudo apt autoremove -y
 
 # Wrap it up
 printf "\n"
