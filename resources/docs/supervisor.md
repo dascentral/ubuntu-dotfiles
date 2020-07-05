@@ -6,11 +6,11 @@
 
 ## Installation
 
-After logging in as the **root** user, execute these commands:
+Installation is fairly straightforward:
 
 ```bash
-apt-get install supervisor
-service supervisor restart
+sudo apt-get install supervisor
+sudo service supervisor restart
 ```
 
 ## Useful Information
@@ -28,7 +28,7 @@ Configuration files live here:
 ### Viewing Running Programs
 
 ```bash
-supervisorctl
+sudo supervisorctl
 ```
 
 ### Reloading the Configuration
@@ -36,8 +36,8 @@ supervisorctl
 After updates to any supervisor configuration files, the system should be reloaded.
 
 ```bash
-supervisorctl reread
-supervisorctl update
+sudo supervisorctl reread
+sudo supervisorctl update
 ```
 
 ## Resources
