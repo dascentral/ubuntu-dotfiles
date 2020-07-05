@@ -96,7 +96,8 @@ Be sure to remove the certificates and renewal config from the old server:
 
 ```bash
 rm /etc/letsencrypt/renewal/[domain].conf
-rm -rf /etc/letsencrypt/renewal/[domain].com
+rm -rf /etc/letsencrypt/live/[domain].com
+rm -rf /etc/letsencrypt/archive/[domain].com
 ```
 
 ## SSL Renewal
