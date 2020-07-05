@@ -99,6 +99,17 @@ rm /etc/letsencrypt/renewal/[domain].conf
 rm -rf /etc/letsencrypt/renewal/[domain].com
 ```
 
+## SSL Renewal
+
+Add the following to the crontab of the `root` user:
+
+```bash
+#------------------------------------------------------------------------
+# Let's Encrypt SSL Renewal
+#------------------------------------------------------------------------
+30 2,14 * * 1 certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start" >> /var/log/letsencrypt/renew.log
+```
+
 ## Resources
 
 * **Article:** May 2020 — [How To Secure Nginx with Let's Encrypt on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04) - via Digital Ocean
