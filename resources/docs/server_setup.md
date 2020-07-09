@@ -86,7 +86,7 @@ sudo apt upgrade
 
 ### Firewall Setup
 
-Ubuntu 20.04 servers can use the [UFW firewall](https://en.wikipedia.org/wiki/Uncomplicated_Firewall) to make sure only  connections to certain services are allowed. We can set up a basic firewall very easily using this application.
+Ubuntu 20.04 servers can use the [UFW firewall](https://en.wikipedia.org/wiki/Uncomplicated_Firewall) to restrict only secure connections to certain services. We can set up a basic firewall very easily using this application.
 
 Let's first ensure the firewall allows SSH connections:
 
@@ -163,6 +163,26 @@ sudo mysql
 This will connect to the MySQL server as the administrative database user **root**, which is inferred by the use of `sudo` when running this command.
 
 Note that the default authentication method for the administrative MySQL user is `unix_socket` instead of `password`. So even though we provided a password for the root user during the initial installation, we cannot login with that password because of this setting.
+
+**Enabling external access**
+
+While I would not recommend this for production instances, you can enable external access to MySQL but you will need to make two changes.
+
+First, enable MySQL traffice through the firewall:
+
+```bash
+sudo ufw allow mysql
+```
+
+Second, edit the `/etc/mysql/mysql.conf.d/mysql.conf.d` file and edit the following line:
+
+```bash
+# Instead of skip-networking the default is now to listen only on
+# localhost which is more compatible and is not less secure.
+bind-address		= 127.0.0.1
+```
+
+Ideally, you sent the bind address to your current IP address. You may also comment it out to allow connections from any IP address.
 
 ### PHP Installation
 
