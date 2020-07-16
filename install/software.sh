@@ -5,6 +5,11 @@ if [ ! -e "/usr/bin/git" ]; then
     sudo apt install -y git
 fi
 
+if [ ! -e "/usr/bin/ag" ]; then
+    printf "\033[1;37mInstalling ag.\n\033[0m"
+    sudo apt install -y silversearcher-ag
+fi
+
 if [ ! -e "/usr/bin/tmux" ]; then
     printf "\033[1;37mInstalling tmux.\n\033[0m"
     sudo apt install -y tmux
