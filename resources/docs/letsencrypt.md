@@ -50,12 +50,12 @@ scp certs.tar.gz [user]@[ip]:~/
 
 ### Extract SSL Certifications
 
-Login to the new server, move the archive to the root, `su - root`, and then extract the files:
+Login to the new server, move the archive to the root, `sudo su`, and then extract the files:
 
 ```bash
 mv ~/certs.tar.gz /
 cd /
-su - root
+sudo su
 sudo tar -xvf certs.tar.gz
 ```
 
@@ -80,7 +80,11 @@ sudo ln -s /etc/letsencrypt/archive/[domain]/privkey[X].pem /etc/letsencrypt/liv
 
 ### Update DNS
 
-At this point, you can update your DNS records to point the domain name to the new server. Make sure you have migrated the necessary web server configurations.
+At this point, you can update your DNS records to point the domain name to the new server.
+
+### Web Server Configuration
+
+Before you can successfully renew the certificate, you will need to make sure you have migrated the necessary web server configurations to the new server.
 
 ### Test Certificate Renewal
 
