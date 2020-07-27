@@ -37,3 +37,9 @@ user = www-data
 group = www-data
 ```
 
+Following those changes, you will want to restart the PHP-FPM service:
+
+```bash
+sudo service php7.4-fpm restart
+```
+
