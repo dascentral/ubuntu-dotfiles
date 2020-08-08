@@ -190,7 +190,7 @@ You guessed it. Installation of this software is fairly straightforward:
 
 ```bash
 sudo apt update
-sudo apt install -y php-fpm php-mysql php7.4-zip php7.4-xml
+sudo apt install -y php-fpm php-mysql php7.4-zip php7.4-xml php7.4-mbstring
 ```
 
 ## Optional Modifications
