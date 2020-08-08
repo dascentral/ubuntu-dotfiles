@@ -53,10 +53,11 @@ scp certs.tar.gz [user]@[ip]:~/
 Login to the new server, move the archive to the root, `sudo su`, and then extract the files:
 
 ```bash
-mv ~/certs.tar.gz /
+sudo mv ~/certs.tar.gz /
 cd /
 sudo su
 sudo tar -xvf certs.tar.gz
+rm certs.tar.gz
 ```
 
 ### Create the "live" Symlinks
