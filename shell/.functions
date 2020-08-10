@@ -1,0 +1,72 @@
+# Commit everything
+function commit() {
+    commitMessage="$1"
+
+    if [ "$commitMessage" = "" ]; then
+        commitMessage="WIP"
+    fi
+
+    git add .
+    eval "git commit -a -m '${commitMessage}'"
+}
+
+# Create a new MySQL database
+function createdb() {
+    if [ $# != 1 ]; then
+        echo "Usage: createdb [dbname]";
+    else
+        mysql -u root -e "CREATE DATABASE $1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
+    fi
+}
+
+# Create a new directory and enter it
+function mkd() {
+    mkdir -p "$@" && cd "$@"
+}
+
+# Output Laravel routes in an abbreviated format
+function routes() {
+    if [ ! -e "artisan" ]; then
+        printf "\033[1;33mYou are not in the root of a Laravel application.\033[0m\n"
+    fi
+
+    if [ -e "artisan" ]; then
+      if [ $# != 1 ]; then
+          php artisan route:list --columns=method,uri,name
+      else
+          php artisan route:list --columns=method,uri,name --name=$1
+      fi
+    fi
+}
+
+# cat the latest Laravel log
+function cll() {
+  if [ ! -e "artisan" ]; then
+      printf "\033[1;33mYou are not in the root of a Laravel application.\033[0m\n"
+  fi
+
+  if [ -e "artisan" ] && [ ! -e "storage/logs" ]; then
+      printf "\033[1;33mThere is no "storage/logs" folder.\033[0m\n"
+  fi
+
+  if [ -e "artisan" ] && [ -e "storage/logs" ]; then
+    file=(`ls -Art storage/logs | tail -n 1`)
+    cat -f storage/logs/$file
+  fi
+}
+
+# tail the latest Laravel log
+function tll() {
+  if [ ! -e "artisan" ]; then
+      printf "\033[1;33mYou are not in the root of a Laravel application.\033[0m\n"
+  fi
+
+  if [ -e "artisan" ] && [ ! -e "storage/logs" ]; then
+      printf "\033[1;33mThere is no "storage/logs" folder.\033[0m\n"
+  fi
+
+  if [ -e "artisan" ] && [ -e "storage/logs" ]; then
+    file=(`ls -Art storage/logs | tail -n 1`)
+    tail -f storage/logs/$file
+  fi
+}
