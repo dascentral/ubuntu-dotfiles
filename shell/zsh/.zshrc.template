@@ -104,3 +104,5 @@ fi
 # Source Aliases
 source ~/.aliases
 
+# Source Functions
+source ~/dotfiles/shell/.functions
