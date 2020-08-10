@@ -51,7 +51,7 @@ function cll() {
 
   if [ -e "artisan" ] && [ -e "storage/logs" ]; then
     file=(`ls -Art storage/logs | tail -n 1`)
-    cat -f storage/logs/$file
+    cat storage/logs/$file
   fi
 }
 
