@@ -105,4 +105,4 @@ fi
 source ~/.aliases
 
 # Source Functions
-source ~/dotfiles/shell/.functions
+source ~/utils/shell/.functions
