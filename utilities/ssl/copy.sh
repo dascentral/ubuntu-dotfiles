@@ -5,12 +5,13 @@
 #===================================================================================
 #
 # DESCRIPTION
-# Facilitates transfer of SSL certificates issued by Let's Encrypt to a new server.
+# Copies SSL certificates issued by Let's Encrypt to a new server.
 #
 # NOTES
 # This script was written initially in Aug 2020 for an Ubuntu 20.04 server. Given
-# the speed with which technology evolves a sanity check of the commands is
-# warranted prior to each execution.
+# the speed with which technology evolves, a sanity check of the commands is
+# warranted prior to each execution. The script assumes you will manually
+# enter the credentials for the remote server, if necessary.
 #
 #===================================================================================
 
