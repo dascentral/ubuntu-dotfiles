@@ -118,5 +118,5 @@ Add the following to the crontab of the `root` user:
 
 ## Resources
 
-* **Article:** May 2020 — [How To Secure Nginx with Let's Encrypt on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04) - via Digital Ocean
+* **Article:** May 2020 — [How To Secure Nginx with Let's Encrypt on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04) — via Digital Ocean
 
