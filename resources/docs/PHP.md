@@ -4,20 +4,15 @@
 
 PHP: Hypertext Preprocessor is a general-purpose programming language originally designed for web development. It was originally created by Rasmus Lerdorf in 1994; the PHP reference implementation is now produced by The PHP Group. Source: [Wikipedia](https://en.wikipedia.org/wiki/PHP)
 
-Installation notes are for **PHP 7.4** running on **Ubuntu 18.04**.
+Installation notes are for **PHP 7.4** running on **Ubuntu 20.04**.
 
 ## Installation
 
 Initial installation is accomplished through execution of the following commands:
 
 ```bash
-sudo apt-get update
-sudo apt -y install software-properties-common
-sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-sudo apt -y install php7.4
-sudo apt-get install php7.4-fpm
-sudo apt-get install php-pear
+sudo apt update
+sudo apt install -y php-fpm php-mysql php7.4-zip php7.4-xml php7.4-mbstring
 ```
 
 ### Resources
@@ -27,14 +22,14 @@ sudo apt-get install php-pear
 
 ## PHP-FPM Configuration
 
-Following installation, PHP-FPM runs as the `www-data` user. If you wish to run this process as a different user, make edits to the `/etc/php/7.4/fpm/pool.d/www.conf` file. Make edits to this section:
+Following initial installation, PHP-FPM runs as the `www-data` user. I find that permissions are easier to manage when it runs as my main administrative user. If you wish to run this process as a different user, edit the `user` and `group` values within `/etc/php/7.4/fpm/pool.d/www.conf`.
 
 ```bash
 ; Unix user/group of processes
 ; Note: The user is mandatory. If the group is not set, the default user's group
 ;       will be used.
-user = www-data
-group = www-data
+user = admin
+group = admin
 ```
 
 Following those changes, you will want to restart the PHP-FPM service:
