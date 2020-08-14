@@ -36,8 +36,8 @@ sudo chown ${USER}: certs.tar.gz
 
 
 printf "\n\033[1mCopying tarball to destination server\033[0m\n"
-#scp certs.tar.gz ${user}@${server}:~/
+scp certs.tar.gz ${user}@${server}:~/
 
 
 printf "\n\033[1mCleaning up\033[0m\n"
-#rmcerts.tar.gz
+rm certs.tar.gz
