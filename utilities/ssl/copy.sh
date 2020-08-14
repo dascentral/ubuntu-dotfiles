@@ -32,6 +32,7 @@ read -p 'Destination User: ' user
 
 printf "\n\033[1mAdding certificate files to tarball\033[0m\n"
 sudo tar -chvzf certs.tar.gz /etc/letsencrypt/archive/${domain} /etc/letsencrypt/renewal/${domain}.conf
+sudo chown ${USER}: certs.tar.gz
 
 
 printf "\n\033[1mCopying tarball to destination server\033[0m\n"
