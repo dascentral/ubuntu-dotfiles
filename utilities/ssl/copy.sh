@@ -21,7 +21,7 @@ printf "\n"
 printf "\033[1mWhat domain are we transferring?\033[0m\n"
 read -p 'Domain: ' domain
 if [ ! -e "/etc/letsencrypt/archive/${domain}" ]; then
-    printf "\n\033[1;33mUnable to find certificates for ${domain}.\n\033[0m"
+    printf "\n\033[1;33mUnable to find certificates for ${domain}.\n\n\033[0m"
     exit 1;
 fi
 
