@@ -21,12 +21,12 @@ printf "\n"
 printf "\033[1mWhat domain are we transferring?\033[0m\n"
 read -p 'Domain: ' domain
 if [ ! -e "/etc/letsencrypt/archive/${domain}" ]; then
-    printf "\033[1;33mUnable to find certificates for ${domain}.\n\033[0m"
+    printf "\n\033[1;33mUnable to find certificates for ${domain}.\n\033[0m"
     exit 1;
 fi
 
 printf "\n\033[1mWhere are we transferring to?\033[0m\n"
-read -p 'Destination Server: ' ipaddress
+read -p 'Destination Server: ' server
 read -p 'Destination User: ' user
 
 
@@ -35,6 +35,8 @@ sudo tar -chvzf certs.tar.gz /etc/letsencrypt/archive/${domain} /etc/letsencrypt
 
 
 printf "\n\033[1mCopying tarball to destination server\033[0m\n"
+#scp certs.tar.gz ${user}@${server}:~/
 
 
 printf "\n\033[1mCleaning up\033[0m\n"
+#rmcerts.tar.gz
