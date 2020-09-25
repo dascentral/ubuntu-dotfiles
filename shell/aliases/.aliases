@@ -33,4 +33,4 @@ alias d755='find . -type d -exec chmod 755 {} \;'
 alias f644='find . -type f -exec chmod 644 {} \;'
 
 # Ubuntu Update
-alias update='sudo apt update && sudo apt upgrade'
+alias update='sudo apt update && sudo apt -y upgrade'
