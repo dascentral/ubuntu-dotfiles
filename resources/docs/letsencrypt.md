@@ -116,6 +116,20 @@ Add the following to the crontab of the `root` user:
 30 2,14 * * 1 certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start" >> /var/log/letsencrypt/renew.log
 ```
 
+## Troubleshooting
+
+### Missing Acme-Challenge Folder
+
+Following a recent transfer of a certificate from one server to another, I ran into an issue where the renewal process was not successfully finding the `.well-known/acme-challenge` folder. After a little digging, I realized the renewal configuration was referencing an incorrect path.
+
+Let's Encrypt configuration files are stored here:
+
+```bash
+/etc/letsencrypt/renewal
+```
+
+Each site has its own configuration file that matches the domain name.
+
 ## Resources
 
 * **Article:** May 2020 — [How To Secure Nginx with Let's Encrypt on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04) — via Digital Ocean
