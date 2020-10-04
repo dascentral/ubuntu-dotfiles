@@ -118,7 +118,7 @@ Add the following to the crontab of the `root` user:
 
 ## Troubleshooting
 
-### Missing Acme-Challenge Folder
+### Failed Renewal
 
 Following a recent transfer of a certificate from one server to another, I ran into an issue where the renewal process was not successfully finding the `.well-known/acme-challenge` folder. After a little digging, I realized the renewal configuration was referencing an incorrect path.
 
