@@ -25,6 +25,11 @@ if [ ! -e "/usr/bin/curl" ]; then
     sudo apt install -y curl
 fi
 
+if [ ! -e "/usr/bin/ncdu" ]; then
+    printf "\033[1;37mInstalling ncdu.\n\033[0m"
+    sudo apt install -y ncdu
+fi
+
 if [ ! -e "/usr/bin/wget" ]; then
     printf "\033[1;37mInstalling wget.\n\033[0m"
     sudo apt install -y wget
