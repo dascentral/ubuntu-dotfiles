@@ -49,7 +49,9 @@ To allow remote connections to MySQL, disable the "bind-address" line within the
 /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
-## Administrative Users
+## User Management
+
+### Administrative Users
 
 Would you like to create an administrative user in addition to the `root` user? Would you like them to be able to access the server remotely? The following commands will help you create that user.
 
@@ -66,6 +68,27 @@ The following will update a password for an existing user:
 USE mysql;
 ALTER USER '[user]'@'localhost' IDENTIFIED BY '[pass]';
 FLUSH PRIVILEGES;
+```
+
+### Resetting the `root` Password
+
+I have found the following steps helpful in resetting the password for the `root` user on an Ubuntu 18 box running MySQL 5.7.
+
+```shell
+$ sudo service mysql stop
+$ sudo mkdir -p /var/run/mysqld
+$ sudo chown mysql:mysql /var/run/mysqld
+$ sudo /usr/sbin/mysqld --skip-grant-tables --skip-networking &
+$ mysql -u root
+
+mysql> FLUSH PRIVILEGES;
+mysql> USE mysql;
+mysql> UPDATE user SET authentication_string=PASSWORD('root') WHERE User='root';
+mysql> UPDATE user SET plugin="mysql_native_password" WHERE User='root';
+mysql> quit
+
+$ sudo pkill mysqld
+$ sudo service mysql start
 ```
 
 ## Uninstall
