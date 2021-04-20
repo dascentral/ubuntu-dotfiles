@@ -205,6 +205,27 @@ sudo chown -R [user]:[user] /etc/nginx/sites-available
 sudo chown -R [user]:[user] /etc/nginx/sites-enabled
 ```
 
+### PHP-FPM
+
+Out of the box, PHP-FPM is typically configured to run as the `www-data` user. To make life simpler, you can set the user and group to the administrative user created at the very beginning of this process. That action can be done by editing the `www.conf` file.
+
+```bash
+sudo vi /etc/php/7.4/fpm/pool.d/www.conf
+```
+
+Within that file, replace `www-data` with the name of your administrator account in the following two lines:
+
+```bash
+owner = www-data
+group = www-data
+```
+
+Restart PHP-FPM for the changes to take effect:
+
+```bash
+sudo service php7.4-fpm restart
+```
+
 ## Additional Software
 
 ### Recommended
@@ -241,5 +262,5 @@ You could then add the following command to allow execution without password:
 * **Article:** February 2021 — [Setup a VM for Laravel 8 with Ubuntu 20.04, PHP8, Nginx, and MySQL](https://robertodev.medium.com/setup-a-vm-for-laravel-8-with-ubuntu-20-04-php8-nginx-and-mysql-4b709de88154)
 * **Article:** April 2020 — [Initial Server Setup with Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 * **Article:** April 2020 — [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04)
-* **Screencasts:** [LEMP Stack with PHP-7.1](https://serversforhackers.com/c/lemp-nginx-php-laravel) — by Servers for Hackers. The PHP version is dated but the video still remains very relevant.
+* **Screencasts:** [LEMP Stack with PHP-7.1](https://serversforhackers.com/c/lemp-nginx-php-laravel) & [A Forge-Like Setup](https://serversforhackers.com/c/lemp-forge-setup)— by Servers for Hackers. The PHP version is dated but the video still remains very relevant.
 
