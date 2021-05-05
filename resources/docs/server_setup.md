@@ -216,7 +216,7 @@ sudo vi /etc/php/7.4/fpm/pool.d/www.conf
 Within that file, replace `www-data` with the name of your administrator account in the following two lines:
 
 ```bash
-owner = www-data
+user = www-data
 group = www-data
 ```
 
