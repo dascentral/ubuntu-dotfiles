@@ -190,7 +190,7 @@ You guessed it. Installation of this software is fairly straightforward:
 
 ```bash
 sudo apt update
-sudo apt install -y php-fpm php-mysql php7.4-zip php7.4-xml php7.4-mbstring
+sudo apt install -y php-fpm php-mysql php8.0-zip php8.0-xml php8.0-mbstring
 ```
 
 ## Optional Modifications
@@ -210,7 +210,7 @@ sudo chown -R [user]:[user] /etc/nginx/sites-enabled
 Out of the box, PHP-FPM is typically configured to run as the `www-data` user. To make life simpler, you can set the user and group to the administrative user created at the very beginning of this process. That action can be done by editing the `www.conf` file.
 
 ```bash
-sudo vi /etc/php/7.4/fpm/pool.d/www.conf
+sudo vi /etc/php/8.0/fpm/pool.d/www.conf
 ```
 
 Within that file, replace `www-data` with the name of your administrator account in the following two lines:
@@ -223,7 +223,7 @@ group = www-data
 Restart PHP-FPM for the changes to take effect:
 
 ```bash
-sudo service php7.4-fpm restart
+sudo service php8.0-fpm restart
 ```
 
 ## Additional Software
@@ -248,13 +248,13 @@ service supervisor restart
 If you wish to allow your administrative user to issue `sudo` commands without entering their password, you can make additions to the `/etc/sudoers.d/` folder. The **safe** way to do this is via the `visudo` command. For example, the following will allow you to add a custom directive for `php-fpm`:
 
 ```bash
-sudo visudo -f /etc/sudoers.d/php-fpm7.4
+sudo visudo -f /etc/sudoers.d/php-fpm
 ```
 
 You could then add the following command to allow execution without password:
 
 ```bash
-[username] ALL=NOPASSWD: /usr/sbin/service php7.4-fpm reload
+[username] ALL=NOPASSWD: /usr/sbin/service php-fpm reload
 ```
 
 ## Resources
