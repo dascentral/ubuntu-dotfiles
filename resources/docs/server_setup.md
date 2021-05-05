@@ -248,7 +248,7 @@ service supervisor restart
 If you wish to allow your administrative user to issue `sudo` commands without entering their password, you can make additions to the `/etc/sudoers.d/` folder. The **safe** way to do this is via the `visudo` command. For example, the following will allow you to add a custom directive for `php-fpm`:
 
 ```bash
-sudo visudo -f /etc/sudoers.d/php-fpm
+sudo visudo -f /etc/sudoers.d/php-fpm7.4
 ```
 
 You could then add the following command to allow execution without password:
@@ -262,5 +262,6 @@ You could then add the following command to allow execution without password:
 * **Article:** February 2021 — [Setup a VM for Laravel 8 with Ubuntu 20.04, PHP8, Nginx, and MySQL](https://robertodev.medium.com/setup-a-vm-for-laravel-8-with-ubuntu-20-04-php8-nginx-and-mysql-4b709de88154)
 * **Article:** April 2020 — [Initial Server Setup with Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 * **Article:** April 2020 — [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04)
+* **Article:** July 2020 — [How To Edit the Sudoers File](https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file)
 * **Screencasts:** [LEMP Stack with PHP-7.1](https://serversforhackers.com/c/lemp-nginx-php-laravel) & [A Forge-Like Setup](https://serversforhackers.com/c/lemp-forge-setup)— by Servers for Hackers. The PHP version is dated but the video still remains very relevant.
 
