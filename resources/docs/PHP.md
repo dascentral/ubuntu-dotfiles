@@ -4,7 +4,7 @@
 
 PHP: Hypertext Preprocessor is a general-purpose programming language originally designed for web development. It was originally created by Rasmus Lerdorf in 1994; the PHP reference implementation is now produced by The PHP Group. Source: [Wikipedia](https://en.wikipedia.org/wiki/PHP)
 
-Installation notes are for **PHP 7.4** running on **Ubuntu 20.04**.
+Installation notes are for **PHP 8.0** running on **Ubuntu 20.04**.
 
 ## Installation
 
@@ -12,7 +12,7 @@ Initial installation is accomplished through execution of the following commands
 
 ```bash
 sudo apt update
-sudo apt install -y php-fpm php-mysql php7.4-zip php7.4-xml php7.4-mbstring
+sudo apt install -y php-fpm php-mysql php8.0-zip php8.0-xml php8.0-mbstring php8.0-intl
 ```
 
 ### Resources
