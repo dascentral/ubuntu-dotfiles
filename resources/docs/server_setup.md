@@ -186,12 +186,14 @@ Ideally, you sent the bind address to your current IP address. You may also comm
 
 ### PHP Installation
 
-You guessed it. Installation of this software is fairly straightforward:
+You guessed it. Installation of this software is fairly straightforward. This command includes modules that I use most frequently.
 
 ```bash
 sudo apt update
-sudo apt install -y php-fpm php-mysql php8.0-zip php8.0-xml php8.0-mbstring
+sudo apt install -y php-fpm php-mysql php8.0-curl php8.0-intl php8.0-ldap php8.0-mbstring php8.0-xml php8.0-zip
 ```
+
+Also consider installation
 
 ## Optional Modifications
 
