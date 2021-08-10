@@ -8,6 +8,7 @@ alias fn='find . -name'
 alias h='history'
 alias hg='history | grep'
 alias l='ls -aCFl --color=auto'
+alias zombie='ps axo stat,ppid,pid,comm | grep -w defunct'
 
 # Directory Shortcuts
 alias utils='cd ~/utils'
