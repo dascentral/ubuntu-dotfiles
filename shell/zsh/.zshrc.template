@@ -106,3 +106,6 @@ source ~/.aliases
 
 # Source Functions
 source ~/utils/shell/.functions
+
+# Path additions
+export PATH=$PATH:~/utils/bin
