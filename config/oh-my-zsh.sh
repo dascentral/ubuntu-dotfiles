@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /Users/${USER}/dotfiles/shell/.functions
+source ${HOME}/utils/shell/.functions
 
 # install Oh My Zsh
 # This has not been tested
