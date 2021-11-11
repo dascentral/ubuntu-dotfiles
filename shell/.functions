@@ -92,34 +92,6 @@ function routes() {
     fi
 }
 
-# cat the latest Laravel log
-function cll() {
-  if [ ! -e "artisan" ]; then
-      printf "\033[1;33mYou are not in the root of a Laravel application.\033[0m\n"
-  fi
-
-  if [ -e "artisan" ] && [ ! -e "storage/logs" ]; then
-      printf "\033[1;33mThere is no "storage/logs" folder.\033[0m\n"
-  fi
-
-  if [ -e "artisan" ] && [ -e "storage/logs" ]; then
-    file=(`ls -Art storage/logs | tail -n 1`)
-    cat storage/logs/$file
-  fi
-}
-
-# tail the latest Laravel log
-function tll() {
-  if [ ! -e "artisan" ]; then
-      printf "\033[1;33mYou are not in the root of a Laravel application.\033[0m\n"
-  fi
-
-  if [ -e "artisan" ] && [ ! -e "storage/logs" ]; then
-      printf "\033[1;33mThere is no "storage/logs" folder.\033[0m\n"
-  fi
-
-  if [ -e "artisan" ] && [ -e "storage/logs" ]; then
-    file=(`ls -Art storage/logs | tail -n 1`)
-    tail -f storage/logs/$file
-  fi
+laravel_application_root() {
+    [ -e "artisan" ]
 }
