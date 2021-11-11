@@ -18,6 +18,8 @@ WHITE='\033[1;37m'
 
 NC='\033[0m'
 
+DOTFILES="${HOME}/utils"
+
 abort() {
     echo -e "${YELLOW}$@${NC}"; exit 1;
 }
