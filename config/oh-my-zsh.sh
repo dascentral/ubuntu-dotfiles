@@ -13,8 +13,8 @@ source ${HOME}/utils/shell/.functions
 # create symbolic link to .zshrc
 if [ ! -L ~/.zshrc ]; then
     info "Linking .zshrc to dotfiles"
-    rm -rf /Users/${USER}/.zshrc
-    ln -s "${DOTFILES}/shell/.zshrc" "/Users/${USER}/.zshrc"
+    rm -rf ${HOME}/.zshrc
+    ln -s "${DOTFILES}/shell/.zshrc" "${HOME}/.zshrc"
     printf "\n"
 fi
 
