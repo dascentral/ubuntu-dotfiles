@@ -1,8 +1,4 @@
-### Folders
 /node_modules
 /vendor
-
-### Files
 .DS_Store
 .env
-.php_cs.cache
