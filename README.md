@@ -1,39 +1,44 @@
-# Ubuntu Utils
+# Ubuntu dotfiles
 
 ## Introduction
 
-A collection of scripts and utility files that aid in the setup and administration of Ubuntu servers.
+Ubuntu dotfiles is a series of customizations that help me personalize and maintain an Ubuntu web server.
+
+I have also have a personal [dotfiles](https://github.com/dascentral/dotfiles) repository that speaks more to the philosophy of this type of repository and contains links to many other repositories that you may use for inspiration.
 
 ### Assumptions
 
-The scripts within this repo rely upon a number of assumptions that are not documented as well as I might like. If you setup your Ubuntu servers in a consistent manner, these scripts may work very well for you. If not, I admit they may not error as gracefully as they should.
+The scripts within this repo rely upon a number of assumptions that are not as well documented as I might like. If you setup your Ubuntu servers in a manner similar to mine, these scripts may work very well for you. If not, I admit they may not error as gracefully as they should.
 
-While I would love for these scripts to be helpful to others, they exist primarily to faciltiate my systems administration activities and address only a very small sliver of the needs within the sysadmin/DevOps world.
+While I would love for these scripts to be helpful to others, they exist primarily to faciltiate my systems administration activities and address only a very small sliver of the needs within the systems administration or DevOps world.
 
 ## Installation
 
-This is a fairly simple clone from GitHub. All scripts within this repo assume the repo is cloned into the `~/utils` folder.
+This is a fairly simple clone from GitHub. All scripts within this repo assume the repo is cloned into the `~/.dotfiles` folder.
 
 ### Via HTTP
 
 ```bash
-git clone https://github.com/dascentral/ubuntu-utils.git ~/utils && cd ~/utils && ./install.sh
+git clone https://github.com/dascentral/ubuntu-utils.git ~/.dotfiles && cd ~/.dotfiles && ./install.sh
 ```
 
 ### Via SSH
 
 ```bash
-git clone git@github.com:dascentral/ubuntu-utils.git ~/utils && cd ~/utils && ./install.sh
+git clone git@github.com:dascentral/ubuntu-utils.git ~/.dotfiles && cd ~/.dotfiles && ./install.sh
 ```
 
 ## Updates
 
-The installation script can be run multiple times to ensure that the latest from the repository is available to the local server and that all software has been installed.
+I have created a script simpy titled `dotfiles` that is idempotent and can be run regularly to ensure the system stays up-to-date. Since this command lives within the `~/.dotfiles/bin` folder, it can be executed from anywhere within the system.
 
 ```bash
-cd ~/utils
-./install.sh
+dotfiles
 ```
+
+# Legacy Content
+
+
 
 ## Update packages
 
