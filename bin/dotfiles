@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+source ${HOME}/.dotfiles/shell/.functions
+
+# Confirm repos are in the correct spot
+dotfiles_live_where_expected
+
+# Confirm they're clean because we're about to reset hard
+dotfiles_confirm_stable
+
+# Aaaaaannnnnddddd begin
+clear
+./maintain/prepare.sh
+./maintain/ubuntu.sh
+./maintain/composer.sh
+./install/oh-my-zsh.sh
