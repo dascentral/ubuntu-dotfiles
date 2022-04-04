@@ -107,6 +107,9 @@ source ~/.aliases
 # Source Functions
 source ~/utils/shell/.functions
 
+# Source Helpers
+source ~/utils/shell/.helpers
+
 # Path additions
 export PATH=$PATH:~/utils/bin
 
