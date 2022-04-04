@@ -1,38 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-#===================================================================================
-# Ubuntu Utilities - Install Script - Ubuntu 18.04
-#===================================================================================
-#
-# DESCRIPTION
-# Facilitates installation of various software packages for administering
-# Ubuntu servers or virtual machines.
-#
-# ACTIONS PERFORMED
-# - See comments below.
-#
-# ASSUMPTIONS
-# - You're running Ubuntu 18.04.
-# - Repo was initially cloned into the ~/utils directory.
-# - Script is executed as the ADMIN user with sudo privileges.
-#
-#===================================================================================
+source ${HOME}/.dotfiles/shell/.functions
 
-clear
-
-# Let it breathe
-printf "\n"
-
-./install/prep.sh
-./install/aliases.sh
+./install/utilities.sh
 ./install/nginx.sh
 ./install/php.sh
+./install/composer.sh
 ./install/redis.sh
-./install/software.sh
-
-# Environment Setup
-#./install/bin.sh
-#./install/permissions.sh
-
-# Cleanup
-#./install/cleanup.sh
+./install/certbot.sh
+./install/oh-my-zsh.sh
