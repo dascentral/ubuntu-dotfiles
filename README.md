@@ -23,7 +23,7 @@ git clone https://github.com/dascentral/ubuntu-dotfiles.git ~/.dotfiles
 Then, run the install script.
 
 ```bash
-~/.dotfiles/install.sh
+cd ~/.dotfiles && ./install.sh
 ```
 
 ## Staying up-to-date
