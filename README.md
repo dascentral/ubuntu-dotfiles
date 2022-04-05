@@ -14,18 +14,16 @@ While I would love for these scripts to be helpful to others, they exist primari
 
 ## Installation
 
-This is a fairly simple clone from GitHub. All scripts within this repo assume the repo is cloned into the `~/.dotfiles` folder.
-
-### Via HTTP
+First, clone the repository.
 
 ```bash
-git clone https://github.com/dascentral/ubuntu-dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install.sh
+git clone https://github.com/dascentral/ubuntu-dotfiles.git ~/.dotfiles
 ```
 
-### Via SSH
+Then, run the install script.
 
 ```bash
-git clone git@github.com:dascentral/ubuntu-dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install.sh
+~/.dotfiles/install.sh
 ```
 
 ## Staying up-to-date
