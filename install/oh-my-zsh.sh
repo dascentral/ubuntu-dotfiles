@@ -40,7 +40,8 @@ fi
 # create symbolic link to .zshrc
 if [ ! -L ~/.zshrc ]; then
     info "Linking .zshrc to dotfiles"
-    cp ${HOME}/.zshrc ${HOME}/.zshrc.backup
+    NOW=$(date +"%Y%m%d")
+    cp ${HOME}/.zshrc ${HOME}/.zshrc.${NOW}
     rm ${HOME}/.zshrc
     ln -s "${DOTFILES}/shell/.zshrc" "${HOME}/.zshrc"
     printf "\n"
