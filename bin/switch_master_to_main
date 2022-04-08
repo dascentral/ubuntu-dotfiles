@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ${HOME}/utils/shell/.functions
+source ${HOME}/.dotfiles/shell/.functions
 
 if [ ! -e ".git" ]; then
     abort "You are not in the root of a Git repository."
