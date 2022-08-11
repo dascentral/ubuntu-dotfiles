@@ -2,10 +2,14 @@
 
 source ${HOME}/.dotfiles/shell/.functions
 
-if [ ! -e "/etc/php" ]; then
-    info "Installing PHP 8.1."
+installPHP() {
     sudo apt install -y php php-fpm php-cli php-mysql
     sudo apt install -y php8.1-curl php8.1-intl php8.1-ldap php8.1-mbstring php8.1-xml php8.1-zip
+}
+
+if [ ! -e "/etc/php" ]; then
+    info "Installing PHP 8.1."
+    installPHP
     printf "\n"
 else
     info "PHP 8.1 is already installed."
@@ -14,8 +18,7 @@ else
     printf "\n"
     if [ "$reinstall" = "y" ]; then
         printf "\n"
-        sudo apt install -y php php-fpm php-cli php-mysql
-        sudo apt install -y php8.1-curl php8.1-intl php8.1-ldap php8.1-mbstring php8.1-xml php8.1-zip
+        installPHP
         printf "\n"
     fi
 fi
