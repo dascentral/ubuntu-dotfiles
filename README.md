@@ -20,7 +20,15 @@ First, clone the repository.
 git clone https://github.com/dascentral/ubuntu-dotfiles.git ~/.dotfiles
 ```
 
-Then, run the install script.
+The installation script in the root of the repository will install the following:
+
+* [Nginx](https://www.nginx.com)
+* [PHP](https://www.php.net) — v8.1, v8.0, and v7.4
+* [Composer](https://getcomposer.org)
+* [Redis](https://redis.io)
+* [Certbot](https://certbot.eff.org)
+* [Oh My Zsh](https://ohmyz.sh)
+* Various Ubuntu utilities — e.g., curl, git, htop, etc.
 
 ```bash
 cd ~/.dotfiles && ./install.sh
