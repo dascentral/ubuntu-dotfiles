@@ -25,7 +25,7 @@ if [ -e "/etc/nginx" ]; then
     sudo chown -R $USER:$USER /etc/nginx/sites-enabled
     sudo chown -R $USER:$USER /etc/nginx/sites-enabled
 
-    # copy default Nginx site into its own folder
+    # move default Nginx site into its own folder
     if [ ! -e "/var/www/html/server" ]; then
         printf "\033[1;37mMoving default Nginx site into '/var/www/html/server'.\n\033[0m"
 
