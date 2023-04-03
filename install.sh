@@ -2,6 +2,8 @@
 
 source ${HOME}/.dotfiles/shell/.functions
 
+sudo apt update
+
 ./install/utilities.sh
 ./install/certbot.sh
 ./install/oh-my-zsh.sh
