@@ -6,7 +6,6 @@ sudo apt update
 
 ./install/utilities.sh
 ./install/certbot.sh
-./install/oh-my-zsh.sh
 
 # END global software install
 ###########################################################################################
@@ -16,3 +15,10 @@ sudo apt update
 ./install/php.sh
 ./install/composer.sh
 ./install/redis.sh
+
+# END optional software install
+###########################################################################################
+# BEGIN wrap up
+
+# best to do last since it changes the shell
+./install/oh-my-zsh.sh
