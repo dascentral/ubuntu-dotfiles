@@ -26,25 +26,25 @@ if [ -e "/etc/nginx" ]; then
     sudo chown -R $USER:$USER /etc/nginx/sites-enabled
 
     # copy default Nginx site into its own folder
-    # if [ ! -e "/var/www/html/server" ]; then
-    #     printf "\033[1;37mMoving default Nginx site into '/var/www/html/server'.\n\033[0m"
+    if [ ! -e "/var/www/html/server" ]; then
+        printf "\033[1;37mMoving default Nginx site into '/var/www/html/server'.\n\033[0m"
 
-    #     # copy default site to new location
-    #     mkdir -p /var/www/html/server
-    #     cp /var/www/html/index* /var/www/html/server
+        # copy default site to new location
+        mkdir -p /var/www/html/server
+        cp /var/www/html/index* /var/www/html/server
 
-    #     # back up default Nginx config
-    #     cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.original
+        # back up default Nginx config
+        cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.original
 
-    #     # copy new config into place
-    #     cp ${DOTFILES}/config/nginx/default /etc/nginx/sites-available
+        # copy new config into place
+        cp ${DOTFILES}/config/nginx/default /etc/nginx/sites-available
 
-    #     # reload Nginx
-    #     sudo service nginx reload
+        # reload Nginx
+        sudo service nginx reload
 
-    #     # remove original default site files
-    #     rm /var/www/html/index*
+        # remove original default site files
+        rm /var/www/html/index*
 
-    #     echo ""
-    # fi
+        echo ""
+    fi
 fi
