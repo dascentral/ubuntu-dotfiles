@@ -20,11 +20,9 @@ fi
 
 # only configure if Nginx is installed
 if [ -e "/etc/nginx" ]; then
-    echo "Configure Nginx";
-
     # update ownership of these locations
-    # sudo chown -R $USER:$USER /etc/nginx/sites-available
-    # sudo chown -R $USER:$USER /etc/nginx/sites-enabled
+    sudo chown -R $USER:$USER /etc/nginx/sites-available
+    sudo chown -R $USER:$USER /etc/nginx/sites-enabled
 
     # copy default Nginx site into its own folder
     # if [ ! -e "/var/www/html/server" ]; then
