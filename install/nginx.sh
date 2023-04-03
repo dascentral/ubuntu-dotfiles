@@ -46,5 +46,5 @@ if [ -e "/etc/nginx" ]; then
     #     rm /var/www/html/index*
 
     #     echo ""
-    fi
+    # fi
 fi
