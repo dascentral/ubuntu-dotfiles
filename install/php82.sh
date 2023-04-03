@@ -12,7 +12,7 @@ installPHP() {
 # BEGIN script logic
 
 if [ ! -e "/etc/php/8.2" ]; then
-    echo -n "Install PHP? (y/N) "
+    echo -n "Install PHP 8.2? (y/N) "
     read -r -n1 install
     echo ""
     if [ "$install" = "y" ]; then
