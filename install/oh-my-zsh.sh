@@ -8,6 +8,10 @@ if [ ! -e "${HOME}/.oh-my-zsh" ]; then
     print "\n"
 fi
 
+if [ ! -e "${HOME}/.oh-my-zsh" ]; then
+    abort "Oh My Zsh installation failed"
+fi
+
 # END installation
 ###########################################################################################
 # BEGIN configuration
