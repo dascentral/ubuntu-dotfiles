@@ -8,6 +8,7 @@ if [ ! -e "${HOME}/.oh-my-zsh" ]; then
     print "\n"
 fi
 
+# confirm installation
 if [ ! -e "${HOME}/.oh-my-zsh" ]; then
     abort "Oh My Zsh installation failed"
 fi
