@@ -21,9 +21,9 @@ mkdir -p /var/www/html/prod
 # backup initial default configuration
 if [ ! -e "/etc/nginx/sites-available/default.original" ]; then
     printf "\033[1;37mBacking up default Nginx site.\n\033[0m"
+    cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.original
     mkdir -p /var/www/html/server
     mv /var/www/html/index* /var/www/html/server
-    cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.original
     printf "\n\n"
 fi
 
