@@ -17,30 +17,39 @@ installPHP80() {
     sudo apt install -y php8.0-curl php8.0-gd php8.0-intl php8.0-ldap php8.0-mbstring php8.0-xml php8.0-zip
 }
 
-if [ ! -e "/etc/php" ]; then
-    info "Installing PHP 8.2."
-    installPHP82
-    echo ""
-else
-    info "PHP 8.2 is already installed."
-    echo -n "Reinstall? (y/N) "
-    read -r -n1 reinstall
-    echo ""
-    if [ "$reinstall" = "y" ]; then
-        echo ""
+# END functions
+###########################################################################################
+# BEGIN script logic
+
+echo -n "Install PHP? (y/N) "
+read -r -n1 install
+echo ""
+if [ "$install" = "y" ]; then
+    if [ ! -e "/etc/php" ]; then
+        info "Installing PHP 8.2."
         installPHP82
         echo ""
+    else
+        info "PHP 8.2 is already installed."
+        echo -n "Reinstall? (y/N) "
+        read -r -n1 reinstall
+        echo ""
+        if [ "$reinstall" = "y" ]; then
+            echo ""
+            installPHP82
+            echo ""
+        fi
     fi
-fi
 
-if [ ! -e "/etc/php/8.1" ]; then
-    info "Installing PHP 8.1."
-    installPHP81
-    echo ""
-fi
+    if [ ! -e "/etc/php/8.1" ]; then
+        info "Installing PHP 8.1."
+        installPHP81
+        echo ""
+    fi
 
-if [ ! -e "/etc/php/8.0" ]; then
-    info "Installing PHP 8.0."
-    installPHP80
-    echo ""
+    if [ ! -e "/etc/php/8.0" ]; then
+        info "Installing PHP 8.0."
+        installPHP80
+        echo ""
+    fi
 fi

@@ -12,12 +12,7 @@ sudo apt update
 ###########################################################################################
 # BEGIN optional software install
 
-echo -n "Install Nginx? (y/N) "
-read -r -n1 install
-echo ""
-if [ "$install" = "y" ]; then
-    ./install/nginx.sh
-fi
+./install/nginx.sh
 
 echo -n "Install PHP & Composer? (y/N) "
 read -r -n1 install
