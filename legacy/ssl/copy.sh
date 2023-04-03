@@ -16,7 +16,7 @@
 #===================================================================================
 
 # Let it breathe
-printf "\n"
+echo ""
 
 # Collect information
 printf "\033[1mWhat domain are we transferring?\033[0m\n"

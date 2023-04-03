@@ -12,14 +12,14 @@ source ${HOME}/.dotfiles/shell/.functions
 
 echo -n "Install Nginx? (y/N) "
 read -r -n1 install
-printf "\n"
+echo ""
 if [ "$install" = "y" ]; then
     ./install/nginx.sh
 fi
 
 echo -n "Install PHP & Composer? (y/N) "
 read -r -n1 install
-printf "\n"
+echo ""
 if [ "$install" = "y" ]; then
     ./install/php.sh
     ./install/composer.sh
@@ -27,7 +27,7 @@ fi
 
 echo -n "Install Redis? (y/N) "
 read -r -n1 install
-printf "\n"
+echo ""
 if [ "$install" = "y" ]; then
     ./install/redis.sh
 fi

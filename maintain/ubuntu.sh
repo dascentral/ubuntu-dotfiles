@@ -4,8 +4,8 @@ source ${HOME}/.dotfiles/shell/.functions
 
 info "Upgrading software."
 sudo apt -y upgrade
-printf "\n"
+echo ""
 
 info "Removing orphan packages."
 sudo apt autoremove -y
-printf "\n"
+echo ""

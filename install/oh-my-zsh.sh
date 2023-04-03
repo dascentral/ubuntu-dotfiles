@@ -29,7 +29,7 @@ for url in ${links[@]}; do
     if [ ! -e ${plugin} ]; then
         info "Installing Zsh plugin - ${plugin}"
         git clone ${url}
-        printf "\n"
+        echo ""
     fi
 done
 
@@ -39,7 +39,7 @@ plugin="artisan"
 if [ ! -e ${plugin} ]; then
     info "Installing Zsh plugin - jessarcher/zsh-artisan"
     git clone ${source} ${plugin}
-    printf "\n"
+    echo ""
 fi
 
 # create symbolic link to .zshrc
@@ -49,5 +49,5 @@ if [ ! -L ~/.zshrc ]; then
     cp ${HOME}/.zshrc ${HOME}/.zshrc.${NOW}
     rm ${HOME}/.zshrc
     ln -s "${DOTFILES}/shell/.zshrc" "${HOME}/.zshrc"
-    printf "\n"
+    echo ""
 fi

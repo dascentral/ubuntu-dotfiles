@@ -6,11 +6,11 @@ info "Pulling latest from Git: ${DOTFILES}"
 cd ${DOTFILES}
 git reset HEAD --hard
 git pull
-printf "\n"
+echo ""
 
 info "Updating package information."
 sudo apt update
-printf "\n"
+echo ""
 
 # HACK ALERT
 # Files seem to come down from Git with odd permissions. This code is my attempt to clean things up.

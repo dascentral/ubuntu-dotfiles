@@ -20,4 +20,4 @@ if [ -e "/usr/local/lib" ]; then
     sudo chown -R ${USER} /usr/local/lib
 fi
 
-printf "\n"
+echo ""

@@ -14,7 +14,7 @@
 #
 #===================================================================================
 
-printf "\n"
+echo ""
 
 printf "\n\033[1mMoving certificate files to \"/\"\033[0m\n"
 sudo mv ~/certs.tar.gz /

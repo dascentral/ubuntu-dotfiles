@@ -8,5 +8,5 @@ if [ ! -e "/usr/bin/certbot" ]; then
     sudo add-apt-repository universe
     sudo apt update
     sudo apt install -y certbot python3-certbot-nginx
-    printf "\n"
+    echo ""
 fi

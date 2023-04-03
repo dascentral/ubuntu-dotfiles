@@ -20,27 +20,27 @@ installPHP80() {
 if [ ! -e "/etc/php" ]; then
     info "Installing PHP 8.2."
     installPHP82
-    printf "\n"
+    echo ""
 else
     info "PHP 8.2 is already installed."
     echo -n "Reinstall? (y/N) "
     read -r -n1 reinstall
-    printf "\n"
+    echo ""
     if [ "$reinstall" = "y" ]; then
-        printf "\n"
+        echo ""
         installPHP82
-        printf "\n"
+        echo ""
     fi
 fi
 
 if [ ! -e "/etc/php/8.1" ]; then
     info "Installing PHP 8.1."
     installPHP81
-    printf "\n"
+    echo ""
 fi
 
 if [ ! -e "/etc/php/8.0" ]; then
     info "Installing PHP 8.0."
     installPHP80
-    printf "\n"
+    echo ""
 fi

@@ -24,4 +24,4 @@ if [ ! -e "/usr/local/bin/mysql_backup" ]; then
 fi
 
 # Wrap it up
-printf "\n"
+echo ""
