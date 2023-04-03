@@ -3,8 +3,8 @@
 source ${HOME}/.dotfiles/shell/.functions
 
 installPHP() {
-    sudo apt install -y php8.0 php8.0-fpm php8.0-cli php8.0-mysql
-    sudo apt install -y php8.0-curl php8.0-gd php8.0-intl php8.0-ldap php8.0-mbstring php8.0-xml php8.0-zip
+    sudo apt install -y php8.0 php8.0-cli php8.0-curl php8.0-gd php8.0-intl php8.0-ldap php8.0-mbstring php8.0-mysql php8.0-xml php8.0-zip
+    sudo apt install -y php8.0-fpm
 }
 
 # END functions

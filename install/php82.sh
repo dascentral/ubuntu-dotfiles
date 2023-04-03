@@ -11,7 +11,7 @@ installPHP() {
 ###########################################################################################
 # BEGIN script logic
 
-if [ ! -e "/etc/php" ]; then
+if [ ! -e "/etc/php/8.2" ]; then
     echo -n "Install PHP? (y/N) "
     read -r -n1 install
     echo ""
