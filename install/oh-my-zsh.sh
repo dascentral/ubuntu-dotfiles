@@ -5,7 +5,7 @@ source ${HOME}/.dotfiles/shell/.functions
 if [ ! -e "${HOME}/.oh-my-zsh" ]; then
     info "Installing Oh My Zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    print "\n"
+    echo ""
 fi
 
 # confirm installation
