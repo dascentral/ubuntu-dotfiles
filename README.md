@@ -23,7 +23,7 @@ git clone https://github.com/dascentral/ubuntu-dotfiles.git ~/.dotfiles
 The installation script in the root of the repository will install the following:
 
 * [Nginx](https://www.nginx.com)
-* [PHP](https://www.php.net) — v8.1, v8.0, and v7.4
+* [PHP](https://www.php.net) — v8.2, v8.1, and v8.0
 * [Composer](https://getcomposer.org)
 * [Redis](https://redis.io)
 * [Certbot](https://certbot.eff.org)
