@@ -6,6 +6,7 @@ sudo apt update
 
 ./install/utilities.sh
 ./install/certbot.sh
+./install/supervisor.sh
 
 # END global software install
 ###########################################################################################
