@@ -1,0 +1,3 @@
+dsmith ALL=NOPASSWD: /usr/sbin/service php8.0-fpm reload
+dsmith ALL=NOPASSWD: /usr/sbin/service php8.1-fpm reload
+dsmith ALL=NOPASSWD: /usr/sbin/service php8.2-fpm reload
