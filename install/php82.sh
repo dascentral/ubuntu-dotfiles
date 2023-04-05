@@ -42,5 +42,4 @@ fi
 filename="/etc/php/8.2/fpm/pool.d/www.conf"
 search="user = www-data"
 replace="user = ${USER}"
-echo "$filename, $search, $replace"
-# sed -i "s/$search/$replace/" $filename
+sed -i "s/$search/$replace/" $filename
