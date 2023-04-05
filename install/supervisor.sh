@@ -7,6 +7,6 @@ if [ ! -e "/etc/supervisor" ]; then
     echo ""
     info "Installing Supervisor."
     sudo apt install -y supervisor
-    service supervisor restart
+    sudo service supervisor restart
     echo ""
 fi
