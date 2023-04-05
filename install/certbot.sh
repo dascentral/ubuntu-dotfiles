@@ -3,6 +3,7 @@
 source ${HOME}/.dotfiles/shell/.functions
 
 if [ ! -e "/usr/bin/certbot" ]; then
+    echo ""
     info "Installing Certbot."
     sudo apt install software-properties-common
     sudo add-apt-repository universe

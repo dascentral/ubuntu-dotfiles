@@ -12,6 +12,7 @@ installPHP() {
 # BEGIN script logic
 
 if [ ! -e "/etc/php/8.0" ]; then
+    echo ""
     echo -n "Install PHP 8.0? (y/N) "
     read -r -n1 install
     echo ""
@@ -21,6 +22,7 @@ if [ ! -e "/etc/php/8.0" ]; then
         echo ""
     fi
 else
+    echo ""
     info "PHP 8.0 is already installed."
     echo -n "Reinstall? (y/N) "
     read -r -n1 reinstall

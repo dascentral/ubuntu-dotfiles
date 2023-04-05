@@ -3,6 +3,7 @@
 source ${HOME}/.dotfiles/shell/.functions
 
 if [ ! -e "/usr/local/bin/composer" ]; then
+    echo ""
     echo -n "Install composer? (y/N) "
     read -r -n1 install
     echo ""
