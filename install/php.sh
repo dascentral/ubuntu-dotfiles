@@ -9,3 +9,5 @@ sudo apt update
 ./install/php80.sh
 ./install/php81.sh
 ./install/php82.sh
+
+# TODO: update sudoers.d
