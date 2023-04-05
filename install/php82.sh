@@ -40,6 +40,11 @@ fi
 # BEGIN configuration
 
 filename="/etc/php/8.2/fpm/pool.d/www.conf"
+
 search="user = www-data"
 replace="user = ${USER}"
+sudo sed -i "s/$search/$replace/" $filename
+
+search="group = www-data"
+replace="group = ${USER}"
 sudo sed -i "s/$search/$replace/" $filename
