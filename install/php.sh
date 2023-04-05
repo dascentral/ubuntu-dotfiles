@@ -2,6 +2,7 @@
 
 source ${HOME}/.dotfiles/shell/.functions
 
+# TODO: see if we can check to see if this has already been added
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 
