@@ -48,3 +48,5 @@ sudo sed -i "s/$search/$replace/" $filename
 search="group = www-data"
 replace="group = ${USER}"
 sudo sed -i "s/$search/$replace/" $filename
+
+sudo service php8.2-fpm restart
