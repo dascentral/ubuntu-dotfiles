@@ -10,7 +10,7 @@ installPHP() {
 
 # END functions
 ###########################################################################################
-# BEGIN script logic
+# BEGIN installation
 
 if [ ! -e "/etc/php/8.2" ]; then
     echo ""
@@ -34,3 +34,13 @@ else
         echo ""
     fi
 fi
+
+# END installation
+###########################################################################################
+# BEGIN configuration
+
+filename="/etc/php/8.2/fpm/pool.d/www.conf"
+search="user = www-data"
+replace="user = ${USER}"
+echo "$filename, $search, $replace"
+# sed -i "s/$search/$replace/" $filename
