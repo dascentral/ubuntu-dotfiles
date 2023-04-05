@@ -2,7 +2,7 @@
 
 source ${HOME}/.dotfiles/shell/.functions
 
-# execute only if Nginx is not already installed
+# execute only if not already installed
 if [ ! -e "/etc/nginx" ]; then
     echo -n "Install Nginx? (y/N) "
     read -r -n1 install

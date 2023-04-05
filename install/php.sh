@@ -2,8 +2,10 @@
 
 source ${HOME}/.dotfiles/shell/.functions
 
-# TODO: see if we can check to see if this has already been added
-sudo add-apt-repository ppa:ondrej/php
+if [ ! -e "/etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list" ]; then
+    sudo add-apt-repository ppa:ondrej/php
+fi
+
 sudo apt update
 
 ./install/php80.sh
