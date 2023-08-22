@@ -12,10 +12,16 @@ sudo apt update
 ###########################################################################################
 # BEGIN optional software install
 
-./install/nginx.sh
-./install/php.sh
-./install/composer.sh
-./install/redis.sh
+echo -n "Install Nginx, MySQL, PHP, & Redis? (y/N) "
+read -r -n1 install
+echo ""
+if [ "$install" = "y" ]; then
+    ./install/nginx.sh
+    ./install/mysql.sh
+    ./install/php.sh
+    ./install/composer.sh
+    ./install/redis.sh
+fi
 
 # END optional software install
 ###########################################################################################
