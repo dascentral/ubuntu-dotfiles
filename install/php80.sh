@@ -13,25 +13,9 @@ installPHP() {
 
 if [ ! -e "/etc/php/8.0" ]; then
     echo ""
-    echo -n "Install PHP 8.0? (y/N) "
-    read -r -n1 install
+    info "Installing PHP 8.0."
+    installPHP
     echo ""
-    if [ "$install" = "y" ]; then
-        info "Installing PHP 8.0."
-        installPHP
-        echo ""
-    fi
-else
-    echo ""
-    info "PHP 8.0 is already installed."
-    echo -n "Reinstall? (y/N) "
-    read -r -n1 reinstall
-    echo ""
-    if [ "$reinstall" = "y" ]; then
-        echo ""
-        installPHP
-        echo ""
-    fi
 fi
 
 # END installation

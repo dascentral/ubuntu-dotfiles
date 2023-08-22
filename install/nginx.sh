@@ -3,14 +3,9 @@
 source ${HOME}/.dotfiles/shell/.functions
 
 if [ ! -e "/etc/nginx" ]; then
-    echo -n "Install Nginx? (y/N) "
-    read -r -n1 install
-    echo ""
-    if [ "$install" = "y" ]; then
-        info "Installing Nginx."
-        sudo apt install -y nginx
-        sudo ufw allow 'Nginx Full'
-    fi
+    info "Installing Nginx."
+    sudo apt install -y nginx
+    sudo ufw allow 'Nginx Full'
 fi
 
 # END installation

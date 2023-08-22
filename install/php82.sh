@@ -14,25 +14,9 @@ installPHP() {
 
 if [ ! -e "/etc/php/8.2" ]; then
     echo ""
-    echo -n "Install PHP 8.2? (y/N) "
-    read -r -n1 install
+    info "Installing PHP 8.2."
+    installPHP
     echo ""
-    if [ "$install" = "y" ]; then
-        info "Installing PHP 8.2."
-        installPHP
-        echo ""
-    fi
-else
-    echo ""
-    info "PHP 8.2 is already installed."
-    echo -n "Reinstall? (y/N) "
-    read -r -n1 reinstall
-    echo ""
-    if [ "$reinstall" = "y" ]; then
-        echo ""
-        installPHP
-        echo ""
-    fi
 fi
 
 # END installation

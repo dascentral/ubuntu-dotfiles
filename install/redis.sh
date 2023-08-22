@@ -4,12 +4,7 @@ source ${HOME}/.dotfiles/shell/.functions
 
 if [ ! -e "/etc/redis" ]; then
     echo ""
-    echo -n "Install Redis? (y/N) "
-    read -r -n1 install
+    info "Installing Redis."
+    sudo apt install -y redis-server
     echo ""
-    if [ "$install" = "y" ]; then
-        info "Installing Redis."
-        sudo apt install -y redis-server
-        echo ""
-    fi
 fi
