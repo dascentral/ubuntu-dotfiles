@@ -2,7 +2,6 @@
 
 source ${HOME}/.dotfiles/shell/.functions
 
-# execute only if not already installed
 if [ ! -e "/etc/mysql" ]; then
     echo ""
     echo -n "Install MySQL? (y/N) "

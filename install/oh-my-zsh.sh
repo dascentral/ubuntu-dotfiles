@@ -10,7 +10,6 @@ if [ ! -e "${HOME}/.oh-my-zsh" ]; then
     echo ""
 fi
 
-# confirm installation
 if [ ! -e "${HOME}/.oh-my-zsh" ]; then
     abort "Oh My Zsh installation failed"
 fi
