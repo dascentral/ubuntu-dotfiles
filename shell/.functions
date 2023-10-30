@@ -90,6 +90,10 @@ laravel_application_root() {
     [ -e "artisan" ]
 }
 
+nginx_installed() {
+    [ -e "/etc/nginx" ]
+}
+
 package_json_exists() {
     [ -e "package.json" ]
 }

@@ -1,90 +1,25 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-#===================================================================================
-# Laravel Site Setup Script - Ubuntu 14.04
-#===================================================================================
-#
-# DESCRIPTION
-# Helper script that sets up necessary folders and Nginx server configurations
-# for DEV, Stage, and UAT versions of a Laravel-based site.
-#
-# PARAMETERS
-# - url - Production URL for the site to be hosted
-#
-# ACTIONS PERFORMED
-# - Creates DEV, Stage, and UAT folders in the appropriate place
-# - Creates and enables the necessary Nginx server entries
-# - Reloads the Nginx configuration
-# - Creates the Laravel storage folder structure
-# - Sets appropriate permissions on Laravel storage folders
-#
-# ASSUMPTIONS
-# - Web server is Nginx
-# - Web server user is "www-data"
-# - PHP FPM is located in its "normal" place
-#
-#===================================================================================
+source ${HOME}/.dotfiles/shell/.functions
 
-# One parameter is required
+if ! nginx_installed; then
+    abort "Nginx is not installed. Aborting."
+fi
+
 if [ $# != 1 ]; then
-   echo "Usage: laravel-site [url]";
-   exit 1
+    abort "Usage: laravel-site [url]";
 fi
 
-# web server user
-user="www-data"
+info "Creating site folder in /var/www/html."
+mkdir -p /var/www/html/$1
 
-# Nginx required for now
-if [ ! -e "/etc/nginx" ]; then
-    echo "Server is not running Nginx. Script cannot proceed."
-    exit 1;
-fi
+info "Creating Laravel storage folders."
+mkdir -p /var/www/html/$1/storage/app
+mkdir -p /var/www/html/$1/storage/framework/cache
+mkdir -p /var/www/html/$1/storage/framework/sessions
+mkdir -p /var/www/html/$1/storage/framework/testing
+mkdir -p /var/www/html/$1/storage/framework/views
+mkdir -p /var/www/html/$1/storage/logs
 
-# determine the verion of PHP available
-if [ -e "/var/run/php/php7.2-fpm.sock" ]; then
-    config="laravel-php72.conf"
-elif [ -e "/var/run/php/php7.1-fpm.sock" ]; then
-    config="laravel-php71.conf"
-else
-    echo "Unable to determine version of PHP. Script cannot proceed."
-    exit 1;
-fi
-
-# Create site folders
-mkdir -p /usr/share/nginx/html/dev/$1
-mkdir -p /usr/share/nginx/html/stage/$1
-mkdir -p /usr/share/nginx/html/uat/$1
-mkdir -p /usr/share/nginx/html/prod/$1
-
-# Create Nginx server configs
-cp ~/utils/resources/config/nginx/$config /etc/nginx/sites-available/$1.conf
-sudo sed -i "s/SITEURL/$1/g" /etc/nginx/sites-available/$1.conf
-ln -s /etc/nginx/sites-available/$1.conf /etc/nginx/sites-enabled/$1.conf
-
-# Reload Nginx configuration
-sudo service nginx reload
-
-# Set permissions on storage
-if [ -e /usr/share/nginx/html/dev/$1/storage ]; then
-    sudo chown -R ${USER} /usr/share/nginx/html/dev/$1/storage
-    sudo chgrp -R www-data /usr/share/nginx/html/dev/$1/storage
-    sudo chmod 775 /usr/share/nginx/html/dev/$1/storage
-fi
-
-if [ -e /usr/share/nginx/html/stage/$1/storage ]; then
-    sudo chown -R ${USER} /usr/share/nginx/html/stage/$1/storage
-    sudo chgrp -R www-data /usr/share/nginx/html/stage/$1/storage
-    sudo chmod 775 /usr/share/nginx/html/stage/$1/storage
-fi
-
-if [ -e /usr/share/nginx/html/uat/$1/storage ]; then
-    sudo chown -R ${USER} /usr/share/nginx/html/uat/$1/storage
-    sudo chgrp -R www-data /usr/share/nginx/html/uat/$1/storage
-    sudo chmod 775 /usr/share/nginx/html/uat/$1/storage
-fi
-
-if [ -e /usr/share/nginx/html/prod/$1/storage ]; then
-    sudo chown -R ${USER} /usr/share/nginx/html/prod/$1/storage
-    sudo chgrp -R www-data /usr/share/nginx/html/prod/$1/storage
-    sudo chmod 775 /usr/share/nginx/html/prod/$1/storage
-fi
+info "Creating Nginx log folders."
+mkdir -p /var/log/nginx/$1
