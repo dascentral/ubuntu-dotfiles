@@ -2,7 +2,7 @@
 
 source ${HOME}/.dotfiles/shell/.functions
 
-webroot="/var/www/htmlasdf"
+webroot="/var/www/html"
 
 if ! nginx_installed; then
     abort "Nginx is not installed. Aborting."
