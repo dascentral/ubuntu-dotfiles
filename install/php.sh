@@ -7,8 +7,6 @@ if [ ! -e "/etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list" ]; then
     sudo apt update
 fi
 
-./install/php80.sh
-./install/php81.sh
 ./install/php82.sh
 
 # TODO: update sudoers.d
