@@ -2,24 +2,30 @@
 
 source ${HOME}/.dotfiles/shell/.functions
 
+webroot="/var/www/htmlasdf"
+
 if ! nginx_installed; then
     abort "Nginx is not installed. Aborting."
+fi
+
+if [ ! -d "${webroot}" ]; then
+    abort "The Nginx webroot does not exist in the expected location. ({$webroot})"
 fi
 
 if [ $# != 1 ]; then
     abort "Usage: laravel-site [url]";
 fi
 
-info "Creating site folder in /var/www/html."
-mkdir -p /var/www/html/$1
+info "Creating site folder in ${webroot}."
+mkdir -p ${webroot}/$1
 
 info "Creating Laravel storage folders."
-mkdir -p /var/www/html/$1/storage/app
-mkdir -p /var/www/html/$1/storage/framework/cache
-mkdir -p /var/www/html/$1/storage/framework/sessions
-mkdir -p /var/www/html/$1/storage/framework/testing
-mkdir -p /var/www/html/$1/storage/framework/views
-mkdir -p /var/www/html/$1/storage/logs
+mkdir -p ${webroot}/$1/storage/app
+mkdir -p ${webroot}/$1/storage/framework/cache
+mkdir -p ${webroot}/$1/storage/framework/sessions
+mkdir -p ${webroot}/$1/storage/framework/testing
+mkdir -p ${webroot}/$1/storage/framework/views
+mkdir -p ${webroot}/$1/storage/logs
 
 info "Creating Nginx log folders."
 mkdir -p /var/log/nginx/$1
