@@ -53,6 +53,13 @@ has() {
 ################################################################
 
 
+add_php_repository() {
+    if [ ! -e "/etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list" ]; then
+        sudo add-apt-repository ppa:ondrej/php
+        sudo apt update
+    fi
+}
+
 composer_json() {
     [ -e "composer.json" ]
 }
