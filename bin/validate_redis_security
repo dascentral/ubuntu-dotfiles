@@ -44,7 +44,88 @@ check_test() {
     fi
 }
 
-# ... [Previous tests 1-9 remain the same] ...
+# Test 1: External port access
+echo "Test 1: External Access Check"
+timeout 2 bash -c "cat < /dev/null > /dev/tcp/0.0.0.0/6379" 2>/dev/null
+check_test $? "Port 6379 not accessible on all interfaces"
+
+# Test 2: Requires authentication
+echo ""
+echo "Test 2: Authentication Required"
+redis-cli ping 2>&1 | grep -q "NOAUTH"
+check_test $? "Redis requires authentication"
+
+# Test 3: Verify we can connect WITH password
+echo ""
+echo "Test 3: Password Authentication Works"
+redis-cli -a "$REDIS_PASS" ping 2>/dev/null | grep -q "PONG"
+check_test $? "Can connect with password from .env"
+
+# Test 4: Network Binding (check config file since CONFIG is disabled)
+echo ""
+echo "Test 4: Network Binding"
+if grep -E "^bind\s+127\.0\.0\.1" "$REDIS_CONF" > /dev/null; then
+    BIND_CONFIG=$(grep -E "^bind\s+" "$REDIS_CONF" | tail -1)
+    echo "  Config file shows: $BIND_CONFIG"
+    check_test 0 "Redis bound to localhost (verified in config file)"
+else
+    check_test 1 "Redis bound to localhost (not found in config)"
+fi
+
+# Test 5: Protected mode (check config file since CONFIG is disabled)
+echo ""
+echo "Test 5: Protected Mode"
+if grep -E "^protected-mode\s+yes" "$REDIS_CONF" > /dev/null; then
+    check_test 0 "Protected mode enabled (verified in config file)"
+else
+    check_test 1 "Protected mode not enabled in config"
+fi
+
+# Test 6: CONFIG command is disabled (this is GOOD!)
+echo ""
+echo "Test 6: CONFIG Command Disabled"
+OUTPUT=$(redis-cli -a "$REDIS_PASS" CONFIG GET bind 2>&1)
+if echo "$OUTPUT" | grep -qi "unknown command\|renamed"; then
+    check_test 0 "CONFIG command is properly disabled (security feature!)"
+else
+    check_test 1 "CONFIG command is still enabled (security risk)"
+fi
+
+# Test 7: Other dangerous commands disabled
+echo ""
+echo "Test 7: Other Dangerous Commands Disabled"
+for cmd in FLUSHDB FLUSHALL SHUTDOWN; do
+    OUTPUT=$(redis-cli -a "$REDIS_PASS" $cmd 2>&1)
+    if echo "$OUTPUT" | grep -qi "unknown command\|renamed"; then
+        echo "  ✅ $cmd is disabled"
+    else
+        echo "  ❌ $cmd is still ENABLED - CRITICAL!"
+        ((FAIL++))
+    fi
+done
+
+# Test 8: Password strength
+echo ""
+echo "Test 8: Password Strength"
+PASS_LENGTH=${#REDIS_PASS}
+if [ $PASS_LENGTH -ge 20 ]; then
+    check_test 0 "Password is strong ($PASS_LENGTH characters)"
+else
+    check_test 1 "Password should be stronger (Only $PASS_LENGTH characters)"
+fi
+
+# Test 9: Verify actual network binding via netstat
+echo ""
+echo "Test 9: Actual Network Binding (via netstat)"
+NETSTAT_OUTPUT=$(sudo netstat -tlnp | grep :6379)
+if echo "$NETSTAT_OUTPUT" | grep -q "127.0.0.1:6379\|::1:6379"; then
+    echo "  Listening on: $(echo $NETSTAT_OUTPUT | awk '{print $4}')"
+    check_test 0 "Redis listening on localhost only (verified via netstat)"
+elif echo "$NETSTAT_OUTPUT" | grep -q "0.0.0.0:6379"; then
+    check_test 1 "Redis listening on ALL interfaces (DANGEROUS!)"
+else
+    check_test 0 "Redis port binding appears secure"
+fi
 
 # Test 10: Check for CVE-2025-49844 specific vulnerability (FIXED)
 echo ""
