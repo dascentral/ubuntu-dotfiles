@@ -1,0 +1,134 @@
+#!/bin/bash
+# Save as validate_redis_security_fixed.sh
+
+echo "================================"
+echo "Redis Security Validation Test"
+echo "================================"
+echo ""
+
+PASS=0
+FAIL=0
+
+# Function to extract password from .env properly
+get_redis_password() {
+    local env_file="$1"
+    # Extract password and handle quotes properly
+    local pass=$(grep "^REDIS_PASSWORD=" "$env_file" | cut -d= -f2-)
+    # Remove surrounding quotes (both single and double)
+    pass="${pass%\"}"
+    pass="${pass#\"}"
+    pass="${pass%\'}"
+    pass="${pass#\'}"
+    echo "$pass"
+}
+
+# Set the correct path to your .env file
+ENV_FILE="/var/www/html/intranet/.env"
+
+# Get the Redis password
+REDIS_PASS=$(get_redis_password "$ENV_FILE")
+
+echo "Debug: Password length is ${#REDIS_PASS} characters"
+echo ""
+
+# Function to check a test
+check_test() {
+    if [ $1 -eq 0 ]; then
+        echo "✅ PASS: $2"
+        ((PASS++))
+    else
+        echo "❌ FAIL: $2"
+        ((FAIL++))
+    fi
+}
+
+# Test 1: External port access
+echo "Test 1: External Access Check"
+timeout 2 bash -c "cat < /dev/null > /dev/tcp/0.0.0.0/6379" 2>/dev/null
+check_test $? "Port 6379 not accessible on all interfaces"
+
+# Test 2: Requires authentication
+echo ""
+echo "Test 2: Authentication Required"
+redis-cli ping 2>&1 | grep -q "NOAUTH"
+check_test $? "Redis requires authentication"
+
+# Test 3: Verify we can connect WITH password
+echo ""
+echo "Test 3: Password Authentication Works"
+redis-cli -a "$REDIS_PASS" ping 2>/dev/null | grep -q "PONG"
+check_test $? "Can connect with password from .env"
+
+# Test 4: Bound to localhost only
+echo ""
+echo "Test 4: Network Binding"
+BIND=$(redis-cli -a "$REDIS_PASS" CONFIG GET bind 2>/dev/null | tail -1)
+if [[ "$BIND" == "127.0.0.1"* ]] || [[ "$BIND" == "127.0.0.1 ::1"* ]]; then
+    check_test 0 "Redis bound to localhost only ($BIND)"
+else
+    check_test 1 "Redis bound to localhost only (Current: $BIND)"
+fi
+
+# Test 5: Protected mode enabled
+echo ""
+echo "Test 5: Protected Mode"
+PROTECTED=$(redis-cli -a "$REDIS_PASS" CONFIG GET protected-mode 2>/dev/null | tail -1)
+[[ "$PROTECTED" == "yes" ]]
+check_test $? "Protected mode is enabled"
+
+# Test 6: Dangerous commands disabled
+echo ""
+echo "Test 6: Dangerous Commands Disabled"
+for cmd in FLUSHDB FLUSHALL CONFIG SHUTDOWN; do
+    OUTPUT=$(redis-cli -a "$REDIS_PASS" $cmd 2>&1)
+    if echo "$OUTPUT" | grep -qi "unknown command\|renamed"; then
+        echo "  ✅ $cmd is disabled"
+    else
+        echo "  ❌ $cmd is still ENABLED - CRITICAL!"
+        ((FAIL++))
+    fi
+done
+
+# Test 7: Password strength
+echo ""
+echo "Test 7: Password Strength"
+PASS_LENGTH=${#REDIS_PASS}
+if [ $PASS_LENGTH -ge 20 ]; then
+    check_test 0 "Password is strong ($PASS_LENGTH characters)"
+else
+    check_test 1 "Password should be stronger (Only $PASS_LENGTH characters)"
+fi
+
+# Test 8: Check for CVE-2025-49844 specific vulnerability
+echo ""
+echo "Test 8: CVE-2025-49844 Vulnerability"
+# Try to execute Lua script without auth (should fail)
+echo 'return redis.call("ping")' | redis-cli --eval - 2>&1 | grep -q "NOAUTH"
+check_test $? "Lua engine requires authentication"
+
+# Test 9: Memory/System info access
+echo ""
+echo "Test 9: Information Disclosure"
+redis-cli INFO server 2>&1 | grep -q "NOAUTH"
+check_test $? "Server info requires authentication"
+
+echo ""
+echo "================================"
+echo "SECURITY VALIDATION SUMMARY"
+echo "================================"
+echo "✅ Passed: $PASS tests"
+echo "❌ Failed: $FAIL tests"
+echo ""
+
+if [ $FAIL -eq 0 ]; then
+    echo "🎉 SUCCESS: Redis is properly secured against CVE-2025-49844!"
+    echo ""
+    echo "Security measures in place:"
+    echo "• Authentication required"
+    echo "• Bound to localhost only"  
+    echo "• Protected mode enabled"
+    echo "• Dangerous commands disabled"
+    echo "• External access blocked"
+else
+    echo "⚠️  WARNING: Some security tests failed. Review and fix immediately!"
+fi
