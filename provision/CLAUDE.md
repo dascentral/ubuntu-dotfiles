@@ -14,7 +14,7 @@ These are load-bearing. Do not remove without an explicit conversation.
 - **Both must remain idempotent.** Every step checks for existing state or relies on apt's idempotence.
 - **Both run as a non-root sudo user, not root.** The pre-flight check enforces this.
 - **`provision-laravel-app-server.sh` gates on `~/logs/setup-complete.log`.** Verifies `setup.sh` has completed successfully.
-- **The provisioning scripts source `lib/config.sh`** for shared `section`/`ok` helpers and log paths. Logs and completion markers live under `~/logs`.
+- **The provisioning scripts source `lib/config.sh`** for shared `section`/`ok` helpers and log paths. Logs and completion markers live under `~/logs`; each run replaces its previous log.
 - **PHP-FPM, Horizon, and app files all run as the admin user (not www-data).** Deliberate choice to avoid permission issues. Don't revert the pool config.
 - **MySQL 8.4 LTS from Oracle's APT repo, not Ubuntu's default.** MySQL 8.0 reached EOL in April 2026.
 - **`opcache.validate_timestamps=0` is intentional.** The deploy pipeline reloads PHP-FPM after each deploy.
