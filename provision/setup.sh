@@ -19,6 +19,7 @@ source "${HOME}/.dotfiles/lib/config.sh"
 SETUP_DIR="${DOTFILES}/provision/setup"
 LOG_FILE="$LOG_SETUP"
 
+mkdir -p "$LOG_DIR"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 # --- Pre-flight checks -------------------------------------------------------

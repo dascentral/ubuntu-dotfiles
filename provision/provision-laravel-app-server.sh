@@ -37,6 +37,7 @@ LARAVEL_DIR="${DOTFILES}/provision/laravel"
 LOG_FILE="$LOG_PROVISION_LARAVEL"
 MYSQL_PASS_FILE="$HOME/.mysql_root_password"
 
+mkdir -p "$LOG_DIR"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 # --- Pre-flight checks -------------------------------------------------------

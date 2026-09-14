@@ -28,6 +28,7 @@ LOG_FILE="$LOG_PROVISION_DASCENTRAL"
 APP_USER_HOME="/home/${APP_USER}"
 FPM_POOL="/etc/php/${PHP_VERSION}/fpm/pool.d/www.conf"
 
+mkdir -p "$LOG_DIR"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 # --- Pre-flight checks -------------------------------------------------------
